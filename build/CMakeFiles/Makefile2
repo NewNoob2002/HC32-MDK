@@ -63,11 +63,11 @@ CMAKE_BINARY_DIR = C:/Users/guoti/Desktop/hc32f460jeta_template/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/TEST.efl.dir/all
+all: CMakeFiles/TEST.elf.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/TEST.efl.dir/codegen
+codegen: CMakeFiles/TEST.elf.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -75,40 +75,40 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/TEST.efl.dir/clean
+clean: CMakeFiles/TEST.elf.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/TEST.efl.dir
+# Target rules for target CMakeFiles/TEST.elf.dir
 
 # All Build rule for target.
-CMakeFiles/TEST.efl.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:/Users/guoti/Desktop/hc32f460jeta_template/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49 "Built target TEST.efl"
-.PHONY : CMakeFiles/TEST.efl.dir/all
+CMakeFiles/TEST.elf.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:/Users/guoti/Desktop/hc32f460jeta_template/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49 "Built target TEST.elf"
+.PHONY : CMakeFiles/TEST.elf.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/TEST.efl.dir/rule: cmake_check_build_system
+CMakeFiles/TEST.elf.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start C:/Users/guoti/Desktop/hc32f460jeta_template/build/CMakeFiles 49
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/TEST.efl.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/TEST.elf.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:/Users/guoti/Desktop/hc32f460jeta_template/build/CMakeFiles 0
-.PHONY : CMakeFiles/TEST.efl.dir/rule
+.PHONY : CMakeFiles/TEST.elf.dir/rule
 
 # Convenience name for target.
-TEST.efl: CMakeFiles/TEST.efl.dir/rule
-.PHONY : TEST.efl
+TEST.elf: CMakeFiles/TEST.elf.dir/rule
+.PHONY : TEST.elf
 
 # codegen rule for target.
-CMakeFiles/TEST.efl.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:/Users/guoti/Desktop/hc32f460jeta_template/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49 "Finished codegen for target TEST.efl"
-.PHONY : CMakeFiles/TEST.efl.dir/codegen
+CMakeFiles/TEST.elf.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:/Users/guoti/Desktop/hc32f460jeta_template/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49 "Finished codegen for target TEST.elf"
+.PHONY : CMakeFiles/TEST.elf.dir/codegen
 
 # clean rule for target.
-CMakeFiles/TEST.efl.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/clean
-.PHONY : CMakeFiles/TEST.efl.dir/clean
+CMakeFiles/TEST.elf.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/clean
+.PHONY : CMakeFiles/TEST.elf.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

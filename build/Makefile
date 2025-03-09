@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named TEST.efl
+# Target rules for targets named TEST.elf
 
 # Build rule for target.
-TEST.efl: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TEST.efl
-.PHONY : TEST.efl
+TEST.elf: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TEST.elf
+.PHONY : TEST.elf
 
 # fast build rule for target.
-TEST.efl/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/build
-.PHONY : TEST.efl/fast
+TEST.elf/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/build
+.PHONY : TEST.elf/fast
 
 CMSIS/Device/HDSC/hc32f4xx/Source/GCC/startup_hc32f460.obj: CMSIS/Device/HDSC/hc32f4xx/Source/GCC/startup_hc32f460.S.obj
 .PHONY : CMSIS/Device/HDSC/hc32f4xx/Source/GCC/startup_hc32f460.obj
 
 # target to build an object file
 CMSIS/Device/HDSC/hc32f4xx/Source/GCC/startup_hc32f460.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/CMSIS/Device/HDSC/hc32f4xx/Source/GCC/startup_hc32f460.S.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/CMSIS/Device/HDSC/hc32f4xx/Source/GCC/startup_hc32f460.S.obj
 .PHONY : CMSIS/Device/HDSC/hc32f4xx/Source/GCC/startup_hc32f460.S.obj
 
 CMSIS/Device/HDSC/hc32f4xx/Source/syscalls.obj: CMSIS/Device/HDSC/hc32f4xx/Source/syscalls.c.obj
@@ -142,7 +142,7 @@ CMSIS/Device/HDSC/hc32f4xx/Source/syscalls.obj: CMSIS/Device/HDSC/hc32f4xx/Sourc
 
 # target to build an object file
 CMSIS/Device/HDSC/hc32f4xx/Source/syscalls.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/CMSIS/Device/HDSC/hc32f4xx/Source/syscalls.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/CMSIS/Device/HDSC/hc32f4xx/Source/syscalls.c.obj
 .PHONY : CMSIS/Device/HDSC/hc32f4xx/Source/syscalls.c.obj
 
 CMSIS/Device/HDSC/hc32f4xx/Source/syscalls.i: CMSIS/Device/HDSC/hc32f4xx/Source/syscalls.c.i
@@ -150,7 +150,7 @@ CMSIS/Device/HDSC/hc32f4xx/Source/syscalls.i: CMSIS/Device/HDSC/hc32f4xx/Source/
 
 # target to preprocess a source file
 CMSIS/Device/HDSC/hc32f4xx/Source/syscalls.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/CMSIS/Device/HDSC/hc32f4xx/Source/syscalls.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/CMSIS/Device/HDSC/hc32f4xx/Source/syscalls.c.i
 .PHONY : CMSIS/Device/HDSC/hc32f4xx/Source/syscalls.c.i
 
 CMSIS/Device/HDSC/hc32f4xx/Source/syscalls.s: CMSIS/Device/HDSC/hc32f4xx/Source/syscalls.c.s
@@ -158,7 +158,7 @@ CMSIS/Device/HDSC/hc32f4xx/Source/syscalls.s: CMSIS/Device/HDSC/hc32f4xx/Source/
 
 # target to generate assembly for a file
 CMSIS/Device/HDSC/hc32f4xx/Source/syscalls.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/CMSIS/Device/HDSC/hc32f4xx/Source/syscalls.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/CMSIS/Device/HDSC/hc32f4xx/Source/syscalls.c.s
 .PHONY : CMSIS/Device/HDSC/hc32f4xx/Source/syscalls.c.s
 
 CMSIS/Device/HDSC/hc32f4xx/Source/system_hc32f460.obj: CMSIS/Device/HDSC/hc32f4xx/Source/system_hc32f460.c.obj
@@ -166,7 +166,7 @@ CMSIS/Device/HDSC/hc32f4xx/Source/system_hc32f460.obj: CMSIS/Device/HDSC/hc32f4x
 
 # target to build an object file
 CMSIS/Device/HDSC/hc32f4xx/Source/system_hc32f460.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/CMSIS/Device/HDSC/hc32f4xx/Source/system_hc32f460.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/CMSIS/Device/HDSC/hc32f4xx/Source/system_hc32f460.c.obj
 .PHONY : CMSIS/Device/HDSC/hc32f4xx/Source/system_hc32f460.c.obj
 
 CMSIS/Device/HDSC/hc32f4xx/Source/system_hc32f460.i: CMSIS/Device/HDSC/hc32f4xx/Source/system_hc32f460.c.i
@@ -174,7 +174,7 @@ CMSIS/Device/HDSC/hc32f4xx/Source/system_hc32f460.i: CMSIS/Device/HDSC/hc32f4xx/
 
 # target to preprocess a source file
 CMSIS/Device/HDSC/hc32f4xx/Source/system_hc32f460.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/CMSIS/Device/HDSC/hc32f4xx/Source/system_hc32f460.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/CMSIS/Device/HDSC/hc32f4xx/Source/system_hc32f460.c.i
 .PHONY : CMSIS/Device/HDSC/hc32f4xx/Source/system_hc32f460.c.i
 
 CMSIS/Device/HDSC/hc32f4xx/Source/system_hc32f460.s: CMSIS/Device/HDSC/hc32f4xx/Source/system_hc32f460.c.s
@@ -182,7 +182,7 @@ CMSIS/Device/HDSC/hc32f4xx/Source/system_hc32f460.s: CMSIS/Device/HDSC/hc32f4xx/
 
 # target to generate assembly for a file
 CMSIS/Device/HDSC/hc32f4xx/Source/system_hc32f460.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/CMSIS/Device/HDSC/hc32f4xx/Source/system_hc32f460.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/CMSIS/Device/HDSC/hc32f4xx/Source/system_hc32f460.c.s
 .PHONY : CMSIS/Device/HDSC/hc32f4xx/Source/system_hc32f460.c.s
 
 Driver/src/hc32_ll.obj: Driver/src/hc32_ll.c.obj
@@ -190,7 +190,7 @@ Driver/src/hc32_ll.obj: Driver/src/hc32_ll.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll.c.obj
 .PHONY : Driver/src/hc32_ll.c.obj
 
 Driver/src/hc32_ll.i: Driver/src/hc32_ll.c.i
@@ -198,7 +198,7 @@ Driver/src/hc32_ll.i: Driver/src/hc32_ll.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll.c.i
 .PHONY : Driver/src/hc32_ll.c.i
 
 Driver/src/hc32_ll.s: Driver/src/hc32_ll.c.s
@@ -206,7 +206,7 @@ Driver/src/hc32_ll.s: Driver/src/hc32_ll.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll.c.s
 .PHONY : Driver/src/hc32_ll.c.s
 
 Driver/src/hc32_ll_adc.obj: Driver/src/hc32_ll_adc.c.obj
@@ -214,7 +214,7 @@ Driver/src/hc32_ll_adc.obj: Driver/src/hc32_ll_adc.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_adc.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_adc.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_adc.c.obj
 .PHONY : Driver/src/hc32_ll_adc.c.obj
 
 Driver/src/hc32_ll_adc.i: Driver/src/hc32_ll_adc.c.i
@@ -222,7 +222,7 @@ Driver/src/hc32_ll_adc.i: Driver/src/hc32_ll_adc.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_adc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_adc.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_adc.c.i
 .PHONY : Driver/src/hc32_ll_adc.c.i
 
 Driver/src/hc32_ll_adc.s: Driver/src/hc32_ll_adc.c.s
@@ -230,7 +230,7 @@ Driver/src/hc32_ll_adc.s: Driver/src/hc32_ll_adc.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_adc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_adc.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_adc.c.s
 .PHONY : Driver/src/hc32_ll_adc.c.s
 
 Driver/src/hc32_ll_aes.obj: Driver/src/hc32_ll_aes.c.obj
@@ -238,7 +238,7 @@ Driver/src/hc32_ll_aes.obj: Driver/src/hc32_ll_aes.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_aes.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_aes.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_aes.c.obj
 .PHONY : Driver/src/hc32_ll_aes.c.obj
 
 Driver/src/hc32_ll_aes.i: Driver/src/hc32_ll_aes.c.i
@@ -246,7 +246,7 @@ Driver/src/hc32_ll_aes.i: Driver/src/hc32_ll_aes.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_aes.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_aes.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_aes.c.i
 .PHONY : Driver/src/hc32_ll_aes.c.i
 
 Driver/src/hc32_ll_aes.s: Driver/src/hc32_ll_aes.c.s
@@ -254,7 +254,7 @@ Driver/src/hc32_ll_aes.s: Driver/src/hc32_ll_aes.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_aes.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_aes.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_aes.c.s
 .PHONY : Driver/src/hc32_ll_aes.c.s
 
 Driver/src/hc32_ll_aos.obj: Driver/src/hc32_ll_aos.c.obj
@@ -262,7 +262,7 @@ Driver/src/hc32_ll_aos.obj: Driver/src/hc32_ll_aos.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_aos.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_aos.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_aos.c.obj
 .PHONY : Driver/src/hc32_ll_aos.c.obj
 
 Driver/src/hc32_ll_aos.i: Driver/src/hc32_ll_aos.c.i
@@ -270,7 +270,7 @@ Driver/src/hc32_ll_aos.i: Driver/src/hc32_ll_aos.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_aos.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_aos.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_aos.c.i
 .PHONY : Driver/src/hc32_ll_aos.c.i
 
 Driver/src/hc32_ll_aos.s: Driver/src/hc32_ll_aos.c.s
@@ -278,7 +278,7 @@ Driver/src/hc32_ll_aos.s: Driver/src/hc32_ll_aos.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_aos.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_aos.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_aos.c.s
 .PHONY : Driver/src/hc32_ll_aos.c.s
 
 Driver/src/hc32_ll_can.obj: Driver/src/hc32_ll_can.c.obj
@@ -286,7 +286,7 @@ Driver/src/hc32_ll_can.obj: Driver/src/hc32_ll_can.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_can.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_can.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_can.c.obj
 .PHONY : Driver/src/hc32_ll_can.c.obj
 
 Driver/src/hc32_ll_can.i: Driver/src/hc32_ll_can.c.i
@@ -294,7 +294,7 @@ Driver/src/hc32_ll_can.i: Driver/src/hc32_ll_can.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_can.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_can.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_can.c.i
 .PHONY : Driver/src/hc32_ll_can.c.i
 
 Driver/src/hc32_ll_can.s: Driver/src/hc32_ll_can.c.s
@@ -302,7 +302,7 @@ Driver/src/hc32_ll_can.s: Driver/src/hc32_ll_can.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_can.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_can.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_can.c.s
 .PHONY : Driver/src/hc32_ll_can.c.s
 
 Driver/src/hc32_ll_clk.obj: Driver/src/hc32_ll_clk.c.obj
@@ -310,7 +310,7 @@ Driver/src/hc32_ll_clk.obj: Driver/src/hc32_ll_clk.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_clk.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_clk.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_clk.c.obj
 .PHONY : Driver/src/hc32_ll_clk.c.obj
 
 Driver/src/hc32_ll_clk.i: Driver/src/hc32_ll_clk.c.i
@@ -318,7 +318,7 @@ Driver/src/hc32_ll_clk.i: Driver/src/hc32_ll_clk.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_clk.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_clk.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_clk.c.i
 .PHONY : Driver/src/hc32_ll_clk.c.i
 
 Driver/src/hc32_ll_clk.s: Driver/src/hc32_ll_clk.c.s
@@ -326,7 +326,7 @@ Driver/src/hc32_ll_clk.s: Driver/src/hc32_ll_clk.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_clk.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_clk.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_clk.c.s
 .PHONY : Driver/src/hc32_ll_clk.c.s
 
 Driver/src/hc32_ll_cmp.obj: Driver/src/hc32_ll_cmp.c.obj
@@ -334,7 +334,7 @@ Driver/src/hc32_ll_cmp.obj: Driver/src/hc32_ll_cmp.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_cmp.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_cmp.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_cmp.c.obj
 .PHONY : Driver/src/hc32_ll_cmp.c.obj
 
 Driver/src/hc32_ll_cmp.i: Driver/src/hc32_ll_cmp.c.i
@@ -342,7 +342,7 @@ Driver/src/hc32_ll_cmp.i: Driver/src/hc32_ll_cmp.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_cmp.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_cmp.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_cmp.c.i
 .PHONY : Driver/src/hc32_ll_cmp.c.i
 
 Driver/src/hc32_ll_cmp.s: Driver/src/hc32_ll_cmp.c.s
@@ -350,7 +350,7 @@ Driver/src/hc32_ll_cmp.s: Driver/src/hc32_ll_cmp.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_cmp.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_cmp.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_cmp.c.s
 .PHONY : Driver/src/hc32_ll_cmp.c.s
 
 Driver/src/hc32_ll_crc.obj: Driver/src/hc32_ll_crc.c.obj
@@ -358,7 +358,7 @@ Driver/src/hc32_ll_crc.obj: Driver/src/hc32_ll_crc.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_crc.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_crc.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_crc.c.obj
 .PHONY : Driver/src/hc32_ll_crc.c.obj
 
 Driver/src/hc32_ll_crc.i: Driver/src/hc32_ll_crc.c.i
@@ -366,7 +366,7 @@ Driver/src/hc32_ll_crc.i: Driver/src/hc32_ll_crc.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_crc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_crc.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_crc.c.i
 .PHONY : Driver/src/hc32_ll_crc.c.i
 
 Driver/src/hc32_ll_crc.s: Driver/src/hc32_ll_crc.c.s
@@ -374,7 +374,7 @@ Driver/src/hc32_ll_crc.s: Driver/src/hc32_ll_crc.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_crc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_crc.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_crc.c.s
 .PHONY : Driver/src/hc32_ll_crc.c.s
 
 Driver/src/hc32_ll_dbgc.obj: Driver/src/hc32_ll_dbgc.c.obj
@@ -382,7 +382,7 @@ Driver/src/hc32_ll_dbgc.obj: Driver/src/hc32_ll_dbgc.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_dbgc.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_dbgc.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_dbgc.c.obj
 .PHONY : Driver/src/hc32_ll_dbgc.c.obj
 
 Driver/src/hc32_ll_dbgc.i: Driver/src/hc32_ll_dbgc.c.i
@@ -390,7 +390,7 @@ Driver/src/hc32_ll_dbgc.i: Driver/src/hc32_ll_dbgc.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_dbgc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_dbgc.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_dbgc.c.i
 .PHONY : Driver/src/hc32_ll_dbgc.c.i
 
 Driver/src/hc32_ll_dbgc.s: Driver/src/hc32_ll_dbgc.c.s
@@ -398,7 +398,7 @@ Driver/src/hc32_ll_dbgc.s: Driver/src/hc32_ll_dbgc.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_dbgc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_dbgc.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_dbgc.c.s
 .PHONY : Driver/src/hc32_ll_dbgc.c.s
 
 Driver/src/hc32_ll_dcu.obj: Driver/src/hc32_ll_dcu.c.obj
@@ -406,7 +406,7 @@ Driver/src/hc32_ll_dcu.obj: Driver/src/hc32_ll_dcu.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_dcu.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_dcu.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_dcu.c.obj
 .PHONY : Driver/src/hc32_ll_dcu.c.obj
 
 Driver/src/hc32_ll_dcu.i: Driver/src/hc32_ll_dcu.c.i
@@ -414,7 +414,7 @@ Driver/src/hc32_ll_dcu.i: Driver/src/hc32_ll_dcu.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_dcu.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_dcu.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_dcu.c.i
 .PHONY : Driver/src/hc32_ll_dcu.c.i
 
 Driver/src/hc32_ll_dcu.s: Driver/src/hc32_ll_dcu.c.s
@@ -422,7 +422,7 @@ Driver/src/hc32_ll_dcu.s: Driver/src/hc32_ll_dcu.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_dcu.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_dcu.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_dcu.c.s
 .PHONY : Driver/src/hc32_ll_dcu.c.s
 
 Driver/src/hc32_ll_dma.obj: Driver/src/hc32_ll_dma.c.obj
@@ -430,7 +430,7 @@ Driver/src/hc32_ll_dma.obj: Driver/src/hc32_ll_dma.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_dma.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_dma.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_dma.c.obj
 .PHONY : Driver/src/hc32_ll_dma.c.obj
 
 Driver/src/hc32_ll_dma.i: Driver/src/hc32_ll_dma.c.i
@@ -438,7 +438,7 @@ Driver/src/hc32_ll_dma.i: Driver/src/hc32_ll_dma.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_dma.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_dma.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_dma.c.i
 .PHONY : Driver/src/hc32_ll_dma.c.i
 
 Driver/src/hc32_ll_dma.s: Driver/src/hc32_ll_dma.c.s
@@ -446,7 +446,7 @@ Driver/src/hc32_ll_dma.s: Driver/src/hc32_ll_dma.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_dma.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_dma.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_dma.c.s
 .PHONY : Driver/src/hc32_ll_dma.c.s
 
 Driver/src/hc32_ll_efm.obj: Driver/src/hc32_ll_efm.c.obj
@@ -454,7 +454,7 @@ Driver/src/hc32_ll_efm.obj: Driver/src/hc32_ll_efm.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_efm.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_efm.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_efm.c.obj
 .PHONY : Driver/src/hc32_ll_efm.c.obj
 
 Driver/src/hc32_ll_efm.i: Driver/src/hc32_ll_efm.c.i
@@ -462,7 +462,7 @@ Driver/src/hc32_ll_efm.i: Driver/src/hc32_ll_efm.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_efm.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_efm.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_efm.c.i
 .PHONY : Driver/src/hc32_ll_efm.c.i
 
 Driver/src/hc32_ll_efm.s: Driver/src/hc32_ll_efm.c.s
@@ -470,7 +470,7 @@ Driver/src/hc32_ll_efm.s: Driver/src/hc32_ll_efm.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_efm.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_efm.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_efm.c.s
 .PHONY : Driver/src/hc32_ll_efm.c.s
 
 Driver/src/hc32_ll_emb.obj: Driver/src/hc32_ll_emb.c.obj
@@ -478,7 +478,7 @@ Driver/src/hc32_ll_emb.obj: Driver/src/hc32_ll_emb.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_emb.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_emb.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_emb.c.obj
 .PHONY : Driver/src/hc32_ll_emb.c.obj
 
 Driver/src/hc32_ll_emb.i: Driver/src/hc32_ll_emb.c.i
@@ -486,7 +486,7 @@ Driver/src/hc32_ll_emb.i: Driver/src/hc32_ll_emb.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_emb.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_emb.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_emb.c.i
 .PHONY : Driver/src/hc32_ll_emb.c.i
 
 Driver/src/hc32_ll_emb.s: Driver/src/hc32_ll_emb.c.s
@@ -494,7 +494,7 @@ Driver/src/hc32_ll_emb.s: Driver/src/hc32_ll_emb.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_emb.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_emb.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_emb.c.s
 .PHONY : Driver/src/hc32_ll_emb.c.s
 
 Driver/src/hc32_ll_event_port.obj: Driver/src/hc32_ll_event_port.c.obj
@@ -502,7 +502,7 @@ Driver/src/hc32_ll_event_port.obj: Driver/src/hc32_ll_event_port.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_event_port.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_event_port.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_event_port.c.obj
 .PHONY : Driver/src/hc32_ll_event_port.c.obj
 
 Driver/src/hc32_ll_event_port.i: Driver/src/hc32_ll_event_port.c.i
@@ -510,7 +510,7 @@ Driver/src/hc32_ll_event_port.i: Driver/src/hc32_ll_event_port.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_event_port.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_event_port.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_event_port.c.i
 .PHONY : Driver/src/hc32_ll_event_port.c.i
 
 Driver/src/hc32_ll_event_port.s: Driver/src/hc32_ll_event_port.c.s
@@ -518,7 +518,7 @@ Driver/src/hc32_ll_event_port.s: Driver/src/hc32_ll_event_port.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_event_port.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_event_port.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_event_port.c.s
 .PHONY : Driver/src/hc32_ll_event_port.c.s
 
 Driver/src/hc32_ll_fcg.obj: Driver/src/hc32_ll_fcg.c.obj
@@ -526,7 +526,7 @@ Driver/src/hc32_ll_fcg.obj: Driver/src/hc32_ll_fcg.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_fcg.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_fcg.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_fcg.c.obj
 .PHONY : Driver/src/hc32_ll_fcg.c.obj
 
 Driver/src/hc32_ll_fcg.i: Driver/src/hc32_ll_fcg.c.i
@@ -534,7 +534,7 @@ Driver/src/hc32_ll_fcg.i: Driver/src/hc32_ll_fcg.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_fcg.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_fcg.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_fcg.c.i
 .PHONY : Driver/src/hc32_ll_fcg.c.i
 
 Driver/src/hc32_ll_fcg.s: Driver/src/hc32_ll_fcg.c.s
@@ -542,7 +542,7 @@ Driver/src/hc32_ll_fcg.s: Driver/src/hc32_ll_fcg.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_fcg.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_fcg.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_fcg.c.s
 .PHONY : Driver/src/hc32_ll_fcg.c.s
 
 Driver/src/hc32_ll_fcm.obj: Driver/src/hc32_ll_fcm.c.obj
@@ -550,7 +550,7 @@ Driver/src/hc32_ll_fcm.obj: Driver/src/hc32_ll_fcm.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_fcm.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_fcm.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_fcm.c.obj
 .PHONY : Driver/src/hc32_ll_fcm.c.obj
 
 Driver/src/hc32_ll_fcm.i: Driver/src/hc32_ll_fcm.c.i
@@ -558,7 +558,7 @@ Driver/src/hc32_ll_fcm.i: Driver/src/hc32_ll_fcm.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_fcm.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_fcm.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_fcm.c.i
 .PHONY : Driver/src/hc32_ll_fcm.c.i
 
 Driver/src/hc32_ll_fcm.s: Driver/src/hc32_ll_fcm.c.s
@@ -566,7 +566,7 @@ Driver/src/hc32_ll_fcm.s: Driver/src/hc32_ll_fcm.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_fcm.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_fcm.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_fcm.c.s
 .PHONY : Driver/src/hc32_ll_fcm.c.s
 
 Driver/src/hc32_ll_gpio.obj: Driver/src/hc32_ll_gpio.c.obj
@@ -574,7 +574,7 @@ Driver/src/hc32_ll_gpio.obj: Driver/src/hc32_ll_gpio.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_gpio.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_gpio.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_gpio.c.obj
 .PHONY : Driver/src/hc32_ll_gpio.c.obj
 
 Driver/src/hc32_ll_gpio.i: Driver/src/hc32_ll_gpio.c.i
@@ -582,7 +582,7 @@ Driver/src/hc32_ll_gpio.i: Driver/src/hc32_ll_gpio.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_gpio.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_gpio.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_gpio.c.i
 .PHONY : Driver/src/hc32_ll_gpio.c.i
 
 Driver/src/hc32_ll_gpio.s: Driver/src/hc32_ll_gpio.c.s
@@ -590,7 +590,7 @@ Driver/src/hc32_ll_gpio.s: Driver/src/hc32_ll_gpio.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_gpio.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_gpio.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_gpio.c.s
 .PHONY : Driver/src/hc32_ll_gpio.c.s
 
 Driver/src/hc32_ll_hash.obj: Driver/src/hc32_ll_hash.c.obj
@@ -598,7 +598,7 @@ Driver/src/hc32_ll_hash.obj: Driver/src/hc32_ll_hash.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_hash.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_hash.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_hash.c.obj
 .PHONY : Driver/src/hc32_ll_hash.c.obj
 
 Driver/src/hc32_ll_hash.i: Driver/src/hc32_ll_hash.c.i
@@ -606,7 +606,7 @@ Driver/src/hc32_ll_hash.i: Driver/src/hc32_ll_hash.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_hash.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_hash.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_hash.c.i
 .PHONY : Driver/src/hc32_ll_hash.c.i
 
 Driver/src/hc32_ll_hash.s: Driver/src/hc32_ll_hash.c.s
@@ -614,7 +614,7 @@ Driver/src/hc32_ll_hash.s: Driver/src/hc32_ll_hash.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_hash.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_hash.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_hash.c.s
 .PHONY : Driver/src/hc32_ll_hash.c.s
 
 Driver/src/hc32_ll_i2c.obj: Driver/src/hc32_ll_i2c.c.obj
@@ -622,7 +622,7 @@ Driver/src/hc32_ll_i2c.obj: Driver/src/hc32_ll_i2c.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_i2c.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_i2c.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_i2c.c.obj
 .PHONY : Driver/src/hc32_ll_i2c.c.obj
 
 Driver/src/hc32_ll_i2c.i: Driver/src/hc32_ll_i2c.c.i
@@ -630,7 +630,7 @@ Driver/src/hc32_ll_i2c.i: Driver/src/hc32_ll_i2c.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_i2c.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_i2c.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_i2c.c.i
 .PHONY : Driver/src/hc32_ll_i2c.c.i
 
 Driver/src/hc32_ll_i2c.s: Driver/src/hc32_ll_i2c.c.s
@@ -638,7 +638,7 @@ Driver/src/hc32_ll_i2c.s: Driver/src/hc32_ll_i2c.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_i2c.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_i2c.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_i2c.c.s
 .PHONY : Driver/src/hc32_ll_i2c.c.s
 
 Driver/src/hc32_ll_i2s.obj: Driver/src/hc32_ll_i2s.c.obj
@@ -646,7 +646,7 @@ Driver/src/hc32_ll_i2s.obj: Driver/src/hc32_ll_i2s.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_i2s.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_i2s.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_i2s.c.obj
 .PHONY : Driver/src/hc32_ll_i2s.c.obj
 
 Driver/src/hc32_ll_i2s.i: Driver/src/hc32_ll_i2s.c.i
@@ -654,7 +654,7 @@ Driver/src/hc32_ll_i2s.i: Driver/src/hc32_ll_i2s.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_i2s.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_i2s.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_i2s.c.i
 .PHONY : Driver/src/hc32_ll_i2s.c.i
 
 Driver/src/hc32_ll_i2s.s: Driver/src/hc32_ll_i2s.c.s
@@ -662,7 +662,7 @@ Driver/src/hc32_ll_i2s.s: Driver/src/hc32_ll_i2s.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_i2s.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_i2s.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_i2s.c.s
 .PHONY : Driver/src/hc32_ll_i2s.c.s
 
 Driver/src/hc32_ll_icg.obj: Driver/src/hc32_ll_icg.c.obj
@@ -670,7 +670,7 @@ Driver/src/hc32_ll_icg.obj: Driver/src/hc32_ll_icg.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_icg.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_icg.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_icg.c.obj
 .PHONY : Driver/src/hc32_ll_icg.c.obj
 
 Driver/src/hc32_ll_icg.i: Driver/src/hc32_ll_icg.c.i
@@ -678,7 +678,7 @@ Driver/src/hc32_ll_icg.i: Driver/src/hc32_ll_icg.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_icg.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_icg.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_icg.c.i
 .PHONY : Driver/src/hc32_ll_icg.c.i
 
 Driver/src/hc32_ll_icg.s: Driver/src/hc32_ll_icg.c.s
@@ -686,7 +686,7 @@ Driver/src/hc32_ll_icg.s: Driver/src/hc32_ll_icg.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_icg.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_icg.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_icg.c.s
 .PHONY : Driver/src/hc32_ll_icg.c.s
 
 Driver/src/hc32_ll_interrupts.obj: Driver/src/hc32_ll_interrupts.c.obj
@@ -694,7 +694,7 @@ Driver/src/hc32_ll_interrupts.obj: Driver/src/hc32_ll_interrupts.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_interrupts.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_interrupts.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_interrupts.c.obj
 .PHONY : Driver/src/hc32_ll_interrupts.c.obj
 
 Driver/src/hc32_ll_interrupts.i: Driver/src/hc32_ll_interrupts.c.i
@@ -702,7 +702,7 @@ Driver/src/hc32_ll_interrupts.i: Driver/src/hc32_ll_interrupts.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_interrupts.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_interrupts.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_interrupts.c.i
 .PHONY : Driver/src/hc32_ll_interrupts.c.i
 
 Driver/src/hc32_ll_interrupts.s: Driver/src/hc32_ll_interrupts.c.s
@@ -710,7 +710,7 @@ Driver/src/hc32_ll_interrupts.s: Driver/src/hc32_ll_interrupts.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_interrupts.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_interrupts.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_interrupts.c.s
 .PHONY : Driver/src/hc32_ll_interrupts.c.s
 
 Driver/src/hc32_ll_keyscan.obj: Driver/src/hc32_ll_keyscan.c.obj
@@ -718,7 +718,7 @@ Driver/src/hc32_ll_keyscan.obj: Driver/src/hc32_ll_keyscan.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_keyscan.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_keyscan.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_keyscan.c.obj
 .PHONY : Driver/src/hc32_ll_keyscan.c.obj
 
 Driver/src/hc32_ll_keyscan.i: Driver/src/hc32_ll_keyscan.c.i
@@ -726,7 +726,7 @@ Driver/src/hc32_ll_keyscan.i: Driver/src/hc32_ll_keyscan.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_keyscan.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_keyscan.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_keyscan.c.i
 .PHONY : Driver/src/hc32_ll_keyscan.c.i
 
 Driver/src/hc32_ll_keyscan.s: Driver/src/hc32_ll_keyscan.c.s
@@ -734,7 +734,7 @@ Driver/src/hc32_ll_keyscan.s: Driver/src/hc32_ll_keyscan.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_keyscan.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_keyscan.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_keyscan.c.s
 .PHONY : Driver/src/hc32_ll_keyscan.c.s
 
 Driver/src/hc32_ll_mpu.obj: Driver/src/hc32_ll_mpu.c.obj
@@ -742,7 +742,7 @@ Driver/src/hc32_ll_mpu.obj: Driver/src/hc32_ll_mpu.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_mpu.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_mpu.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_mpu.c.obj
 .PHONY : Driver/src/hc32_ll_mpu.c.obj
 
 Driver/src/hc32_ll_mpu.i: Driver/src/hc32_ll_mpu.c.i
@@ -750,7 +750,7 @@ Driver/src/hc32_ll_mpu.i: Driver/src/hc32_ll_mpu.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_mpu.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_mpu.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_mpu.c.i
 .PHONY : Driver/src/hc32_ll_mpu.c.i
 
 Driver/src/hc32_ll_mpu.s: Driver/src/hc32_ll_mpu.c.s
@@ -758,7 +758,7 @@ Driver/src/hc32_ll_mpu.s: Driver/src/hc32_ll_mpu.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_mpu.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_mpu.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_mpu.c.s
 .PHONY : Driver/src/hc32_ll_mpu.c.s
 
 Driver/src/hc32_ll_ots.obj: Driver/src/hc32_ll_ots.c.obj
@@ -766,7 +766,7 @@ Driver/src/hc32_ll_ots.obj: Driver/src/hc32_ll_ots.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_ots.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_ots.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_ots.c.obj
 .PHONY : Driver/src/hc32_ll_ots.c.obj
 
 Driver/src/hc32_ll_ots.i: Driver/src/hc32_ll_ots.c.i
@@ -774,7 +774,7 @@ Driver/src/hc32_ll_ots.i: Driver/src/hc32_ll_ots.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_ots.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_ots.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_ots.c.i
 .PHONY : Driver/src/hc32_ll_ots.c.i
 
 Driver/src/hc32_ll_ots.s: Driver/src/hc32_ll_ots.c.s
@@ -782,7 +782,7 @@ Driver/src/hc32_ll_ots.s: Driver/src/hc32_ll_ots.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_ots.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_ots.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_ots.c.s
 .PHONY : Driver/src/hc32_ll_ots.c.s
 
 Driver/src/hc32_ll_pwc.obj: Driver/src/hc32_ll_pwc.c.obj
@@ -790,7 +790,7 @@ Driver/src/hc32_ll_pwc.obj: Driver/src/hc32_ll_pwc.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_pwc.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_pwc.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_pwc.c.obj
 .PHONY : Driver/src/hc32_ll_pwc.c.obj
 
 Driver/src/hc32_ll_pwc.i: Driver/src/hc32_ll_pwc.c.i
@@ -798,7 +798,7 @@ Driver/src/hc32_ll_pwc.i: Driver/src/hc32_ll_pwc.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_pwc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_pwc.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_pwc.c.i
 .PHONY : Driver/src/hc32_ll_pwc.c.i
 
 Driver/src/hc32_ll_pwc.s: Driver/src/hc32_ll_pwc.c.s
@@ -806,7 +806,7 @@ Driver/src/hc32_ll_pwc.s: Driver/src/hc32_ll_pwc.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_pwc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_pwc.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_pwc.c.s
 .PHONY : Driver/src/hc32_ll_pwc.c.s
 
 Driver/src/hc32_ll_qspi.obj: Driver/src/hc32_ll_qspi.c.obj
@@ -814,7 +814,7 @@ Driver/src/hc32_ll_qspi.obj: Driver/src/hc32_ll_qspi.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_qspi.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_qspi.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_qspi.c.obj
 .PHONY : Driver/src/hc32_ll_qspi.c.obj
 
 Driver/src/hc32_ll_qspi.i: Driver/src/hc32_ll_qspi.c.i
@@ -822,7 +822,7 @@ Driver/src/hc32_ll_qspi.i: Driver/src/hc32_ll_qspi.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_qspi.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_qspi.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_qspi.c.i
 .PHONY : Driver/src/hc32_ll_qspi.c.i
 
 Driver/src/hc32_ll_qspi.s: Driver/src/hc32_ll_qspi.c.s
@@ -830,7 +830,7 @@ Driver/src/hc32_ll_qspi.s: Driver/src/hc32_ll_qspi.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_qspi.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_qspi.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_qspi.c.s
 .PHONY : Driver/src/hc32_ll_qspi.c.s
 
 Driver/src/hc32_ll_rmu.obj: Driver/src/hc32_ll_rmu.c.obj
@@ -838,7 +838,7 @@ Driver/src/hc32_ll_rmu.obj: Driver/src/hc32_ll_rmu.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_rmu.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_rmu.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_rmu.c.obj
 .PHONY : Driver/src/hc32_ll_rmu.c.obj
 
 Driver/src/hc32_ll_rmu.i: Driver/src/hc32_ll_rmu.c.i
@@ -846,7 +846,7 @@ Driver/src/hc32_ll_rmu.i: Driver/src/hc32_ll_rmu.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_rmu.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_rmu.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_rmu.c.i
 .PHONY : Driver/src/hc32_ll_rmu.c.i
 
 Driver/src/hc32_ll_rmu.s: Driver/src/hc32_ll_rmu.c.s
@@ -854,7 +854,7 @@ Driver/src/hc32_ll_rmu.s: Driver/src/hc32_ll_rmu.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_rmu.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_rmu.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_rmu.c.s
 .PHONY : Driver/src/hc32_ll_rmu.c.s
 
 Driver/src/hc32_ll_rtc.obj: Driver/src/hc32_ll_rtc.c.obj
@@ -862,7 +862,7 @@ Driver/src/hc32_ll_rtc.obj: Driver/src/hc32_ll_rtc.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_rtc.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_rtc.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_rtc.c.obj
 .PHONY : Driver/src/hc32_ll_rtc.c.obj
 
 Driver/src/hc32_ll_rtc.i: Driver/src/hc32_ll_rtc.c.i
@@ -870,7 +870,7 @@ Driver/src/hc32_ll_rtc.i: Driver/src/hc32_ll_rtc.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_rtc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_rtc.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_rtc.c.i
 .PHONY : Driver/src/hc32_ll_rtc.c.i
 
 Driver/src/hc32_ll_rtc.s: Driver/src/hc32_ll_rtc.c.s
@@ -878,7 +878,7 @@ Driver/src/hc32_ll_rtc.s: Driver/src/hc32_ll_rtc.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_rtc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_rtc.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_rtc.c.s
 .PHONY : Driver/src/hc32_ll_rtc.c.s
 
 Driver/src/hc32_ll_sdioc.obj: Driver/src/hc32_ll_sdioc.c.obj
@@ -886,7 +886,7 @@ Driver/src/hc32_ll_sdioc.obj: Driver/src/hc32_ll_sdioc.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_sdioc.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_sdioc.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_sdioc.c.obj
 .PHONY : Driver/src/hc32_ll_sdioc.c.obj
 
 Driver/src/hc32_ll_sdioc.i: Driver/src/hc32_ll_sdioc.c.i
@@ -894,7 +894,7 @@ Driver/src/hc32_ll_sdioc.i: Driver/src/hc32_ll_sdioc.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_sdioc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_sdioc.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_sdioc.c.i
 .PHONY : Driver/src/hc32_ll_sdioc.c.i
 
 Driver/src/hc32_ll_sdioc.s: Driver/src/hc32_ll_sdioc.c.s
@@ -902,7 +902,7 @@ Driver/src/hc32_ll_sdioc.s: Driver/src/hc32_ll_sdioc.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_sdioc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_sdioc.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_sdioc.c.s
 .PHONY : Driver/src/hc32_ll_sdioc.c.s
 
 Driver/src/hc32_ll_spi.obj: Driver/src/hc32_ll_spi.c.obj
@@ -910,7 +910,7 @@ Driver/src/hc32_ll_spi.obj: Driver/src/hc32_ll_spi.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_spi.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_spi.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_spi.c.obj
 .PHONY : Driver/src/hc32_ll_spi.c.obj
 
 Driver/src/hc32_ll_spi.i: Driver/src/hc32_ll_spi.c.i
@@ -918,7 +918,7 @@ Driver/src/hc32_ll_spi.i: Driver/src/hc32_ll_spi.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_spi.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_spi.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_spi.c.i
 .PHONY : Driver/src/hc32_ll_spi.c.i
 
 Driver/src/hc32_ll_spi.s: Driver/src/hc32_ll_spi.c.s
@@ -926,7 +926,7 @@ Driver/src/hc32_ll_spi.s: Driver/src/hc32_ll_spi.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_spi.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_spi.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_spi.c.s
 .PHONY : Driver/src/hc32_ll_spi.c.s
 
 Driver/src/hc32_ll_sram.obj: Driver/src/hc32_ll_sram.c.obj
@@ -934,7 +934,7 @@ Driver/src/hc32_ll_sram.obj: Driver/src/hc32_ll_sram.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_sram.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_sram.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_sram.c.obj
 .PHONY : Driver/src/hc32_ll_sram.c.obj
 
 Driver/src/hc32_ll_sram.i: Driver/src/hc32_ll_sram.c.i
@@ -942,7 +942,7 @@ Driver/src/hc32_ll_sram.i: Driver/src/hc32_ll_sram.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_sram.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_sram.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_sram.c.i
 .PHONY : Driver/src/hc32_ll_sram.c.i
 
 Driver/src/hc32_ll_sram.s: Driver/src/hc32_ll_sram.c.s
@@ -950,7 +950,7 @@ Driver/src/hc32_ll_sram.s: Driver/src/hc32_ll_sram.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_sram.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_sram.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_sram.c.s
 .PHONY : Driver/src/hc32_ll_sram.c.s
 
 Driver/src/hc32_ll_swdt.obj: Driver/src/hc32_ll_swdt.c.obj
@@ -958,7 +958,7 @@ Driver/src/hc32_ll_swdt.obj: Driver/src/hc32_ll_swdt.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_swdt.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_swdt.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_swdt.c.obj
 .PHONY : Driver/src/hc32_ll_swdt.c.obj
 
 Driver/src/hc32_ll_swdt.i: Driver/src/hc32_ll_swdt.c.i
@@ -966,7 +966,7 @@ Driver/src/hc32_ll_swdt.i: Driver/src/hc32_ll_swdt.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_swdt.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_swdt.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_swdt.c.i
 .PHONY : Driver/src/hc32_ll_swdt.c.i
 
 Driver/src/hc32_ll_swdt.s: Driver/src/hc32_ll_swdt.c.s
@@ -974,7 +974,7 @@ Driver/src/hc32_ll_swdt.s: Driver/src/hc32_ll_swdt.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_swdt.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_swdt.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_swdt.c.s
 .PHONY : Driver/src/hc32_ll_swdt.c.s
 
 Driver/src/hc32_ll_tmr0.obj: Driver/src/hc32_ll_tmr0.c.obj
@@ -982,7 +982,7 @@ Driver/src/hc32_ll_tmr0.obj: Driver/src/hc32_ll_tmr0.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_tmr0.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_tmr0.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_tmr0.c.obj
 .PHONY : Driver/src/hc32_ll_tmr0.c.obj
 
 Driver/src/hc32_ll_tmr0.i: Driver/src/hc32_ll_tmr0.c.i
@@ -990,7 +990,7 @@ Driver/src/hc32_ll_tmr0.i: Driver/src/hc32_ll_tmr0.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_tmr0.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_tmr0.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_tmr0.c.i
 .PHONY : Driver/src/hc32_ll_tmr0.c.i
 
 Driver/src/hc32_ll_tmr0.s: Driver/src/hc32_ll_tmr0.c.s
@@ -998,7 +998,7 @@ Driver/src/hc32_ll_tmr0.s: Driver/src/hc32_ll_tmr0.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_tmr0.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_tmr0.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_tmr0.c.s
 .PHONY : Driver/src/hc32_ll_tmr0.c.s
 
 Driver/src/hc32_ll_tmr4.obj: Driver/src/hc32_ll_tmr4.c.obj
@@ -1006,7 +1006,7 @@ Driver/src/hc32_ll_tmr4.obj: Driver/src/hc32_ll_tmr4.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_tmr4.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_tmr4.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_tmr4.c.obj
 .PHONY : Driver/src/hc32_ll_tmr4.c.obj
 
 Driver/src/hc32_ll_tmr4.i: Driver/src/hc32_ll_tmr4.c.i
@@ -1014,7 +1014,7 @@ Driver/src/hc32_ll_tmr4.i: Driver/src/hc32_ll_tmr4.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_tmr4.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_tmr4.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_tmr4.c.i
 .PHONY : Driver/src/hc32_ll_tmr4.c.i
 
 Driver/src/hc32_ll_tmr4.s: Driver/src/hc32_ll_tmr4.c.s
@@ -1022,7 +1022,7 @@ Driver/src/hc32_ll_tmr4.s: Driver/src/hc32_ll_tmr4.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_tmr4.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_tmr4.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_tmr4.c.s
 .PHONY : Driver/src/hc32_ll_tmr4.c.s
 
 Driver/src/hc32_ll_tmr6.obj: Driver/src/hc32_ll_tmr6.c.obj
@@ -1030,7 +1030,7 @@ Driver/src/hc32_ll_tmr6.obj: Driver/src/hc32_ll_tmr6.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_tmr6.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_tmr6.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_tmr6.c.obj
 .PHONY : Driver/src/hc32_ll_tmr6.c.obj
 
 Driver/src/hc32_ll_tmr6.i: Driver/src/hc32_ll_tmr6.c.i
@@ -1038,7 +1038,7 @@ Driver/src/hc32_ll_tmr6.i: Driver/src/hc32_ll_tmr6.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_tmr6.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_tmr6.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_tmr6.c.i
 .PHONY : Driver/src/hc32_ll_tmr6.c.i
 
 Driver/src/hc32_ll_tmr6.s: Driver/src/hc32_ll_tmr6.c.s
@@ -1046,7 +1046,7 @@ Driver/src/hc32_ll_tmr6.s: Driver/src/hc32_ll_tmr6.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_tmr6.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_tmr6.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_tmr6.c.s
 .PHONY : Driver/src/hc32_ll_tmr6.c.s
 
 Driver/src/hc32_ll_tmra.obj: Driver/src/hc32_ll_tmra.c.obj
@@ -1054,7 +1054,7 @@ Driver/src/hc32_ll_tmra.obj: Driver/src/hc32_ll_tmra.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_tmra.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_tmra.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_tmra.c.obj
 .PHONY : Driver/src/hc32_ll_tmra.c.obj
 
 Driver/src/hc32_ll_tmra.i: Driver/src/hc32_ll_tmra.c.i
@@ -1062,7 +1062,7 @@ Driver/src/hc32_ll_tmra.i: Driver/src/hc32_ll_tmra.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_tmra.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_tmra.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_tmra.c.i
 .PHONY : Driver/src/hc32_ll_tmra.c.i
 
 Driver/src/hc32_ll_tmra.s: Driver/src/hc32_ll_tmra.c.s
@@ -1070,7 +1070,7 @@ Driver/src/hc32_ll_tmra.s: Driver/src/hc32_ll_tmra.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_tmra.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_tmra.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_tmra.c.s
 .PHONY : Driver/src/hc32_ll_tmra.c.s
 
 Driver/src/hc32_ll_trng.obj: Driver/src/hc32_ll_trng.c.obj
@@ -1078,7 +1078,7 @@ Driver/src/hc32_ll_trng.obj: Driver/src/hc32_ll_trng.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_trng.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_trng.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_trng.c.obj
 .PHONY : Driver/src/hc32_ll_trng.c.obj
 
 Driver/src/hc32_ll_trng.i: Driver/src/hc32_ll_trng.c.i
@@ -1086,7 +1086,7 @@ Driver/src/hc32_ll_trng.i: Driver/src/hc32_ll_trng.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_trng.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_trng.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_trng.c.i
 .PHONY : Driver/src/hc32_ll_trng.c.i
 
 Driver/src/hc32_ll_trng.s: Driver/src/hc32_ll_trng.c.s
@@ -1094,7 +1094,7 @@ Driver/src/hc32_ll_trng.s: Driver/src/hc32_ll_trng.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_trng.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_trng.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_trng.c.s
 .PHONY : Driver/src/hc32_ll_trng.c.s
 
 Driver/src/hc32_ll_usart.obj: Driver/src/hc32_ll_usart.c.obj
@@ -1102,7 +1102,7 @@ Driver/src/hc32_ll_usart.obj: Driver/src/hc32_ll_usart.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_usart.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_usart.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_usart.c.obj
 .PHONY : Driver/src/hc32_ll_usart.c.obj
 
 Driver/src/hc32_ll_usart.i: Driver/src/hc32_ll_usart.c.i
@@ -1110,7 +1110,7 @@ Driver/src/hc32_ll_usart.i: Driver/src/hc32_ll_usart.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_usart.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_usart.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_usart.c.i
 .PHONY : Driver/src/hc32_ll_usart.c.i
 
 Driver/src/hc32_ll_usart.s: Driver/src/hc32_ll_usart.c.s
@@ -1118,7 +1118,7 @@ Driver/src/hc32_ll_usart.s: Driver/src/hc32_ll_usart.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_usart.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_usart.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_usart.c.s
 .PHONY : Driver/src/hc32_ll_usart.c.s
 
 Driver/src/hc32_ll_utility.obj: Driver/src/hc32_ll_utility.c.obj
@@ -1126,7 +1126,7 @@ Driver/src/hc32_ll_utility.obj: Driver/src/hc32_ll_utility.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_utility.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_utility.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_utility.c.obj
 .PHONY : Driver/src/hc32_ll_utility.c.obj
 
 Driver/src/hc32_ll_utility.i: Driver/src/hc32_ll_utility.c.i
@@ -1134,7 +1134,7 @@ Driver/src/hc32_ll_utility.i: Driver/src/hc32_ll_utility.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_utility.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_utility.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_utility.c.i
 .PHONY : Driver/src/hc32_ll_utility.c.i
 
 Driver/src/hc32_ll_utility.s: Driver/src/hc32_ll_utility.c.s
@@ -1142,7 +1142,7 @@ Driver/src/hc32_ll_utility.s: Driver/src/hc32_ll_utility.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_utility.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_utility.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_utility.c.s
 .PHONY : Driver/src/hc32_ll_utility.c.s
 
 Driver/src/hc32_ll_wdt.obj: Driver/src/hc32_ll_wdt.c.obj
@@ -1150,7 +1150,7 @@ Driver/src/hc32_ll_wdt.obj: Driver/src/hc32_ll_wdt.c.obj
 
 # target to build an object file
 Driver/src/hc32_ll_wdt.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_wdt.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_wdt.c.obj
 .PHONY : Driver/src/hc32_ll_wdt.c.obj
 
 Driver/src/hc32_ll_wdt.i: Driver/src/hc32_ll_wdt.c.i
@@ -1158,7 +1158,7 @@ Driver/src/hc32_ll_wdt.i: Driver/src/hc32_ll_wdt.c.i
 
 # target to preprocess a source file
 Driver/src/hc32_ll_wdt.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_wdt.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_wdt.c.i
 .PHONY : Driver/src/hc32_ll_wdt.c.i
 
 Driver/src/hc32_ll_wdt.s: Driver/src/hc32_ll_wdt.c.s
@@ -1166,7 +1166,7 @@ Driver/src/hc32_ll_wdt.s: Driver/src/hc32_ll_wdt.c.s
 
 # target to generate assembly for a file
 Driver/src/hc32_ll_wdt.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32_ll_wdt.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32_ll_wdt.c.s
 .PHONY : Driver/src/hc32_ll_wdt.c.s
 
 Driver/src/hc32f460_ll_interrupts_share.obj: Driver/src/hc32f460_ll_interrupts_share.c.obj
@@ -1174,7 +1174,7 @@ Driver/src/hc32f460_ll_interrupts_share.obj: Driver/src/hc32f460_ll_interrupts_s
 
 # target to build an object file
 Driver/src/hc32f460_ll_interrupts_share.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32f460_ll_interrupts_share.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32f460_ll_interrupts_share.c.obj
 .PHONY : Driver/src/hc32f460_ll_interrupts_share.c.obj
 
 Driver/src/hc32f460_ll_interrupts_share.i: Driver/src/hc32f460_ll_interrupts_share.c.i
@@ -1182,7 +1182,7 @@ Driver/src/hc32f460_ll_interrupts_share.i: Driver/src/hc32f460_ll_interrupts_sha
 
 # target to preprocess a source file
 Driver/src/hc32f460_ll_interrupts_share.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32f460_ll_interrupts_share.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32f460_ll_interrupts_share.c.i
 .PHONY : Driver/src/hc32f460_ll_interrupts_share.c.i
 
 Driver/src/hc32f460_ll_interrupts_share.s: Driver/src/hc32f460_ll_interrupts_share.c.s
@@ -1190,7 +1190,7 @@ Driver/src/hc32f460_ll_interrupts_share.s: Driver/src/hc32f460_ll_interrupts_sha
 
 # target to generate assembly for a file
 Driver/src/hc32f460_ll_interrupts_share.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Driver/src/hc32f460_ll_interrupts_share.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Driver/src/hc32f460_ll_interrupts_share.c.s
 .PHONY : Driver/src/hc32f460_ll_interrupts_share.c.s
 
 Libraries/MillisTaskManager/MillisTaskManager.obj: Libraries/MillisTaskManager/MillisTaskManager.cpp.obj
@@ -1198,7 +1198,7 @@ Libraries/MillisTaskManager/MillisTaskManager.obj: Libraries/MillisTaskManager/M
 
 # target to build an object file
 Libraries/MillisTaskManager/MillisTaskManager.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Libraries/MillisTaskManager/MillisTaskManager.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Libraries/MillisTaskManager/MillisTaskManager.cpp.obj
 .PHONY : Libraries/MillisTaskManager/MillisTaskManager.cpp.obj
 
 Libraries/MillisTaskManager/MillisTaskManager.i: Libraries/MillisTaskManager/MillisTaskManager.cpp.i
@@ -1206,7 +1206,7 @@ Libraries/MillisTaskManager/MillisTaskManager.i: Libraries/MillisTaskManager/Mil
 
 # target to preprocess a source file
 Libraries/MillisTaskManager/MillisTaskManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Libraries/MillisTaskManager/MillisTaskManager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Libraries/MillisTaskManager/MillisTaskManager.cpp.i
 .PHONY : Libraries/MillisTaskManager/MillisTaskManager.cpp.i
 
 Libraries/MillisTaskManager/MillisTaskManager.s: Libraries/MillisTaskManager/MillisTaskManager.cpp.s
@@ -1214,7 +1214,7 @@ Libraries/MillisTaskManager/MillisTaskManager.s: Libraries/MillisTaskManager/Mil
 
 # target to generate assembly for a file
 Libraries/MillisTaskManager/MillisTaskManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/Libraries/MillisTaskManager/MillisTaskManager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/Libraries/MillisTaskManager/MillisTaskManager.cpp.s
 .PHONY : Libraries/MillisTaskManager/MillisTaskManager.cpp.s
 
 app/source/main.obj: app/source/main.cpp.obj
@@ -1222,7 +1222,7 @@ app/source/main.obj: app/source/main.cpp.obj
 
 # target to build an object file
 app/source/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/app/source/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/app/source/main.cpp.obj
 .PHONY : app/source/main.cpp.obj
 
 app/source/main.i: app/source/main.cpp.i
@@ -1230,7 +1230,7 @@ app/source/main.i: app/source/main.cpp.i
 
 # target to preprocess a source file
 app/source/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/app/source/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/app/source/main.cpp.i
 .PHONY : app/source/main.cpp.i
 
 app/source/main.s: app/source/main.cpp.s
@@ -1238,7 +1238,7 @@ app/source/main.s: app/source/main.cpp.s
 
 # target to generate assembly for a file
 app/source/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/app/source/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/app/source/main.cpp.s
 .PHONY : app/source/main.cpp.s
 
 bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.obj: bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.c.obj
@@ -1246,7 +1246,7 @@ bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.obj: bsp/ev_hc32f460_lqfp100_v
 
 # target to build an object file
 bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.c.obj
 .PHONY : bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.c.obj
 
 bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.i: bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.c.i
@@ -1254,7 +1254,7 @@ bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.i: bsp/ev_hc32f460_lqfp100_v2/
 
 # target to preprocess a source file
 bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.c.i
 .PHONY : bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.c.i
 
 bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.s: bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.c.s
@@ -1262,7 +1262,7 @@ bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.s: bsp/ev_hc32f460_lqfp100_v2/
 
 # target to generate assembly for a file
 bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.efl.dir/build.make CMakeFiles/TEST.efl.dir/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST.elf.dir/build.make CMakeFiles/TEST.elf.dir/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.c.s
 .PHONY : bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.c.s
 
 # Help Target
@@ -1273,7 +1273,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... TEST.efl"
+	@echo "... TEST.elf"
 	@echo "... CMSIS/Device/HDSC/hc32f4xx/Source/GCC/startup_hc32f460.obj"
 	@echo "... CMSIS/Device/HDSC/hc32f4xx/Source/syscalls.obj"
 	@echo "... CMSIS/Device/HDSC/hc32f4xx/Source/syscalls.i"

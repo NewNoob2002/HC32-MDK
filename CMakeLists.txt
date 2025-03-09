@@ -72,14 +72,16 @@ add_compile_options(
         -fdata-sections -fno-common -fmessage-length=0
     )
 
-add_executable(${PROJECT_NAME}.efl ${SOURCE_FILE} ${STARTUP_FILE})
+add_executable(${PROJECT_NAME}.elf ${SOURCE_FILE} ${STARTUP_FILE})
 
 # set_target_properties(${PROJECT_NAME} PROPERTIES
 #     RUNTIME_OUTPUT_DIRECTORY ${EXECUTABLE_OUTPUT_PATH}
 # )
 
-# add_custom_command(TARGET ${PROJECT_NAME}.efl POST_BUILD
-# COMMAND ${CMAKE_OBJCOPY} -i32 --output=${HEX_FILE}  $<TARGET_FILE:${PROJECT_NAME}>
-# COMMAND ${CMAKE_OBJCOPY} -bin --output=${BIN_FILE}  $<TARGET_FILE:${PROJECT_NAME}>
-# COMMAND ${CMAKE_SIEZE} --info=sizes $<TARGET_FILE:${PROJECT_NAME}>)
+add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
+COMMAND ${CMAKE_OBJCOPY} -O binary 
+"${EXECUTABLE_OUTPUT_PATH}/TEST.elf" 
+"${EXECUTABLE_OUTPUT_PATH}/TEST.bin"
+COMMENT "Generating BIN file"
+)
 

@@ -36,8 +36,8 @@ MEMORY
     FLASH       (rx): ORIGIN = 0x00000000, LENGTH = 512K
     OTP_DATA    (rx): ORIGIN = 0x03000C00, LENGTH = 960
     OTP_LOCK    (rx): ORIGIN = 0x03000FC0, LENGTH = 60
-    RAM        (rwx): ORIGIN = 0x1FFF8000, LENGTH = 188K
-    RET_RAM    (rwx): ORIGIN = 0x200F0000, LENGTH = 4K
+    RAM        (xrw): ORIGIN = 0x1FFF8000, LENGTH = 188K
+    RET_RAM    (xrw): ORIGIN = 0x200F0000, LENGTH = 4K
 }
 
 ENTRY(Reset_Handler)

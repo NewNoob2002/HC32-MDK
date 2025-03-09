@@ -14,6 +14,13 @@ int _write(int fd, const char *buf, int len) {
     }
     return len;
 }
+#include <sys/stat.h>
+
+int _fstat(int fd, struct stat *st) {
+    // 假设是字符设备（如终端）
+    st->st_mode = S_IFCHR;  // 标记为字符设备
+    return 0;
+}
 void _exit(int status) { while (1); }  // 死循环
 int _kill(int pid, int sig) { return -1; }
 int _getpid(void) { return 1; }
