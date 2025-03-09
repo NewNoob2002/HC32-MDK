@@ -1,0 +1,10 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/guoti/Desktop/hc32f460jeta_template/CMSIS/Device/HDSC/hc32f4xx/Source/GCC/startup_hc32f460.S
+

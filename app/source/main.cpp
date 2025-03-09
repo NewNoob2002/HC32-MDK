@@ -25,7 +25,7 @@
 #include "hc32_ll.h"
 #include "ev_hc32f460_lqfp100_v2_bsp.h"
 #include <string.h>
-#include "MillisTaskManager/MillisTaskManager.h"
+#include "MillisTaskManager.h"
 MillisTaskManager task;
 /**
  * @addtogroup HC32F460_DDL_Examples
@@ -246,7 +246,7 @@ static void dmaSend()
  * @param  None
  * @retval int32_t return value, if needed
  */
-int32_t main(void)
+int main(void)
 {
     /* Peripheral registers write unprotected */
     LL_PERIPH_WE(EXAMPLE_PERIPH_WE);
@@ -265,6 +265,7 @@ int32_t main(void)
     while(1) {
         task.Running(millis());
     }
+    return 0;
 }
 
 /**
