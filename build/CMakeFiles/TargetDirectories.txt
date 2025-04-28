@@ -1,3 +1,0 @@
-C:/Users/guoti/Desktop/hc32f460jeta_template/build/CMakeFiles/TEST.elf.dir
-C:/Users/guoti/Desktop/hc32f460jeta_template/build/CMakeFiles/edit_cache.dir
-C:/Users/guoti/Desktop/hc32f460jeta_template/build/CMakeFiles/rebuild_cache.dir
