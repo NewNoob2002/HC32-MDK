@@ -1,8 +1,8 @@
-./output/debug/hardwarei2c.o: ..\..\Libraries\HardWareI2c\HardwareI2c.cpp \
+./output/debug/hardwarei2c.o: ..\..\bsp\HardWareI2C\HardwareI2c.cpp \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\string.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__config \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
-  ..\..\Libraries\HardWareI2C\HardwareI2c.h ..\..\Driver\inc\hc32_ll.h \
+  ..\..\bsp\HardWareI2C\HardwareI2c.h ..\..\Driver\inc\hc32_ll.h \
   ..\..\Driver\inc\hc32_ll_def.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stddef.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stddef.h \

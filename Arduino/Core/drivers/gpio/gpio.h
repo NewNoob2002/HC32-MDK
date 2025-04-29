@@ -1,7 +1,7 @@
 #pragma once
-#include "hc32_ll.h"
+#include <hc32_ll.h>
 #include "addon_gpio.h"
-#include "adc.h"
+#include <adc.h>
 #include "WVariant.h"
 #include "core_types.h"
 #include "core_debug.h"

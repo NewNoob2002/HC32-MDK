@@ -22,7 +22,6 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "hc32_ll.h"
-//#include <addon_gpio.h>
 #include "adc.h"
 
 // Include board variant
@@ -162,7 +161,7 @@ typedef struct pin_info_t
 	/**
 	 * @brief GPIO pin map
 	 */
-	extern const pin_info_t PIN_MAP[BOARD_NR_GPIO_PINS];
+extern const pin_info_t PIN_MAP[BOARD_NR_GPIO_PINS];
 
 /**
  * @brief test if a gpio pin number is valid

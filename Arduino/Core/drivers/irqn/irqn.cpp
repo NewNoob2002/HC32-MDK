@@ -90,14 +90,14 @@ inline size_t irqn_to_bitfield_index(IRQn_Type irqn)
 //
 // IRQn auto-assignment public API
 //
-en_result_t _irqn_aa_get(IRQn_Type &irqn)
+int32_t _irqn_aa_get(IRQn_Type &irqn)
 {
     // get next available IRQn index
     size_t irqn_index;
     if (!irqn_bitfield_next(irqn_index))
     {
         // no more IRQn available
-        return Error;
+        return LL_ERR;
     }
 
     // set IRQn bitfield value to true
@@ -105,10 +105,10 @@ en_result_t _irqn_aa_get(IRQn_Type &irqn)
 
     // translate IRQn index to IRQn and done
     irqn = irqn_bitfield_index_to_irqn(irqn_index);
-    return Ok;
+    return LL_OK;
 }
 
-en_result_t _irqn_aa_resign(IRQn_Type &irqn)
+int32_t _irqn_aa_resign(IRQn_Type &irqn)
 {
     // translate IRQn to IRQn index
     size_t irqn_index = irqn_to_bitfield_index(irqn);
@@ -117,5 +117,5 @@ en_result_t _irqn_aa_resign(IRQn_Type &irqn)
     irqn_bitfield_set(irqn_index, false);
 
     // done
-    return Ok;
+    return LL_OK;
 }

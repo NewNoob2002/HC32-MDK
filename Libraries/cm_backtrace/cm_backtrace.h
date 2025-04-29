@@ -29,11 +29,12 @@
 #ifndef _CORTEXM_BACKTRACE_H_
 #define _CORTEXM_BACKTRACE_H_
 
+#include <cmb_def.h>
+#include <stdlib.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
-    
-#include "cmb_def.h"
 
 void cm_backtrace_init(const char *firmware_name, const char *hardware_ver, const char *software_ver);
 void cm_backtrace_firmware_info(void);

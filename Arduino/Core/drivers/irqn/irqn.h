@@ -11,8 +11,8 @@ extern "C"
 {
 #endif
 
-    en_result_t _irqn_aa_get(IRQn_Type &irqn);
-    en_result_t _irqn_aa_resign(IRQn_Type &irqn);
+    int32_t _irqn_aa_get(IRQn_Type &irqn);
+    int32_t _irqn_aa_resign(IRQn_Type &irqn);
 
 #ifdef __CORE_DEBUG
 
