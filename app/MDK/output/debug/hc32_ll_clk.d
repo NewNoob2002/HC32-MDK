@@ -13,4 +13,5 @@
   ..\..\CMSIS\Device\HDSC\hc32f4xx\Include\system_hc32f460.h \
   ..\..\Driver\inc\hc32_ll_def.h \
   ..\..\CMSIS\Device\HDSC\hc32f4xx\Include\hc32f4xx.h \
-  ..\source\hc32f4xx_conf.h ..\..\Driver\inc\hc32_ll_utility.h
+  ..\source\hc32f4xx_conf.h ..\..\Driver\inc\hc32_ll_utility.h \
+  ..\..\Arduino\delay.h

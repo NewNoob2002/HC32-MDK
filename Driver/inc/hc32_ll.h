@@ -37,7 +37,7 @@ extern "C"
 
 #include "hc32f4xx.h"
 #include "hc32f4xx_conf.h"
-
+#include <systick.h>
 /**
  * @addtogroup LL_Driver
  * @{

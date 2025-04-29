@@ -81,9 +81,9 @@
           </BeforeMake>
           <AfterMake>
             <RunUserProg1>0</RunUserProg1>
-            <RunUserProg2>0</RunUserProg2>
+            <RunUserProg2>1</RunUserProg2>
             <UserProg1Name></UserProg1Name>
-            <UserProg2Name></UserProg2Name>
+            <UserProg2Name>fromelf --bin -o "$L@L.bin" "#L</UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopA1X>0</nStopA1X>
@@ -313,7 +313,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>4</Optim>
+            <Optim>1</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>__DEBUG,HC32F460,USE_DDL_DRIVER,</Define>
               <Undefine></Undefine>
-              <IncludePath>..\source;..\..\bsp\ev_hc32f460_lqfp100_v2;..\..\CMSIS\Include;..\..\CMSIS\Device\HDSC\hc32f4xx\Include;..\..\Driver\inc;..\..\Libraries</IncludePath>
+              <IncludePath>..\source;..\..\bsp\ev_hc32f460_lqfp100_v2;..\..\CMSIS\Include;..\..\CMSIS\Device\HDSC\hc32f4xx\Include;..\..\Driver\inc;..\..\Libraries\MillisTaskManager;..\..\Libraries\HardWareI2C;..\..\Arduino;..\..\Arduino\Core\avr;..\..\Arduino\Core\drivers\gpio;..\..\Arduino\Core\drivers\adc;..\..\Arduino\Core\drivers\panic;..\..\Arduino\Core\drivers\irqn;..\..\Arduino\Core\drivers\sysclock;..\..\Arduino\Core\variants\hc32f460xx</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -381,12 +381,92 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>app</GroupName>
+          <GroupName>App</GroupName>
           <Files>
             <File>
               <FileName>main.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\source\main.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Arduino</GroupName>
+          <Files>
+            <File>
+              <FileName>variant.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\Arduino\Core\variants\hc32f460xx\variant.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>wiring_digital.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\Arduino\wiring_digital.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>wiring_digital.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\Arduino\wiring_digital.h</FilePath>
+            </File>
+            <File>
+              <FileName>WString.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\Arduino\WString.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>WMath.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\Arduino\WMath.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>adc.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\Arduino\Core\drivers\adc\adc.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>adc_config.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\Arduino\Core\drivers\adc\adc_config.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>addon_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Arduino\Core\drivers\gpio\addon_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>sysclock.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\Arduino\Core\drivers\sysclock\sysclock.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>systick.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\Arduino\Core\drivers\sysclock\systick.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>itoa.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Arduino\itoa.c</FilePath>
+            </File>
+            <File>
+              <FileName>dtostrf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Arduino\Core\avr\dtostrf.c</FilePath>
+            </File>
+            <File>
+              <FileName>Print.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\Arduino\Print.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Stream.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\Arduino\Stream.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>irqn.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\Arduino\Core\drivers\irqn\irqn.cpp</FilePath>
             </File>
           </Files>
         </Group>
@@ -631,12 +711,17 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>lib</GroupName>
+          <GroupName>library</GroupName>
           <Files>
             <File>
               <FileName>MillisTaskManager.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\..\Libraries\MillisTaskManager\MillisTaskManager.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>HardwareI2c.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\Libraries\HardWareI2c\HardwareI2c.cpp</FilePath>
             </File>
           </Files>
         </Group>

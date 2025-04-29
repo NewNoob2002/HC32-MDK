@@ -63,16 +63,8 @@
  * @defgroup UTILITY_Local_Variables UTILITY Local Variables
  * @{
  */
-#ifndef SYSTICK_TICK_FREQ
-#define SYSTICK_TICK_FREQ     1000 // Hz
 #endif
 
-#define SYSTICK_TICK_INTERVAL   (1000 / SYSTICK_TICK_FREQ)
-#define SYSTICK_LOAD_VALUE      (SystemCoreClock / SYSTICK_TICK_FREQ)
-#define SYSTICK_MILLIS          (SystemTickCount * SYSTICK_TICK_INTERVAL)
-#define CYCLES_PER_MICROSECOND   (SystemCoreClock / 1000000U)
-#endif
-static volatile uint32_t SystemTickCount = 0;
 /**
  * @}
  */
@@ -84,71 +76,70 @@ static volatile uint32_t SystemTickCount = 0;
  *           - LL_OK: SysTick Initializes succeed
  *           - LL_ERR: SysTick Initializes failed
  */
-int32_t SysTick_Init(uint32_t u32Freq)
-{
-    uint32_t i32Ret = 1;
-    if(0UL == SysTick_Config(SYSTICK_LOAD_VALUE))
-    i32Ret = 0;
-    NVIC_SetPriority(SysTick_IRQn, 0);
+//int32_t SysTick_Init(uint32_t u32Freq)
+//{
+//    uint32_t i32Ret = 1;
+//    if(0UL == SysTick_Config(SYSTICK_LOAD_VALUE))
+//			i32Ret = 0;
 
-    return i32Ret;
-}
+//    return i32Ret;
+//}
 
-void SysTick_Handler(void)
-{
-    SystemTickCount++;
-}
+//void SysTick_Handler(void)
+//{
+//    SystemTickCount++;
+//}
 
 /**
   * @brief  Return the millis time after power
   * @param  None
   * @retval get mills
   */
-uint32_t millis(void)
-{
-    return SYSTICK_MILLIS;
-}
+//uint32_t millis(void)
+//{
+//    return SYSTICK_MILLIS;
+//}
 
-uint32_t micros(void)
-{
-    return (SYSTICK_MILLIS * 1000 + (SYSTICK_LOAD_VALUE - SysTick->VAL) / CYCLES_PER_MICROSECOND);
-}
+//uint32_t micros(void)
+//{
+//    return (SYSTICK_MILLIS * 1000 + (SYSTICK_LOAD_VALUE - SysTick->VAL) / CYCLES_PER_MICROSECOND);
+//}
 
-void delay_ms(uint32_t ms)
-{
-    uint32_t tickstart = SystemTickCount;
-    uint32_t wait = ms / SYSTICK_TICK_INTERVAL;
+//void delay_ms(uint32_t ms)
+//{
+//    uint32_t tickstart = SystemTickCount;
+//    uint32_t wait = ms / SYSTICK_TICK_INTERVAL;
 
-    while((SystemTickCount - tickstart) < wait)
-    {
-    }
-}
+//    while((SystemTickCount - tickstart) < wait)
+//    {
+//    }
+//}
 
-void delay_us(uint32_t us)
-{
-    uint32_t total = 0;
-    uint32_t target = CYCLES_PER_MICROSECOND * us;
-    int last = SysTick->VAL;
-    int now = last;
-    int diff = 0;
-start:
-    now = SysTick->VAL;
-    diff = last - now;
-    if(diff > 0)
-    {
-        total += diff;
-    }
-    else
-    {
-        total += diff + SYSTICK_LOAD_VALUE;
-    }
-    if(total > target)
-    {
-        return;
-    }
-    last = now;
-    goto start;
-}
+//void delay_us(uint32_t us)
+//{
+//    uint32_t total = 0;
+//    uint32_t target = CYCLES_PER_MICROSECOND * us;
+//    int last = SysTick->VAL;
+//    int now = last;
+//    int diff = 0;
+//start:
+//    now = SysTick->VAL;
+//    diff = last - now;
+//    if(diff > 0)
+//    {
+//        total += diff;
+//    }
+//    else
+//    {
+//        total += diff + SYSTICK_LOAD_VALUE;
+//    }
+//    if(total > target)
+//    {
+//        return;
+//    }
+//    last = now;
+//    goto start;
+//}
 
 #ifdef __DEBUG
 /**

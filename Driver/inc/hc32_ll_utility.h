@@ -65,11 +65,6 @@ extern "C"
  * @addtogroup UTILITY_Global_Functions
  * @{
  */
-int32_t SysTick_Init(uint32_t u32Freq);
-uint32_t millis(void);
-uint32_t micros(void);
-void delay_ms(uint32_t ms);
-void delay_us(uint32_t us);
 
 #if (LL_PRINT_ENABLE == DDL_ON)
 int32_t LL_PrintfInit(void *vpDevice, uint32_t u32Param, int32_t (*pfnPreinit)(void *vpDevice, uint32_t u32Param));

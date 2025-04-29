@@ -23,8 +23,8 @@
  * Include files
  ******************************************************************************/
 #include "hc32_ll.h"
-#include "ev_hc32f460_lqfp100_v2_bsp.h"
-#include <string.h>
+#include <Arduino.h>
+#include "HardwareI2c.h"
 #include "MillisTaskManager.h"
 MillisTaskManager task;
 /**
@@ -251,21 +251,20 @@ int main(void)
     /* Peripheral registers write unprotected */
     LL_PERIPH_WE(EXAMPLE_PERIPH_WE);
     /* Configure BSP */
-    BSP_CLK_Init();
-    SysTick_Init(1000);
-    BSP_LED_Init();
-    /* Configure SPI */
-    SPI_Config();
+		clock_init();
+    systick_init();
+		
+		pinMode(PB14, OUTPUT);
+		Slave_Initialize();
     /* Peripheral registers write protected */
     LL_PERIPH_WP(EXAMPLE_PERIPH_WP);
     
     task.Register(led_blink, 10);
-    task.Register(dmaSend, 10);
+//    task.Register(dmaSend, 10);
     
     while(1) {
         task.Running(millis());
     }
-    return 0;
 }
 
 /**

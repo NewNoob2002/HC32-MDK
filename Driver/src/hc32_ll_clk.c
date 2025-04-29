@@ -33,7 +33,7 @@
  ******************************************************************************/
 #include "hc32_ll_clk.h"
 #include "hc32_ll_utility.h"
-
+#include <delay.h>
 /**
  * @addtogroup LL_Driver
  * @{
@@ -1566,7 +1566,6 @@ void CLK_SetClockDiv(uint32_t u32Clock, uint32_t u32Div)
     SetSysClockDiv(u32Clock, u32Div);
     /* Update system clock */
     SystemCoreClockUpdate();
-    SysTick_Init(1000);
 }
 
 /**

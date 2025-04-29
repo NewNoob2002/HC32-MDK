@@ -44,6 +44,7 @@
  ******************************************************************************/
 #include "hc32_ll_pwc.h"
 #include "hc32_ll_utility.h"
+#include <delay.h>
 
 /**
  * @addtogroup LL_Driver
