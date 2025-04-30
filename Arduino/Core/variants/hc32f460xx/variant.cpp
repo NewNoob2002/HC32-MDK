@@ -68,7 +68,7 @@
 // Pin Map
 //
 
-extern const pin_info_t PIN_MAP[BOARD_NR_GPIO_PINS] = {
+const pin_info_t PIN_MAP[BOARD_NR_GPIO_PINS] = {
 	//GPIO_PIN , GPIO_PORT, ADC&channel, TIM,
 	// ---  PAx  ---
 	{0,  GPIO_PORT_A, ADC(1, ADC_CH0), TIMA(2, 1, 4)},	// PA0

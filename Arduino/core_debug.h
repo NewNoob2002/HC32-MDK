@@ -1,8 +1,7 @@
 #ifndef _CORE_DEBUG_H
 #define _CORE_DEBUG_H
 
-#include <stdio.h>
-#include "panic.h"
+#include <panic.h>
 
 #ifdef __CORE_DEBUG
 

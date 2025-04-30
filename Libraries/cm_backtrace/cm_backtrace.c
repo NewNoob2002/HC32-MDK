@@ -26,7 +26,7 @@
  * Created on: 2016-12-15
  */
 
-#include "cm_backtrace.h"
+#include <cm_backtrace.h>
 #include <stdbool.h>
 #include <string.h>
 #include <stdio.h>
@@ -35,7 +35,7 @@
     #error "must be C99 or higher. try to add '-std=c99' to compile parameters"
 #endif
 
-#if defined(__CC_ARM) || defined(__CLANG_ARM)
+#if defined(__ARMCC_VERSION)
     #define SECTION_START(_name_)                _name_##$$Base
     #define SECTION_END(_name_)                  _name_##$$Limit
     #define IMAGE_SECTION_START(_name_)          Image$$##_name_##$$Base
@@ -112,14 +112,16 @@ static const char * const print_info[] = {
     #include "Languages/zh-CN/cmb_zh_CN.h"
 #elif (CMB_PRINT_LANGUAGE == CMB_PRINT_LANGUAGE_CHINESE_UTF8)
     #include "Languages/zh-CN/cmb_zh_CN_UTF8.h"
+#elif (CMB_PRINT_LANGUAGE == CMB_PRINT_LANGUAGE_CUSTOM)
+    #include "cmb_language_custom.h"
 #else
     #error "CMB_PRINT_LANGUAGE defined error in 'cmb_cfg.h'"
 #endif
 };
 
-static char fw_name[CMB_NAME_MAX] = {0};
-static char hw_ver[CMB_NAME_MAX] = {0};
-static char sw_ver[CMB_NAME_MAX] = {0};
+static char fw_name[CMB_NAME_MAX + 1] = {0};
+static char hw_ver[CMB_NAME_MAX + 1] = {0};
+static char sw_ver[CMB_NAME_MAX + 1] = {0};
 static uint32_t main_stack_start_addr = 0;
 static size_t main_stack_size = 0;
 static uint32_t code_start_addr = 0;
@@ -141,11 +143,11 @@ static bool on_thread_before_fault = false;
  * library initialize
  */
 void cm_backtrace_init(const char *firmware_name, const char *hardware_ver, const char *software_ver) {
-    strncpy(fw_name, firmware_name, CMB_NAME_MAX - 1);
-    strncpy(hw_ver, hardware_ver, CMB_NAME_MAX - 1);
-    strncpy(sw_ver, software_ver, CMB_NAME_MAX - 1);
+    strncpy(fw_name, firmware_name, CMB_NAME_MAX);
+    strncpy(hw_ver, hardware_ver, CMB_NAME_MAX);
+    strncpy(sw_ver, software_ver, CMB_NAME_MAX);
 
-#if defined(__CC_ARM) || defined(__CLANG_ARM)
+#if defined(__ARMCC_VERSION)
     main_stack_start_addr = (uint32_t)&CSTACK_BLOCK_START(CMB_CSTACK_BLOCK_NAME);
     main_stack_size = (uint32_t)&CSTACK_BLOCK_END(CMB_CSTACK_BLOCK_NAME) - main_stack_start_addr;
     code_start_addr = (uint32_t)&CODE_SECTION_START(CMB_CODE_SECTION_NAME);
@@ -187,26 +189,36 @@ void cm_backtrace_firmware_info(void) {
  * @param start_addr stack start address
  * @param size stack size
  */
-static void get_cur_thread_stack_info(uint32_t sp, uint32_t *start_addr, size_t *size) {
+static void get_cur_thread_stack_info(uint32_t *sp, uint32_t *start_addr, size_t *size) {
     CMB_ASSERT(start_addr);
     CMB_ASSERT(size);
 
 #if (CMB_OS_PLATFORM_TYPE == CMB_OS_PLATFORM_RTT)
     *start_addr = (uint32_t) rt_thread_self()->stack_addr;
     *size = rt_thread_self()->stack_size;
+    *sp = (uint32_t)rt_thread_self()->sp;
 #elif (CMB_OS_PLATFORM_TYPE == CMB_OS_PLATFORM_UCOSII)
     extern OS_TCB *OSTCBCur;
 
     *start_addr = (uint32_t) OSTCBCur->OSTCBStkBottom;
     *size = OSTCBCur->OSTCBStkSize * sizeof(OS_STK);
 #elif (CMB_OS_PLATFORM_TYPE == CMB_OS_PLATFORM_UCOSIII)
-    extern OS_TCB *OSTCBCurPtr; 
-    
+    extern OS_TCB *OSTCBCurPtr;
+
     *start_addr = (uint32_t) OSTCBCurPtr->StkBasePtr;
     *size = OSTCBCurPtr->StkSize * sizeof(CPU_STK_SIZE);
-#elif (CMB_OS_PLATFORM_TYPE == CMB_OS_PLATFORM_FREERTOS)   
+#elif (CMB_OS_PLATFORM_TYPE == CMB_OS_PLATFORM_FREERTOS)
     *start_addr = (uint32_t)vTaskStackAddr();
     *size = vTaskStackSize() * sizeof( StackType_t );
+#elif (CMB_OS_PLATFORM_TYPE == CMB_OS_PLATFORM_RTX5)
+    osRtxThread_t *thread = osRtxInfo.thread.run.curr;
+    *start_addr = (uint32_t)thread->stack_mem;
+    *size = thread->stack_size;
+#elif  (CMB_OS_PLATFORM_TYPE == CMB_OS_PLATFORM_THREADX)
+    TX_THREAD * ptThread = NULL;
+    TX_THREAD_GET_CURRENT(ptThread);
+    *start_addr = (uint32_t)ptThread->tx_thread_stack_start;
+    *size = ptThread->tx_thread_stack_size;
 #endif
 }
 
@@ -215,7 +227,11 @@ static void get_cur_thread_stack_info(uint32_t sp, uint32_t *start_addr, size_t 
  */
 static const char *get_cur_thread_name(void) {
 #if (CMB_OS_PLATFORM_TYPE == CMB_OS_PLATFORM_RTT)
+#if (RT_VER_NUM < 0x50001)
     return rt_thread_self()->name;
+#else
+    return rt_thread_self()->parent.name;
+#endif
 #elif (CMB_OS_PLATFORM_TYPE == CMB_OS_PLATFORM_UCOSII)
     extern OS_TCB *OSTCBCur;
 
@@ -226,11 +242,17 @@ static const char *get_cur_thread_name(void) {
 #endif /* OS_TASK_NAME_SIZE > 0 || OS_TASK_NAME_EN > 0 */
 
 #elif (CMB_OS_PLATFORM_TYPE == CMB_OS_PLATFORM_UCOSIII)
-    extern OS_TCB *OSTCBCurPtr; 
-    
+    extern OS_TCB *OSTCBCurPtr;
+
     return (const char *)OSTCBCurPtr->NamePtr;
 #elif (CMB_OS_PLATFORM_TYPE == CMB_OS_PLATFORM_FREERTOS)
     return vTaskName();
+#elif (CMB_OS_PLATFORM_TYPE == CMB_OS_PLATFORM_RTX5)
+    return osRtxInfo.thread.run.curr->name;
+#elif (CMB_OS_PLATFORM_TYPE == CMB_OS_PLATFORM_THREADX)
+    TX_THREAD * ptThread = NULL;
+    TX_THREAD_GET_CURRENT(ptThread);
+    return ptThread->tx_thread_name;
 #endif
 }
 
@@ -241,6 +263,8 @@ static const char *get_cur_thread_name(void) {
  * dump current stack information
  */
 static void dump_stack(uint32_t stack_start_addr, size_t stack_size, uint32_t *stack_pointer) {
+    uint32_t deep = CMB_DUMP_STACK_DEPTH_SIZE;
+
     if (stack_is_overflow) {
         if (on_thread_before_fault) {
             cmb_println(print_info[PRINT_THREAD_STACK_OVERFLOW], stack_pointer);
@@ -254,7 +278,7 @@ static void dump_stack(uint32_t stack_start_addr, size_t stack_size, uint32_t *s
         }
     }
     cmb_println(print_info[PRINT_THREAD_STACK_INFO]);
-    for (; (uint32_t) stack_pointer < stack_start_addr + stack_size; stack_pointer++) {
+    for (; (uint32_t) stack_pointer < stack_start_addr + stack_size && deep; stack_pointer++, deep--) {
         cmb_println("  addr: %08x    data: %08x", stack_pointer, *stack_pointer);
     }
     cmb_println("====================================");
@@ -281,6 +305,31 @@ static bool disassembly_ins_is_bl_blx(uint32_t addr) {
     }
 }
 
+size_t cm_backtrace_call_stack_any(uint32_t *buffer, size_t size, uint32_t sp, uint32_t stack_start_addr, uint32_t stack_size)
+{
+    uint32_t pc;
+    size_t depth = 0;
+    /* copy called function address */
+    for (; sp < stack_start_addr + stack_size; sp += sizeof(size_t)) {
+        /* the *sp value may be LR, so need decrease a word to PC */
+        pc = *((uint32_t *) sp) - sizeof(size_t);
+        /* the Cortex-M using thumb instruction, so the pc must be an odd number */
+        if (pc % 2 == 0) {
+            continue;
+        }
+        /* fix the PC address in thumb mode */
+        pc = *((uint32_t *) sp) - 1;
+        if ((pc >= code_start_addr + sizeof(size_t)) && (pc <= code_start_addr + code_size) && (depth < CMB_CALL_STACK_MAX_DEPTH)
+                /* check the the instruction before PC address is 'BL' or 'BLX' */
+                && disassembly_ins_is_bl_blx(pc - sizeof(size_t)) && (depth < size)) {
+            /* the second depth function may be already saved, so need ignore repeat */
+            buffer[depth++] = pc;
+        }
+    }
+
+    return depth;
+}
+
 /**
  * backtrace function call stack
  *
@@ -292,6 +341,10 @@ static bool disassembly_ins_is_bl_blx(uint32_t addr) {
  */
 size_t cm_backtrace_call_stack(uint32_t *buffer, size_t size, uint32_t sp) {
     uint32_t stack_start_addr = main_stack_start_addr, pc;
+
+#ifdef CMB_USING_OS_PLATFORM
+    uint32_t tcb_sp;
+#endif
     size_t depth = 0, stack_size = main_stack_size;
     bool regs_saved_lr_is_valid = false;
 
@@ -311,23 +364,19 @@ size_t cm_backtrace_call_stack(uint32_t *buffer, size_t size, uint32_t sp) {
 #ifdef CMB_USING_OS_PLATFORM
         /* program is running on thread before fault */
         if (on_thread_before_fault) {
-            get_cur_thread_stack_info(sp, &stack_start_addr, &stack_size);
+            get_cur_thread_stack_info(&tcb_sp, &stack_start_addr, &stack_size);
         }
     } else {
         /* OS environment */
         if (cmb_get_sp() == cmb_get_psp()) {
-            get_cur_thread_stack_info(sp, &stack_start_addr, &stack_size);
+            get_cur_thread_stack_info(&tcb_sp, &stack_start_addr, &stack_size);
         }
 #endif /* CMB_USING_OS_PLATFORM */
 
     }
 
     if (stack_is_overflow) {
-        if (sp < stack_start_addr) {
-            sp = stack_start_addr;
-        } else if (sp > stack_start_addr + stack_size) {
-            sp = stack_start_addr + stack_size;
-        }
+        sp = stack_start_addr;
     }
 
     /* copy called function address */
@@ -384,11 +433,12 @@ static void print_call_stack(uint32_t sp) {
  * @param sp the stack pointer when on assert occurred
  */
 void cm_backtrace_assert(uint32_t sp) {
-    CMB_ASSERT(init_ok);
-
 #ifdef CMB_USING_OS_PLATFORM
+    uint32_t tcb_sp;
     uint32_t cur_stack_pointer = cmb_get_sp();
 #endif
+
+    CMB_ASSERT(init_ok);
 
     cmb_println("");
     cm_backtrace_firmware_info();
@@ -408,7 +458,7 @@ void cm_backtrace_assert(uint32_t sp) {
 #ifdef CMB_USING_DUMP_STACK_INFO
         uint32_t stack_start_addr;
         size_t stack_size;
-        get_cur_thread_stack_info(sp, &stack_start_addr, &stack_size);
+        get_cur_thread_stack_info(&tcb_sp, &stack_start_addr, &stack_size);
         dump_stack(stack_start_addr, stack_size, (uint32_t *) sp);
 #endif /* CMB_USING_DUMP_STACK_INFO */
 
@@ -563,7 +613,7 @@ static uint32_t statck_del_fpu_regs(uint32_t fault_handler_lr, uint32_t sp) {
  * @param fault_handler_sp the stack pointer on fault handler
  */
 void cm_backtrace_fault(uint32_t fault_handler_lr, uint32_t fault_handler_sp) {
-    uint32_t stack_pointer = fault_handler_sp, saved_regs_addr = stack_pointer;
+    uint32_t stack_pointer = fault_handler_sp, saved_regs_addr = stack_pointer, tcb_stack_pointer = 0;
     const char *regs_name[] = { "R0 ", "R1 ", "R2 ", "R3 ", "R12", "LR ", "PC ", "PSR" };
 
 #ifdef CMB_USING_DUMP_STACK_INFO
@@ -588,7 +638,7 @@ void cm_backtrace_fault(uint32_t fault_handler_lr, uint32_t fault_handler_sp) {
         saved_regs_addr = stack_pointer = cmb_get_psp();
 
 #ifdef CMB_USING_DUMP_STACK_INFO
-        get_cur_thread_stack_info(stack_pointer, &stack_start_addr, &stack_size);
+        get_cur_thread_stack_info(&tcb_stack_pointer, &stack_start_addr, &stack_size);
 #endif /* CMB_USING_DUMP_STACK_INFO */
 
     } else {
@@ -607,17 +657,32 @@ void cm_backtrace_fault(uint32_t fault_handler_lr, uint32_t fault_handler_sp) {
     stack_pointer = statck_del_fpu_regs(fault_handler_lr, stack_pointer);
 #endif /* (CMB_CPU_PLATFORM_TYPE == CMB_CPU_ARM_CORTEX_M4) || (CMB_CPU_PLATFORM_TYPE == CMB_CPU_ARM_CORTEX_M7) */
 
+    /*
+     * Was the stack pointer adjusted to ensure 8-byte alignment when the exception was taken?
+     * In that case, bit 9 of stacked xPSR/RETPSR is set.
+     */
+    if (((uint32_t *)saved_regs_addr)[7] & (1UL << 9)) {
+        stack_pointer += 4;
+    }
+
 #ifdef CMB_USING_DUMP_STACK_INFO
     /* check stack overflow */
     if (stack_pointer < stack_start_addr || stack_pointer > stack_start_addr + stack_size) {
+        cmb_println("stack_pointer: 0x%08x, stack_start_addr: 0x%08x, stack_end_addr: 0x%08x", stack_pointer, stack_start_addr,
+            stack_start_addr + stack_size);
         stack_is_overflow = true;
+#if (CMB_OS_PLATFORM_TYPE == CMB_OS_PLATFORM_RTT)
+        if (on_thread_before_fault) {
+             /* change the stack start adder to TCB->sp when stack is overflow  */
+            stack_pointer = tcb_stack_pointer;
+        }
+#endif
     }
     /* dump stack information */
     dump_stack(stack_start_addr, stack_size, (uint32_t *) stack_pointer);
 #endif /* CMB_USING_DUMP_STACK_INFO */
 
-    /* the stack frame may be get failed when it is overflow  */
-    if (!stack_is_overflow) {
+    {
         /* dump register */
         cmb_println(print_info[PRINT_REGS_TITLE]);
 

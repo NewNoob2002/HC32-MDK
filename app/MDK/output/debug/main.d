@@ -53,8 +53,13 @@
   ..\..\Arduino\Core\avr\interrupt.h ..\..\Arduino\Core\avr\io.h \
   ..\..\Arduino\Core\avr\dtostrf.h ..\..\Arduino\binary.h \
   ..\..\Arduino\itoa.h ..\..\Arduino\wiring_constants.h \
-  ..\..\Arduino\WVariant.h ..\..\Arduino\Core\drivers\adc\adc.h \
-  ..\..\Arduino\Core\drivers\adc\adc_config.h \
+  ..\..\Arduino\WVariant.h ..\..\Arduino\Core\drivers\gpio\gpio.h \
+  ..\..\Arduino\Core\drivers\gpio\addon_gpio.h \
+  ..\..\Arduino\Core\drivers\adc\adc.h \
+  ..\..\Arduino\Core\drivers\adc\adc_config.h ..\..\Arduino\WVariant.h \
+  ..\..\Arduino\core_types.h ..\..\Arduino\core_debug.h \
+  ..\..\Arduino\Core\drivers\panic\panic.h \
+  ..\..\Arduino\Core\drivers\panic\panic_api.h \
   ..\..\Arduino\Core\variants\hc32f460xx\variant.h \
   ..\..\Arduino\WCharacter.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\ctype.h \
@@ -64,5 +69,5 @@
   ..\..\Arduino\wiring_digital.h \
   ..\..\Arduino\Core\drivers\sysclock\sysclock.h \
   ..\..\Arduino\Core\drivers\gpio\direct_access.h \
-  ..\..\Arduino\WVariant.h ..\..\Libraries\HardWareI2C\HardwareI2c.h \
+  ..\..\bsp\HardWareI2C\HardwareI2c.h \
   ..\..\Libraries\MillisTaskManager\MillisTaskManager.h

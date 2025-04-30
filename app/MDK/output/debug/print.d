@@ -54,8 +54,13 @@
   ..\..\Driver\inc\hc32_ll_sram.h ..\..\Driver\inc\hc32_ll_tmr0.h \
   ..\..\Driver\inc\hc32_ll_tmra.h ..\..\Driver\inc\hc32_ll_usart.h \
   ..\..\Driver\inc\hc32_ll_utility.h \
+  ..\..\Arduino\Core\drivers\gpio\gpio.h \
+  ..\..\Arduino\Core\drivers\gpio\addon_gpio.h \
   ..\..\Arduino\Core\drivers\adc\adc.h \
-  ..\..\Arduino\Core\drivers\adc\adc_config.h \
+  ..\..\Arduino\Core\drivers\adc\adc_config.h ..\..\Arduino\WVariant.h \
+  ..\..\Arduino\core_types.h ..\..\Arduino\core_debug.h \
+  ..\..\Arduino\Core\drivers\panic\panic.h \
+  ..\..\Arduino\Core\drivers\panic\panic_api.h \
   ..\..\Arduino\Core\variants\hc32f460xx\variant.h \
   ..\..\Arduino\WCharacter.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\ctype.h \
@@ -64,5 +69,4 @@
   ..\..\Arduino\Stream.h ..\..\Arduino\Print.h ..\..\Arduino\Printable.h \
   ..\..\Arduino\wiring_digital.h \
   ..\..\Arduino\Core\drivers\sysclock\sysclock.h \
-  ..\..\Arduino\Core\drivers\gpio\direct_access.h \
-  ..\..\Arduino\WVariant.h
+  ..\..\Arduino\Core\drivers\gpio\direct_access.h

@@ -23,8 +23,8 @@
  extern "C" {
 #endif
 
-#include "hc32_ll.h"
-#include "WVariant.h"
+#include <hc32_ll.h>
+#include <WVariant.h>
 #include "wiring_constants.h"
 #include "core_types.h"
 

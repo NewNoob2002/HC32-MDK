@@ -41,6 +41,9 @@
   ..\..\Arduino\WVariant.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdbool.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  ..\..\Arduino\Core\drivers\gpio\gpio.h \
+  ..\..\Arduino\Core\drivers\gpio\addon_gpio.h \
   ..\..\Arduino\Core\drivers\adc\adc.h \
-  ..\..\Arduino\Core\drivers\adc\adc_config.h \
+  ..\..\Arduino\Core\drivers\adc\adc_config.h ..\..\Arduino\WVariant.h \
+  ..\..\Arduino\core_types.h \
   ..\..\Arduino\Core\variants\hc32f460xx\variant.h
