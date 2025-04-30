@@ -901,11 +901,10 @@ ARM Macro Assembler    Page 14
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4 --fpu=SoftVFP
  --depend=.\output\debug\startup_hc32f460.d -o.\output\debug\startup_hc32f460.o
- -I.\RTE\_hc32f460jeta_Debug -IC:\Users\gtc\AppData\Local\Arm\Packs\ARM\CMSIS\5
-.8.0\CMSIS\Core\Include -IC:\Users\gtc\AppData\Local\Arm\Packs\HDSC\HC32F460\1.
-0.12\Device\Include --predefine="__UVISION_VERSION SETA 536" --predefine="_RTE_
- SETA 1" --predefine="_RTE_ SETA 1" --list=.\output\debug\startup_hc32f460.lst 
-..\..\CMSIS\Device\HDSC\hc32f4xx\Source\ARM\startup_hc32f460.s
+ -IC:\Users\guoti\AppData\Local\Arm\Packs\HDSC\HC32F460\1.0.12\Device\Include -
+-predefine="__UVISION_VERSION SETA 536" --predefine="_RTE_ SETA 1" --list=.\out
+put\debug\startup_hc32f460.lst ..\..\CMSIS\Device\HDSC\hc32f4xx\Source\ARM\star
+tup_hc32f460.s
 
 
 

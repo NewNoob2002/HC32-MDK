@@ -29,6 +29,7 @@
 #ifndef _CMB_CFG_H_
 #define _CMB_CFG_H_
 
+<<<<<<< HEAD
 #ifdef	CMB_USER_CFG
 #include "cmb_user_cfg.h"
 #else
@@ -37,10 +38,20 @@ extern "C"
 {
 #endif
 void cmb_printf(const char *__restrict __format, ...);
+=======
+#include <usart.h>
+>>>>>>> f6f97cb766ab510a21feca370b07245adc777d6c
 
+#ifdef	CMB_USER_CFG
+#include "cmb_user_cfg.h"
+#else
 /* print line, must config by user */
+<<<<<<< HEAD
 #define cmb_println(...)               cmb_printf(__VA_ARGS__);cmb_printf("\r\n")
 //#define cmb_println(...)               /* e.g., printf(__VA_ARGS__);printf("\r\n")  or  SEGGER_RTT_printf(0, __VA_ARGS__);SEGGER_RTT_WriteString(0, "\r\n")  */
+=======
+#define cmb_println(...)                cmb_printf(__VA_ARGS__);cmb_printf("\r\n")/* e.g., printf(__VA_ARGS__);printf("\r\n")  or  SEGGER_RTT_printf(0, __VA_ARGS__);SEGGER_RTT_WriteString(0, "\r\n")  */
+>>>>>>> f6f97cb766ab510a21feca370b07245adc777d6c
 /* enable bare metal(no OS) platform */
 /* #define CMB_USING_BARE_METAL_PLATFORM */
 #define CMB_USING_BARE_METAL_PLATFORM
@@ -58,8 +69,11 @@ void cmb_printf(const char *__restrict __format, ...);
 /* #define CMB_PRINT_LANGUAGE             CMB_PRINT_LANGUAGE_ENGLISH(default) or CMB_PRINT_LANGUAGE_CHINESE or CMB_PRINT_LANGUAGE_CHINESE_UTF8 */
 #endif
 
+<<<<<<< HEAD
 #ifdef __cplusplus
 }
 #endif
 
+=======
+>>>>>>> f6f97cb766ab510a21feca370b07245adc777d6c
 #endif /* _CMB_CFG_H_ */

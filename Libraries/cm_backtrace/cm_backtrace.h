@@ -29,7 +29,12 @@
 #ifndef _CORTEXM_BACKTRACE_H_
 #define _CORTEXM_BACKTRACE_H_
 
+<<<<<<< HEAD
 #include "cmb_def.h"
+=======
+#include <cmb_def.h>
+#include <stdlib.h>
+>>>>>>> f6f97cb766ab510a21feca370b07245adc777d6c
 
 #ifdef __cplusplus
 extern "C" {

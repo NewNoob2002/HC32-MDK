@@ -36,6 +36,16 @@
   ..\..\Driver\inc\hc32_ll_sram.h ..\..\Driver\inc\hc32_ll_tmr0.h \
   ..\..\Driver\inc\hc32_ll_tmra.h ..\..\Driver\inc\hc32_ll_usart.h \
   ..\..\Driver\inc\hc32_ll_utility.h \
+  ..\..\Arduino\Core\drivers\gpio\gpio.h \
+  ..\..\Arduino\Core\drivers\gpio\addon_gpio.h \
   ..\..\Arduino\Core\drivers\adc\adc.h \
-  ..\..\Arduino\Core\drivers\adc\adc_config.h \
+  ..\..\Arduino\Core\drivers\adc\adc_config.h ..\..\Arduino\core_types.h \
+  ..\..\Arduino\core_debug.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdio.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  ..\..\Arduino\Core\drivers\panic\panic.h \
+  ..\..\Arduino\Core\drivers\panic\panic_api.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdlib.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
+  ..\..\Arduino\WVariant.h \
   ..\..\Arduino\Core\variants\hc32f460xx\variant.h
