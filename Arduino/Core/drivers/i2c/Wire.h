@@ -1,15 +1,17 @@
 #pragma once
 
 #include <hc32_ll.h>
-#include <Print.h>
-#include <Stream.h>
 #include <gpio.h>
-#include <RingBuffer.h>
 
 #ifndef WIRE_BUFF_SIZE
 #define WIRE_BUFF_SIZE 128
 #endif
 
+/* I2C address mode */
+#define I2C_ADDR_MD_7BIT                (0U)
+#define I2C_ADDR_MD_10BIT               (1U)
+
+#define I2C_ADDR_MD                     (I2C_ADDR_MD_7BIT)
 /**
  * @brief USART peripheral configuration
  */
@@ -35,41 +37,33 @@ struct i2c_peripheral_config_t
      * @brief pin function for usart rx pin
      */
     uint16_t sda_pin_function;
-
-    /**
-     * @brief clock frequency
-     */
-    uint32_t clock_frequency;
 };
 
-class TwoWire: public Stream {
+class TwoWire{
 public:
 	TwoWire(struct i2c_peripheral_config_t *config, gpio_pin_t scl_pin, gpio_pin_t sda_pin);
 
 	void begin();
-	void begin(uint8_t address);
 
 	void end();
 	void setClock(uint32_t clockFreq);
 
-	void beginTransmission(uint8_t address);
+	bool beginTransmission(uint8_t address);
 	uint8_t endTransmission(bool stopBit = true);
-
-	uint8_t requestFrom(uint8_t address, size_t quantity, bool stopBit = true);
 
 	size_t write(uint8_t data);
 	size_t write(const uint8_t * data, size_t quantity);
 
-	virtual int available(void);
-	virtual int read(void);
-	virtual int peek(void);
-	virtual void flush(void);
-
-	using Print::write;
 
 private:
-    RingBuffer<uint8_t> *_rxBuffer;
-    RingBuffer<uint8_t> *_txBuffer;
+    struct i2c_peripheral_config_t *_config;
+
+    gpio_pin_t _scl_pin;
+    gpio_pin_t _sda_pin;
+
+    uint32_t _clock_frequency;
+
+    uint8_t _max_trytimes;
 };
 
 extern TwoWire Wire;
