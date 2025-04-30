@@ -22,27 +22,20 @@
  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
- * Function: It is an head file for this library. You can see all be called functions.
- * Created on: 2016-12-15
+ * Function: Fault handler by GCC assembly code
+ * Created on: 2016-12-16
  */
+ 
+.thumb
+.text
 
-#ifndef _CORTEXM_BACKTRACE_H_
-#define _CORTEXM_BACKTRACE_H_
+/* NOTE: If use this file's HardFault_Handler, please comments the HardFault_Handler code on other file. */
 
-#include "cmb_def.h"
+.global HardFault_Handler 
+HardFault_Handler:
+    MOV     r0, lr                  /* get lr */
+    MOV     r1, sp                  /* get stack pointer (current is MSP) */
+    BL      cm_backtrace_fault
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-void cm_backtrace_init(const char *firmware_name, const char *hardware_ver, const char *software_ver);
-void cm_backtrace_firmware_info(void);
-size_t cm_backtrace_call_stack(uint32_t *buffer, size_t size, uint32_t sp);
-void cm_backtrace_assert(uint32_t sp);
-void cm_backtrace_fault(uint32_t fault_handler_lr, uint32_t fault_handler_sp);
-
-#ifdef __cplusplus
-}
-#endif
-
-#endif /* _CORTEXM_BACKTRACE_H_ */
+Fault_Loop:
+    BL      Fault_Loop              /* while(1) */
