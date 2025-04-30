@@ -1,9 +1,2 @@
-app/MDK/output/
-app/MDK/output/debug/*.o
-app/MDK/output/debug/*.d
-app/MDK/output/debug/*.map
-app/MDK/output/debug/*.hex
-app/MDK/output/debug/*.bin
-app/MDK/output/debug/*.elf
-app/MDK/output/debug/*.dis
-
+/app/MDK/output/*
+/app/MDK/output/debug/*
