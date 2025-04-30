@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>__DEBUG,HC32F460,USE_DDL_DRIVER,</Define>
               <Undefine></Undefine>
-              <IncludePath>..\source;..\..\bsp\ev_hc32f460_lqfp100_v2;..\..\CMSIS\Include;..\..\CMSIS\Device\HDSC\hc32f4xx\Include;..\..\Driver\inc;..\..\Libraries\MillisTaskManager;..\..\Libraries\HardWareI2C;..\..\Arduino;..\..\Arduino\Core\avr;..\..\Arduino\Core\drivers\gpio;..\..\Arduino\Core\drivers\adc;..\..\Arduino\Core\drivers\panic;..\..\Arduino\Core\drivers\irqn;..\..\Arduino\Core\drivers\sysclock;..\..\Arduino\Core\variants\hc32f460xx</IncludePath>
+              <IncludePath>..\source;..\..\bsp\ev_hc32f460_lqfp100_v2;..\..\CMSIS\Include;..\..\CMSIS\Device\HDSC\hc32f4xx\Include;..\..\Driver\inc;..\..\Libraries\MillisTaskManager;..\..\Libraries\HardWareI2C;..\..\Libraries\cm_backtrace;..\..\Libraries\cm_backtrace\Languages\en-US;..\..\Arduino;..\..\Arduino\Core\avr;..\..\Arduino\Core\drivers\gpio;..\..\Arduino\Core\drivers\adc;..\..\Arduino\Core\drivers\panic;..\..\Arduino\Core\drivers\usart;..\..\Arduino\Core\drivers\irqn;..\..\Arduino\Core\drivers\sysclock;..\..\Arduino\Core\variants\hc32f460xx</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -464,9 +464,19 @@
               <FilePath>..\..\Arduino\Stream.cpp</FilePath>
             </File>
             <File>
+              <FileName>HardwareSerial.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\Arduino\HardwareSerial.cpp</FilePath>
+            </File>
+            <File>
               <FileName>irqn.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\..\Arduino\Core\drivers\irqn\irqn.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>usart_config.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\Arduino\Core\drivers\usart\usart_config.cpp</FilePath>
             </File>
           </Files>
         </Group>
@@ -726,7 +736,24 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>::CMSIS</GroupName>
+          <GroupName>cm_backtrace</GroupName>
+          <Files>
+            <File>
+              <FileName>cm_backtrace.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\cm_backtrace\cm_backtrace.c</FilePath>
+            </File>
+            <File>
+              <FileName>FaultHandler.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\Libraries\cm_backtrace\FaultHandler.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>cmb_cfg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\Libraries\cm_backtrace\cmb_cfg.h</FilePath>
+            </File>
+          </Files>
         </Group>
       </Groups>
     </Target>
@@ -734,14 +761,7 @@
 
   <RTE>
     <apis/>
-    <components>
-      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.5.0" condition="ARMv6_7_8-M Device">
-        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.8.0"/>
-        <targetInfos>
-          <targetInfo name="hc32f460jeta_Debug"/>
-        </targetInfos>
-      </component>
-    </components>
+    <components/>
     <files/>
   </RTE>
 

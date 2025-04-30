@@ -22,6 +22,7 @@
 /*******************************************************************************
  * Include files
  ******************************************************************************/
+#include "HardwareSerial.h"
 #include "hc32_ll.h"
 #include <Arduino.h>
 #include "HardwareI2c.h"
@@ -45,48 +46,48 @@ MillisTaskManager task;
  * Local pre-processor symbols/macros ('#define')
  ******************************************************************************/
 /* unlock/lock peripheral */
-#define EXAMPLE_PERIPH_WE               (LL_PERIPH_GPIO | LL_PERIPH_EFM | LL_PERIPH_FCG | \
-                                         LL_PERIPH_PWC_CLK_RMU | LL_PERIPH_SRAM)
-#define EXAMPLE_PERIPH_WP               (LL_PERIPH_EFM | LL_PERIPH_FCG | LL_PERIPH_SRAM)
+#define EXAMPLE_PERIPH_WE (LL_PERIPH_GPIO | LL_PERIPH_EFM | LL_PERIPH_FCG | \
+                           LL_PERIPH_PWC_CLK_RMU | LL_PERIPH_SRAM)
+#define EXAMPLE_PERIPH_WP (LL_PERIPH_EFM | LL_PERIPH_FCG | LL_PERIPH_SRAM)
 
 /* Configuration for Example */
-#define EXAMPLE_SPI_MASTER_SLAVE        (SPI_MASTER)
-#define EXAMPLE_SPI_BUF_LEN             (128UL)
+#define EXAMPLE_SPI_MASTER_SLAVE (SPI_MASTER)
+#define EXAMPLE_SPI_BUF_LEN      (128UL)
 
 /* SPI definition */
-#define SPI_UNIT                        (CM_SPI1)
-#define SPI_CLK                         (FCG1_PERIPH_SPI1)
-#define SPI_TX_EVT_SRC                  (EVT_SRC_SPI1_SPTI)
-#define SPI_RX_EVT_SRC                  (EVT_SRC_SPI1_SPRI)
+#define SPI_UNIT       (CM_SPI1)
+#define SPI_CLK        (FCG1_PERIPH_SPI1)
+#define SPI_TX_EVT_SRC (EVT_SRC_SPI1_SPTI)
+#define SPI_RX_EVT_SRC (EVT_SRC_SPI1_SPRI)
 
 /* DMA definition */
-#define DMA_UNIT                        (CM_DMA1)
-#define DMA_CLK                         (FCG0_PERIPH_DMA1 | FCG0_PERIPH_AOS)
-#define DMA_TX_CH                       (DMA_CH0)
-#define DMA_TX_TRIG_CH                  (AOS_DMA1_0)
+#define DMA_UNIT       (CM_DMA1)
+#define DMA_CLK        (FCG0_PERIPH_DMA1 | FCG0_PERIPH_AOS)
+#define DMA_TX_CH      (DMA_CH0)
+#define DMA_TX_TRIG_CH (AOS_DMA1_0)
 
-#define DMA_RX_CH                       (DMA_CH1)
-#define DMA_RX_INT_CH                   (DMA_INT_TC_CH1)
-#define DMA_RX_TRIG_CH                  (AOS_DMA1_1)
-#define DMA_RX_INT_SRC                  (INT_SRC_DMA1_TC1)
-#define DMA_RX_IRQ_NUM                  (INT006_IRQn)
+#define DMA_RX_CH      (DMA_CH1)
+#define DMA_RX_INT_CH  (DMA_INT_TC_CH1)
+#define DMA_RX_TRIG_CH (AOS_DMA1_1)
+#define DMA_RX_INT_SRC (INT_SRC_DMA1_TC1)
+#define DMA_RX_IRQ_NUM (INT006_IRQn)
 
 /* SS = PA7 */
-#define SPI_SS_PORT                     (GPIO_PORT_A)
-#define SPI_SS_PIN                      (GPIO_PIN_07)
-#define SPI_SS_FUNC                     (GPIO_FUNC_42)
+#define SPI_SS_PORT (GPIO_PORT_A)
+#define SPI_SS_PIN  (GPIO_PIN_07)
+#define SPI_SS_FUNC (GPIO_FUNC_42)
 /* SCK = PA8 */
-#define SPI_SCK_PORT                    (GPIO_PORT_A)
-#define SPI_SCK_PIN                     (GPIO_PIN_08)
-#define SPI_SCK_FUNC                    (GPIO_FUNC_43)
+#define SPI_SCK_PORT (GPIO_PORT_A)
+#define SPI_SCK_PIN  (GPIO_PIN_08)
+#define SPI_SCK_FUNC (GPIO_FUNC_43)
 /* MOSI = PB0 */
-#define SPI_MOSI_PORT                   (GPIO_PORT_B)
-#define SPI_MOSI_PIN                    (GPIO_PIN_00)
-#define SPI_MOSI_FUNC                   (GPIO_FUNC_40)
+#define SPI_MOSI_PORT (GPIO_PORT_B)
+#define SPI_MOSI_PIN  (GPIO_PIN_00)
+#define SPI_MOSI_FUNC (GPIO_FUNC_40)
 /* MISO = PC5 */
-#define SPI_MISO_PORT                   (GPIO_PORT_C)
-#define SPI_MISO_PIN                    (GPIO_PIN_05)
-#define SPI_MISO_FUNC                   (GPIO_FUNC_41)
+#define SPI_MISO_PORT (GPIO_PORT_C)
+#define SPI_MISO_PIN  (GPIO_PIN_05)
+#define SPI_MISO_FUNC (GPIO_FUNC_41)
 
 /*******************************************************************************
  * Global variable definitions (declared in header file with 'extern')
@@ -130,15 +131,15 @@ static void SPI_Config(void)
     stc_gpio_init_t stcGpioInit;
 
     (void)GPIO_StructInit(&stcGpioInit);
-    stcGpioInit.u16PinDrv       = PIN_HIGH_DRV;
-    (void)GPIO_Init(SPI_SS_PORT,   SPI_SS_PIN,   &stcGpioInit);
-    (void)GPIO_Init(SPI_SCK_PORT,  SPI_SCK_PIN,  &stcGpioInit);
+    stcGpioInit.u16PinDrv = PIN_HIGH_DRV;
+    (void)GPIO_Init(SPI_SS_PORT, SPI_SS_PIN, &stcGpioInit);
+    (void)GPIO_Init(SPI_SCK_PORT, SPI_SCK_PIN, &stcGpioInit);
     (void)GPIO_Init(SPI_MOSI_PORT, SPI_MOSI_PIN, &stcGpioInit);
     (void)GPIO_Init(SPI_MISO_PORT, SPI_MISO_PIN, &stcGpioInit);
 
     /* Configure Port */
-    GPIO_SetFunc(SPI_SS_PORT,   SPI_SS_PIN,   SPI_SS_FUNC);
-    GPIO_SetFunc(SPI_SCK_PORT,  SPI_SCK_PIN,  SPI_SCK_FUNC);
+    GPIO_SetFunc(SPI_SS_PORT, SPI_SS_PIN, SPI_SS_FUNC);
+    GPIO_SetFunc(SPI_SCK_PORT, SPI_SCK_PIN, SPI_SCK_FUNC);
     GPIO_SetFunc(SPI_MOSI_PORT, SPI_MOSI_PIN, SPI_MOSI_FUNC);
     GPIO_SetFunc(SPI_MISO_PORT, SPI_MISO_PIN, SPI_MISO_FUNC);
 
@@ -217,27 +218,27 @@ static void DMA_ReloadConfig(void)
 
 static void led_blink()
 {
-		GPIO_TogglePins(GPIO_PORT_B, GPIO_PIN_14);
+    GPIO_TogglePins(GPIO_PORT_B, GPIO_PIN_14);
+		Serial.printf("%s", "hello, String Test\n");
     delay_ms(100);
 }
 
 static void dmaSend()
 {
-            /* Wait key trigger in master mode */
-        enRxCompleteFlag = RESET;
-        memset(u8RxBuf, 0, EXAMPLE_SPI_BUF_LEN);
-        DMA_ReloadConfig();
-        /* Enable SPI */
-        SPI_Cmd(SPI_UNIT, ENABLE);
-        /* Waiting for completion of reception */
-        while (RESET == enRxCompleteFlag) {
-        }
-        /* Disable SPI */
-        SPI_Cmd(SPI_UNIT, DISABLE);
+    /* Wait key trigger in master mode */
+    enRxCompleteFlag = RESET;
+    memset(u8RxBuf, 0, EXAMPLE_SPI_BUF_LEN);
+    DMA_ReloadConfig();
+    /* Enable SPI */
+    SPI_Cmd(SPI_UNIT, ENABLE);
+    /* Waiting for completion of reception */
+    while (RESET == enRxCompleteFlag) {
+    }
+    /* Disable SPI */
+    SPI_Cmd(SPI_UNIT, DISABLE);
 
-        /* Wait for the slave to be ready */
-        delay_ms(1U);
-    
+    /* Wait for the slave to be ready */
+    delay_ms(1U);
 }
 /**
  * @brief  Main function of SPI tx/rx dma project
@@ -249,18 +250,19 @@ int main(void)
     /* Peripheral registers write unprotected */
     LL_PERIPH_WE(EXAMPLE_PERIPH_WE);
     /* Configure BSP */
-		clock_init();
+    clock_init();
     systick_init();
-		
-		pinMode(PB14, OUTPUT);
-		Slave_Initialize();
+
+    pinMode(PB14, OUTPUT);
+    Serial.begin(115200);
+//    Slave_Initialize();
     /* Peripheral registers write protected */
     LL_PERIPH_WP(EXAMPLE_PERIPH_WP);
-    
+
     task.Register(led_blink, 10);
-//    task.Register(dmaSend, 10);
-    
-    while(1) {
+    //    task.Register(dmaSend, 10);
+
+    while (1) {
         task.Running(millis());
     }
 }

@@ -1,6 +1,6 @@
 #pragma once
-#include <hc32_ddl.h>
-#include "../../RingBuffer.h"
+#include <hc32_ll.h>
+#include <RingBuffer.h>
 
 /**
  * @brief USART peripheral configuration
@@ -10,7 +10,7 @@ struct usart_peripheral_config_t
     /**
      * @brief USART peripheral register base address
      */
-    M4_USART_TypeDef *register_base;
+    CM_USART_TypeDef *register_base;
 
     /**
      * @brief USART peripheral clock id
@@ -21,12 +21,12 @@ struct usart_peripheral_config_t
     /**
      * @brief pin function for usart tx pin
      */
-    en_port_func_t tx_pin_function;
+    uint16_t tx_pin_function;
 
     /**
      * @brief pin function for usart rx pin
      */
-    en_port_func_t rx_pin_function;
+    uint16_t rx_pin_function;
 };
 
 /**
@@ -57,9 +57,9 @@ struct usart_interrupt_config_t
 struct usart_interrupts_config_t
 {
     /**
-     * @brief USART receive data available interrupt configuration
+     * @brief USART receive data full interrupt configuration
      */
-    usart_interrupt_config_t rx_data_available;
+    usart_interrupt_config_t rx_data_full;
 
     /**
      * @brief USART receive error interrupt configuration
@@ -278,3 +278,21 @@ extern usart_config_t USART1_config;
 extern usart_config_t USART2_config;
 extern usart_config_t USART3_config;
 extern usart_config_t USART4_config;
+
+#define SERIAL_1_ENABLE 1
+#define SERIAL_1_TX_PIN PA4
+#define SERIAL_1_RX_PIN PA5
+
+#define SERIAL_2_ENABLE 0
+#define SERIAL_2_TX_PIN PB6
+#define SERIAL_2_RX_PIN PB7
+
+#define SERIAL_3_ENABLE 0
+#define SERIAL_3_TX_PIN PC10
+#define SERIAL_3_RX_PIN PC11
+
+#define SERIAL_4_ENABLE 0
+#define SERIAL_4_TX_PIN PB10
+#define SERIAL_4_RX_PIN PB11
+
+

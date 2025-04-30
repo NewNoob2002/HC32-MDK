@@ -1,0 +1,471 @@
+{
+  "name": "hc32f460jeta",
+  "type": "ARM",
+  "dependenceList": [],
+  "srcDirs": [],
+  "virtualFolder": {
+    "name": "<virtual_root>",
+    "files": [],
+    "folders": [
+      {
+        "name": "App",
+        "files": [
+          {
+            "path": "app/source/main.cpp"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "Arduino",
+        "files": [
+          {
+            "path": "Arduino/Core/variants/hc32f460xx/variant.cpp"
+          },
+          {
+            "path": "Arduino/wiring_digital.cpp"
+          },
+          {
+            "path": "Arduino/wiring_digital.h"
+          },
+          {
+            "path": "Arduino/WString.cpp"
+          },
+          {
+            "path": "Arduino/WMath.cpp"
+          },
+          {
+            "path": "Arduino/Core/drivers/adc/adc.cpp"
+          },
+          {
+            "path": "Arduino/Core/drivers/adc/adc_config.cpp"
+          },
+          {
+            "path": "Arduino/Core/drivers/gpio/addon_gpio.c"
+          },
+          {
+            "path": "Arduino/Core/drivers/sysclock/sysclock.cpp"
+          },
+          {
+            "path": "Arduino/Core/drivers/sysclock/systick.cpp"
+          },
+          {
+            "path": "Arduino/itoa.c"
+          },
+          {
+            "path": "Arduino/Core/avr/dtostrf.c"
+          },
+          {
+            "path": "Arduino/Print.cpp"
+          },
+          {
+            "path": "Arduino/Stream.cpp"
+          },
+          {
+            "path": "Arduino/Core/drivers/irqn/irqn.cpp"
+          },
+          {
+            "path": "Arduino/HardwareSerial.cpp"
+          },
+          {
+            "path": "Arduino/Core/drivers/usart/usart_config.cpp"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "bsp",
+        "files": [
+          {
+            "path": "bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "cmsis",
+        "files": [
+          {
+            "path": "CMSIS/Device/HDSC/hc32f4xx/Source/system_hc32f460.c"
+          },
+          {
+            "path": "CMSIS/Device/HDSC/hc32f4xx/Source/ARM/startup_hc32f460.s"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "driver",
+        "files": [
+          {
+            "path": "Driver/src/hc32_ll.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_adc.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_aes.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_aos.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_can.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_clk.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_cmp.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_crc.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_dbgc.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_dcu.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_dma.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_efm.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_emb.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_event_port.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_fcg.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_fcm.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_gpio.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_hash.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_i2c.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_i2s.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_icg.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_interrupts.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_keyscan.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_mpu.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_ots.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_pwc.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_qspi.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_rmu.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_rtc.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_sdioc.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_spi.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_sram.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_swdt.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_tmr0.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_tmr4.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_tmr6.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_tmra.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_trng.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_usart.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_utility.c"
+          },
+          {
+            "path": "Driver/src/hc32_ll_wdt.c"
+          },
+          {
+            "path": "Driver/src/hc32f460_ll_interrupts_share.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "library",
+        "files": [
+          {
+            "path": "Libraries/MillisTaskManager/MillisTaskManager.cpp"
+          },
+          {
+            "path": "Libraries/HardWareI2c/HardwareI2c.cpp"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "cm_backtrace",
+        "files": [
+          {
+            "path": "Libraries/cm_backtrace/cm_backtrace.c"
+          },
+          {
+            "path": "Libraries/cm_backtrace/FaultHandler.cpp"
+          },
+          {
+            "path": "Libraries/cm_backtrace/cmb_cfg.h"
+          }
+        ],
+        "folders": []
+      }
+    ]
+  },
+  "outDir": "build",
+  "deviceName": "HC32F460JETA",
+  "packDir": ".pack/HDSC/HC32F460.1.0.12",
+  "miscInfo": {
+    "uid": "2285de2c212d7402271850c8de5be132"
+  },
+  "targets": {
+    "hc32f460jeta_Debug": {
+      "excludeList": [],
+      "toolchain": "AC6",
+      "compileConfig": {
+        "cpuType": "Cortex-M4",
+        "floatingPointHardware": "none",
+        "scatterFilePath": "app/MDK/config/linker/HC32F460xE.sct",
+        "useCustomScatterFile": true,
+        "storageLayout": {
+          "RAM": [
+            {
+              "tag": "RAM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            },
+            {
+              "tag": "RAM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            },
+            {
+              "tag": "RAM",
+              "id": 3,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            },
+            {
+              "tag": "IRAM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x1fff8000",
+                "size": "0x2f000"
+              },
+              "isChecked": true,
+              "noInit": false
+            },
+            {
+              "tag": "IRAM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x200f0000",
+                "size": "0x1000"
+              },
+              "isChecked": false,
+              "noInit": false
+            }
+          ],
+          "ROM": [
+            {
+              "tag": "ROM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            },
+            {
+              "tag": "ROM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            },
+            {
+              "tag": "ROM",
+              "id": 3,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            },
+            {
+              "tag": "IROM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x80000"
+              },
+              "isChecked": true,
+              "isStartup": true
+            },
+            {
+              "tag": "IROM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x3000c00",
+                "size": "0x3c0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            }
+          ]
+        },
+        "options": "null"
+      },
+      "uploader": "JLink",
+      "uploadConfig": {
+        "bin": "",
+        "baseAddr": "",
+        "cpuInfo": {
+          "vendor": "XHSC",
+          "cpuName": "HC32F460xE"
+        },
+        "proType": 1,
+        "speed": 8000,
+        "otherCmds": ""
+      },
+      "uploadConfigMap": {},
+      "custom_dep": {
+        "name": "default",
+        "incList": [
+          "app/source",
+          "bsp/ev_hc32f460_lqfp100_v2",
+          "CMSIS/Include",
+          "CMSIS/Device/HDSC/hc32f4xx/Include",
+          "Driver/inc",
+          "Libraries/MillisTaskManager",
+          "Libraries/HardWareI2C",
+          "Libraries/cm_backtrace",
+          "Libraries/cm_backtrace/Languages/en-US",
+          "Arduino",
+          "Arduino/Core/avr",
+          "Arduino/Core/drivers/gpio",
+          "Arduino/Core/drivers/adc",
+          "Arduino/Core/drivers/panic",
+          "Arduino/Core/drivers/irqn",
+          "Arduino/Core/drivers/sysclock",
+          "Arduino/Core/variants/hc32f460xx",
+          ".cmsis/include",
+          "app/MDK/RTE/_hc32f460jeta_Debug",
+          "Arduino/Core/drivers/usart"
+        ],
+        "libList": [],
+        "defineList": [
+          "__DEBUG",
+          "HC32F460",
+          "USE_DDL_DRIVER"
+        ]
+      },
+      "builderOptions": {
+        "AC6": {
+          "version": 3,
+          "beforeBuildTasks": [],
+          "afterBuildTasks": [
+            {
+              "name": "[Copy linker output for Keil User Commands]",
+              "command": "cd .\\app\\MDK && mkdir ${KEIL_OUTPUT_DIR} & copy \"${OutDir}\\${ProjectName}.axf\" \"${KEIL_OUTPUT_DIR}\\${ProjectName}.axf\"",
+              "disable": false,
+              "abortAfterFailed": true
+            },
+            {
+              "name": "fromelf --bin -o \"$L@L.bin\" \"#L",
+              "command": "cd .\\app\\MDK && fromelf --bin -o \"${KEIL_OUTPUT_DIR}\\${ProjectName}.bin\" \"${KEIL_OUTPUT_DIR}\\${ProjectName}.axf",
+              "disable": false,
+              "abortAfterFailed": true
+            }
+          ],
+          "global": {
+            "use-microLIB": false,
+            "output-debug-info": "enable"
+          },
+          "c/cpp-compiler": {
+            "optimization": "level-0",
+            "language-c": "c99",
+            "language-cpp": "c++11",
+            "link-time-optimization": false,
+            "one-elf-section-per-function": true,
+            "short-enums#wchar": true,
+            "warnings": "ac5-like-warnings"
+          },
+          "asm-compiler": {
+            "$use": "asm-auto"
+          },
+          "linker": {
+            "output-format": "elf",
+            "misc-controls": "--keep=*Handler",
+            "xo-base": "",
+            "ro-base": "0x0",
+            "rw-base": "0x1FFF8000"
+          }
+        }
+      }
+    }
+  },
+  "version": "3.5"
+}

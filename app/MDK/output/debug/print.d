@@ -60,9 +60,10 @@
   ..\..\Arduino\WCharacter.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\ctype.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\ctype.h ..\..\Arduino\WString.h \
-  ..\..\Arduino\WMath.h ..\..\Arduino\RingBuf.h ..\..\Arduino\Arduino.h \
+  ..\..\Arduino\WMath.h ..\..\Arduino\HardwareSerial.h \
   ..\..\Arduino\Stream.h ..\..\Arduino\Print.h ..\..\Arduino\Printable.h \
-  ..\..\Arduino\wiring_digital.h \
+  ..\..\Arduino\Core\drivers\usart\usart_config.h \
+  ..\..\Arduino\RingBuffer.h ..\..\Arduino\wiring_digital.h \
   ..\..\Arduino\Core\drivers\sysclock\sysclock.h \
   ..\..\Arduino\Core\drivers\gpio\direct_access.h \
   ..\..\Arduino\WVariant.h

@@ -1,13 +1,10 @@
+#include "hc32_ll_def.h"
+#include "hc32_ll_usart.h"
 #include "usart_config.h"
-#include "../../core_hooks.h"
+// #include "../../core_hooks.h"
 
 #define USART_COUNT 4
-usart_config_t *USARTx[USART_COUNT] = {
-    &USART1_config,
-    &USART2_config,
-    &USART3_config,
-    &USART4_config,
-};
+extern usart_config_t *USARTx[USART_COUNT];
 
 //
 // IRQ handler implementations
@@ -93,11 +90,11 @@ static void USART_rx_data_available_irq(uint8_t x)
     usart_config_t *usartx = USARTx[x - 1];
 
     // get the received byte and push it to the rx buffer
-    uint8_t ch = USART_RecData(usartx->peripheral.register_base);
-    core_hook_usart_rx_irq(ch, x);
+    uint8_t ch = USART_ReadData(usartx->peripheral.register_base);
+    // core_hook_usart_rx_irq(ch, x);
     
     bool rxOverrun;
-    usartx->state.rx_buffer->push(ch, /*force*/true, rxOverrun);
+    usartx->state.rx_buffer->push(ch, true, rxOverrun);
 
     // if the buffer was overrun, set the overrun error flag
     if (rxOverrun)
@@ -115,9 +112,9 @@ static void USART_rx_error_irq(uint8_t x)
     usart_config_t *usartx = USARTx[x - 1];
 
     // check and clear error flags
-    if (USART_GetStatus(usartx->peripheral.register_base, UsartFrameErr) == Set)
+    if (USART_GetStatus(usartx->peripheral.register_base, USART_FLAG_FRAME_ERR) == SET)
     {
-        USART_ClearStatus(usartx->peripheral.register_base, UsartFrameErr);
+        USART_ClearStatus(usartx->peripheral.register_base, USART_FLAG_FRAME_ERR);
         usartx->state.rx_error = usart_receive_error_t::FramingError;
 
         #ifdef USART_RX_ERROR_COUNTERS_ENABLE
@@ -125,9 +122,9 @@ static void USART_rx_error_irq(uint8_t x)
         #endif
     }
 
-    if (USART_GetStatus(usartx->peripheral.register_base, UsartParityErr) == Set)
+    if (USART_GetStatus(usartx->peripheral.register_base, USART_FLAG_PARITY_ERR) == SET)
     {
-        USART_ClearStatus(usartx->peripheral.register_base, UsartParityErr);
+        USART_ClearStatus(usartx->peripheral.register_base, USART_FLAG_PARITY_ERR);
         usartx->state.rx_error = usart_receive_error_t::ParityError;
 
         #ifdef USART_RX_ERROR_COUNTERS_ENABLE
@@ -135,9 +132,9 @@ static void USART_rx_error_irq(uint8_t x)
         #endif
     }
 
-    if (USART_GetStatus(usartx->peripheral.register_base, UsartOverrunErr) == Set)
+    if (USART_GetStatus(usartx->peripheral.register_base, USART_FLAG_OVERRUN) == SET)
     {
-        USART_ClearStatus(usartx->peripheral.register_base, UsartOverrunErr);
+        USART_ClearStatus(usartx->peripheral.register_base, USART_FLAG_OVERRUN);
         usartx->state.rx_error = usart_receive_error_t::OverrunError;
 
         #ifdef USART_RX_ERROR_COUNTERS_ENABLE
@@ -155,15 +152,15 @@ static void USART_tx_buffer_empty_irq(uint8_t x)
     if (usartx->state.tx_buffer->pop(ch))
     {
         // call hook, then send the byte
-        core_hook_usart_tx_irq(ch, x);
-        USART_SendData(usartx->peripheral.register_base, ch);
+        // core_hook_usart_tx_irq(ch, x);
+        USART_WriteData(usartx->peripheral.register_base, ch);
     }
     else
     {
         // disable TX empty interrupt, and enable TX complete interrupt
         // (tx complete interrupt will disable TX when it fires)
-        USART_FuncCmd(usartx->peripheral.register_base, UsartTxEmptyInt, Disable);
-        USART_FuncCmd(usartx->peripheral.register_base, UsartTxCmpltInt, Enable);
+        USART_FuncCmd(usartx->peripheral.register_base, USART_INT_TX_EMPTY, DISABLE);
+        USART_FuncCmd(usartx->peripheral.register_base, USART_INT_TX_CPLT, ENABLE);
     }
 }
 
@@ -172,8 +169,8 @@ static void USART_tx_complete_irq(uint8_t x)
     usart_config_t *usartx = USARTx[x - 1];
 
     // disable TX and TX complete interrupts
-    USART_FuncCmd(usartx->peripheral.register_base, UsartTxCmpltInt, Disable);
-    USART_FuncCmd(usartx->peripheral.register_base, UsartTx, Disable);
+    USART_FuncCmd(usartx->peripheral.register_base, USART_INT_TX_CPLT, DISABLE);
+    USART_FuncCmd(usartx->peripheral.register_base, USART_TX, DISABLE);
 }
 
 //
