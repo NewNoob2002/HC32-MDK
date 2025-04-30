@@ -1,7 +1,12 @@
 ./output/debug/main.o: ..\source\main.cpp ..\..\Arduino\HardwareSerial.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdint.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__config \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h ..\..\Arduino\Stream.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  ..\..\Arduino\RingBuffer.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stddef.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stddef.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__nullptr \
+  ..\..\Arduino\Stream.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\inttypes.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\inttypes.h \
   ..\..\Arduino\Print.h \
@@ -19,9 +24,6 @@
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
   ..\..\Arduino\Core\drivers\usart\usart_config.h \
   ..\..\Driver\inc\hc32_ll.h ..\..\Driver\inc\hc32_ll_def.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stddef.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stddef.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__nullptr \
   ..\..\CMSIS\Device\HDSC\hc32f4xx\Include\hc32f4xx.h \
   ..\..\CMSIS\Device\HDSC\hc32f4xx\Include\hc32f460.h \
   ..\..\CMSIS\Include\core_cm4.h ..\..\CMSIS\Include\cmsis_version.h \
@@ -66,5 +68,8 @@
   ..\..\Arduino\HardwareSerial.h ..\..\Arduino\wiring_digital.h \
   ..\..\Arduino\Core\drivers\sysclock\sysclock.h \
   ..\..\Arduino\Core\drivers\gpio\direct_access.h \
-  ..\..\Arduino\WVariant.h ..\..\Libraries\HardWareI2C\HardwareI2c.h \
+  ..\..\Arduino\WVariant.h ..\..\Libraries\cm_backtrace\cm_backtrace.h \
+  ..\..\Libraries\cm_backtrace\cmb_def.h \
+  ..\..\Libraries\cm_backtrace\cmb_cfg.h \
+  ..\..\Arduino\Core\drivers\i2c\HardwareI2cSlave.h \
   ..\..\Libraries\MillisTaskManager\MillisTaskManager.h

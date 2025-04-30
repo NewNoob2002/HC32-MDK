@@ -1,6 +1,6 @@
 #include <string.h>
-
-#include "HardwareI2c.h"
+#include <irqn.h>
+#include "HardwareI2cSlave.h"
 /*******************************************************************************
  * Local type definitions ('typedef')
  ******************************************************************************/
@@ -258,6 +258,38 @@ static void I2C_RXI_Callback(void)
     }
 }
 
+inline void i2c_irq_register(stc_irq_signin_config_t &irq, const char *name, uint32_t priority = DDL_IRQ_PRIO_05)
+{
+    // get auto-assigned irqn and set in irq struct
+    IRQn_Type irqn;
+    irqn_aa_get(irqn, name);
+    irq.enIRQn = irqn;
+
+    // create irq registration struct
+    stc_irq_signin_config_t irqConf = {
+        .enIntSrc    = irq.enIntSrc,
+        .enIRQn      = irq.enIRQn,
+        .pfnCallback = irq.pfnCallback,
+    };
+
+    // register and enable irq
+    INTC_IrqSignIn(&irqConf);
+    NVIC_SetPriority(irqConf.enIRQn, priority);
+    NVIC_ClearPendingIRQ(irqConf.enIRQn);
+    NVIC_EnableIRQ(irqConf.enIRQn);
+}
+
+inline void i2c_irq_resign(stc_irq_signin_config_t &irq, const char *name)
+{
+    // disable interrupt and clear pending
+    NVIC_DisableIRQ(irq.enIRQn);
+    NVIC_ClearPendingIRQ(irq.enIRQn);
+    INTC_IrqSignOut(irq.enIRQn);
+
+    // resign auto-assigned irqn
+    irqn_aa_resign(irq.enIRQn, name);
+}
+
 /**
  * @brief   Initialize the I2C peripheral for slave
  * @param   None
@@ -297,31 +329,40 @@ int32_t Slave_Initialize(void)
 #else
         I2C_SlaveAddrConfig(I2C_UNIT, I2C_ADDR0, I2C_ADDR_7BIT, DEVICE_ADDR);
 #endif
-        stcIrqRegCfg.enIRQn = I2C_EEI_IRQN_DEF;
         stcIrqRegCfg.enIntSrc = I2C_INT_EEI_DEF;
         stcIrqRegCfg.pfnCallback = &I2C_EEI_Callback;
-        (void)INTC_IrqSignIn(&stcIrqRegCfg);
-        NVIC_ClearPendingIRQ(stcIrqRegCfg.enIRQn);
-        NVIC_SetPriority(stcIrqRegCfg.enIRQn, DDL_IRQ_PRIO_DEFAULT);
-        NVIC_EnableIRQ(stcIrqRegCfg.enIRQn);
+        i2c_irq_register(stcIrqRegCfg, "I2C_EEI_IRQN_DEF");
+        // stcIrqRegCfg.enIRQn = I2C_EEI_IRQN_DEF;
+        // stcIrqRegCfg.enIntSrc = I2C_INT_EEI_DEF;
+        // stcIrqRegCfg.pfnCallback = &I2C_EEI_Callback;
+        // (void)INTC_IrqSignIn(&stcIrqRegCfg);
+        // NVIC_ClearPendingIRQ(stcIrqRegCfg.enIRQn);
+        // NVIC_SetPriority(stcIrqRegCfg.enIRQn, DDL_IRQ_PRIO_DEFAULT);
+        // NVIC_EnableIRQ(stcIrqRegCfg.enIRQn);
 
-        stcIrqRegCfg.enIRQn = I2C_RXI_IRQN_DEF;
         stcIrqRegCfg.enIntSrc = I2C_INT_RXI_DEF;
         stcIrqRegCfg.pfnCallback = &I2C_RXI_Callback;
-        (void)INTC_IrqSignIn(&stcIrqRegCfg);
-        NVIC_ClearPendingIRQ(stcIrqRegCfg.enIRQn);
-        NVIC_SetPriority(stcIrqRegCfg.enIRQn, DDL_IRQ_PRIO_DEFAULT);
-        NVIC_EnableIRQ(stcIrqRegCfg.enIRQn);
+        i2c_irq_register(stcIrqRegCfg, "I2C_RXI_IRQN_DEF");
+        // stcIrqRegCfg.enIRQn = I2C_RXI_IRQN_DEF;
+        // stcIrqRegCfg.enIntSrc = I2C_INT_RXI_DEF;
+        // stcIrqRegCfg.pfnCallback = &I2C_RXI_Callback;
+        // (void)INTC_IrqSignIn(&stcIrqRegCfg);
+        // NVIC_ClearPendingIRQ(stcIrqRegCfg.enIRQn);
+        // NVIC_SetPriority(stcIrqRegCfg.enIRQn, DDL_IRQ_PRIO_DEFAULT);
+        // NVIC_EnableIRQ(stcIrqRegCfg.enIRQn);
 
-        stcIrqRegCfg.enIRQn = I2C_TEI_IRQN_DEF;
         stcIrqRegCfg.enIntSrc = I2C_INT_TEI_DEF;
         stcIrqRegCfg.pfnCallback = &I2C_TEI_Callback;
-        (void)INTC_IrqSignIn(&stcIrqRegCfg);
-        NVIC_ClearPendingIRQ(stcIrqRegCfg.enIRQn);
-        NVIC_SetPriority(stcIrqRegCfg.enIRQn, DDL_IRQ_PRIO_DEFAULT);
-        NVIC_EnableIRQ(stcIrqRegCfg.enIRQn);
+        i2c_irq_register(stcIrqRegCfg, "I2C_TEI_IRQN_DEF");
+        // stcIrqRegCfg.enIRQn = I2C_TEI_IRQN_DEF;
+        // stcIrqRegCfg.enIntSrc = I2C_INT_TEI_DEF;
+        // stcIrqRegCfg.pfnCallback = &I2C_TEI_Callback;
+        // (void)INTC_IrqSignIn(&stcIrqRegCfg);
+        // NVIC_ClearPendingIRQ(stcIrqRegCfg.enIRQn);
+        // NVIC_SetPriority(stcIrqRegCfg.enIRQn, DDL_IRQ_PRIO_DEFAULT);
+        // NVIC_EnableIRQ(stcIrqRegCfg.enIRQn);
 				
-				I2C_Cmd(I2C_UNIT, ENABLE);
+		I2C_Cmd(I2C_UNIT, ENABLE);
         /* Config slave address match and receive full interrupt function*/
         I2C_IntCmd(I2C_UNIT, I2C_INT_MATCH_ADDR0 | I2C_INT_RX_FULL, ENABLE);
     }

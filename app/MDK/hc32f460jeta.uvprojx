@@ -313,7 +313,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
+            <Optim>0</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -337,9 +337,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>__DEBUG,HC32F460,USE_DDL_DRIVER,</Define>
+              <Define>__DEBUG,HC32F460,USE_DDL_DRIVER,__CORE_DEBUG</Define>
               <Undefine></Undefine>
-              <IncludePath>..\source;..\..\bsp\ev_hc32f460_lqfp100_v2;..\..\CMSIS\Include;..\..\CMSIS\Device\HDSC\hc32f4xx\Include;..\..\Driver\inc;..\..\Libraries\MillisTaskManager;..\..\Libraries\HardWareI2C;..\..\Libraries\cm_backtrace;..\..\Libraries\cm_backtrace\Languages\en-US;..\..\Arduino;..\..\Arduino\Core\avr;..\..\Arduino\Core\drivers\gpio;..\..\Arduino\Core\drivers\adc;..\..\Arduino\Core\drivers\panic;..\..\Arduino\Core\drivers\usart;..\..\Arduino\Core\drivers\irqn;..\..\Arduino\Core\drivers\sysclock;..\..\Arduino\Core\variants\hc32f460xx</IncludePath>
+              <IncludePath>..\source;..\..\bsp\ev_hc32f460_lqfp100_v2;..\..\CMSIS\Include;..\..\CMSIS\Device\HDSC\hc32f4xx\Include;..\..\Driver\inc;..\..\Libraries\MillisTaskManager;..\..\Libraries\cm_backtrace;..\..\Libraries\cm_backtrace\Languages\en-US;..\..\Arduino;..\..\Arduino\Core\avr;..\..\Arduino\Core\drivers\gpio;..\..\Arduino\Core\drivers\adc;..\..\Arduino\Core\drivers\panic;..\..\Arduino\Core\drivers\usart;..\..\Arduino\Core\drivers\irqn;..\..\Arduino\Core\drivers\sysclock;..\..\Arduino\Core\variants\hc32f460xx;..\..\Arduino\Core\drivers\i2c;..\..\Arduino\Core\drivers\spi</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -477,6 +477,11 @@
               <FileName>usart_config.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\..\Arduino\Core\drivers\usart\usart_config.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Wire.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\Arduino\Core\drivers\i2c\Wire.cpp</FilePath>
             </File>
           </Files>
         </Group>
@@ -729,29 +734,9 @@
               <FilePath>..\..\Libraries\MillisTaskManager\MillisTaskManager.cpp</FilePath>
             </File>
             <File>
-              <FileName>HardwareI2c.cpp</FileName>
+              <FileName>HardwareI2cSlave.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>..\..\Libraries\HardWareI2c\HardwareI2c.cpp</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>cm_backtrace</GroupName>
-          <Files>
-            <File>
-              <FileName>cm_backtrace.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Libraries\cm_backtrace\cm_backtrace.c</FilePath>
-            </File>
-            <File>
-              <FileName>FaultHandler.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\..\Libraries\cm_backtrace\FaultHandler.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>cmb_cfg.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\Libraries\cm_backtrace\cmb_cfg.h</FilePath>
+              <FilePath>..\..\Arduino\Core\drivers\i2c\HardwareI2cSlave.cpp</FilePath>
             </File>
           </Files>
         </Group>

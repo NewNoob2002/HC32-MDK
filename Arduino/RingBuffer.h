@@ -175,6 +175,16 @@ public:
         return this->buffer;
     }
 
+    size_t get_write_index()
+    {
+        return this->_wi;
+    }
+
+    size_t get_read_index()
+    {
+        return this->_ri;
+    }
+    
 private:
     bool _push(TElement element)
     {

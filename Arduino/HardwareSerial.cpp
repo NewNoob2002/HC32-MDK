@@ -1,4 +1,6 @@
+#include "core_log.h"
 #include "hc32_ll_usart.h"
+#include "hc32f460.h"
 #include <hc32_ll.h>
 #include <gpio.h>
 #include <irqn.h>
@@ -9,6 +11,8 @@
 
 #if SERIAL_1_ENABLE
 HardwareSerial Serial(&USART1_config, SERIAL_1_TX_PIN, SERIAL_1_RX_PIN);
+uint8_t usart1_rx_buffer[SERIAL_RX_BUFFER_SIZE];
+uint8_t usart1_tx_buffer[SERIAL_TX_BUFFER_SIZE];
 #endif
 
 #if SERIAL_2_ENABLE
@@ -64,7 +68,7 @@ inline void usart_irq_resign(usart_interrupt_config_t &irq, const char *name)
     : reg == CM_USART4 ? 4  \
                        : 0
 #define USART_DEBUG_PRINTF(fmt, ...) \
-    CORE_DEBUG_PRINTF("[USART%d] " fmt, USART_REG_TO_X(this->config->peripheral.register_base), ##__VA_ARGS__)
+    CORE_DEBUG_PRINTF("[USART%d] " fmt, USART_REG_TO_X(this->usart_config->peripheral.register_base), ##__VA_ARGS__)
 
 // void HardwareSerial::USART_rx_data_available_irq(void)
 // {
@@ -75,9 +79,7 @@ inline void usart_irq_resign(usart_interrupt_config_t &irq, const char *name)
 
 HardwareSerial::HardwareSerial(struct usart_config_t *usart_config,
                                gpio_pin_t tx_pin,
-                               gpio_pin_t rx_pin,
-                               uint32_t rxbuffer_size,
-                               uint32_t txbuffer_size)
+                               gpio_pin_t rx_pin)
 {
     CORE_ASSERT(usart_config != NULL, "usart_config is NULL");
     ASSERT_GPIO_PIN_VALID(tx_pin, "tx_pin is invalid");
@@ -88,19 +90,12 @@ HardwareSerial::HardwareSerial(struct usart_config_t *usart_config,
     this->rx_pin       = rx_pin;
 
     // // 关联RingBuffer到USART状态结构体
-    // this->usart_config->state.rx_buffer = new RingBuffer<uint8_t>(rxbuffer_size);
-    // this->usart_config->state.tx_buffer = new RingBuffer<uint8_t>(txbuffer_size);
+    this->_rx_buffer = nullptr;
+    this->_tx_buffer = nullptr;
+    this->usart_config->state.rx_buffer = nullptr;
+    this->usart_config->state.tx_buffer = nullptr;
 
-    // if(this->usart_config->state.rx_buffer == nullptr)
-    //   CORE_ASSERT_FAIL("USART: failed to allocate rx buffer");
-    // if(this->usart_config->state.tx_buffer == nullptr)
-    //   CORE_ASSERT_FAIL("USART: failed to allocate tx buffer");
-
-    // this->_rx_buffer = this->usart_config->state.rx_buffer;
-    // this->_tx_buffer = this->usart_config->state.tx_buffer;
-
-    this->_tx_timeout              = 1000;
-    this->_tx_buffer_full_callback = NULL;
+    this->_tx_timeout = 1000;
 
     this->_is_initialized = false;
 }
@@ -108,11 +103,14 @@ HardwareSerial::HardwareSerial(struct usart_config_t *usart_config,
 HardwareSerial::~HardwareSerial()
 {
     // 释放RingBuffer
-    delete this->usart_config->state.rx_buffer;
-    delete this->usart_config->state.tx_buffer;
+    delete this->_rx_buffer;
+    delete this->_tx_buffer;
 
-    this->usart_config->state.rx_buffer = NULL;
-    this->usart_config->state.tx_buffer = NULL;
+    this->_rx_buffer = nullptr;
+    this->_tx_buffer = nullptr;
+
+    this->usart_config->state.rx_buffer = nullptr;
+    this->usart_config->state.tx_buffer = nullptr;
 }
 
 void HardwareSerial::begin(uint32_t baud)
@@ -176,17 +174,34 @@ void HardwareSerial::begin(const stc_usart_uart_init_t *config, const bool rxNoi
 {
     // this->_rx_buffer->clear();
     // this->_tx_buffer->clear();
-
+    CM_USART_TypeDef *USARTx = this->usart_config->peripheral.register_base;
     // set io
     GPIO_SetFunction(this->tx_pin, this->usart_config->peripheral.tx_pin_function);
     GPIO_SetFunction(this->rx_pin, this->usart_config->peripheral.rx_pin_function);
 
     FCG_Fcg1PeriphClockCmd(this->usart_config->peripheral.clock_id, ENABLE);
     // set config
-    int32_t ret = USART_UART_Init(this->usart_config->peripheral.register_base, config, NULL);
+    int32_t ret = USART_UART_Init(USARTx, config, NULL);
     if (ret != LL_OK) {
         CORE_ASSERT_FAIL("USART: failed to initialize");
     }
+    if (USARTx == CM_USART1) {
+        this->_rx_buffer = new RingBuffer<uint8_t>(usart1_rx_buffer, SERIAL_RX_BUFFER_SIZE);
+        this->_rx_buffer->clear();
+        this->_tx_buffer = new RingBuffer<uint8_t>(usart1_tx_buffer, SERIAL_TX_BUFFER_SIZE);
+        this->_tx_buffer->clear();
+    }
+    // else if(USARTx == CM_USART2)
+    // {
+    //     this->usart_config->state.rx_buffer = new RingBuffer<uint8_t>(usart2_rx_buffer, SERIAL_RX_BUFFER_SIZE);
+    // }
+    // else if(USARTx == CM_USART3)
+    // {
+    //     this->usart_config->state.rx_buffer = new RingBuffer<uint8_t>(usart3_rx_buffer, SERIAL_RX_BUFFER_SIZE);
+    // }
+    this->usart_config->state.rx_buffer = this->_rx_buffer;
+    this->usart_config->state.tx_buffer = this->_tx_buffer;
+
     usart_irq_register(this->usart_config->interrupts.rx_error, "USART_RX_ERROR");
     // usart_irq_register(this->usart_config->interrupts.tx_buffer_empty, "USART_TX_BUFFER_EMPTY");
     // usart_irq_register(this->usart_config->interrupts.tx_complete, "USART_TX_COMPLETE");
@@ -194,8 +209,8 @@ void HardwareSerial::begin(const stc_usart_uart_init_t *config, const bool rxNoi
 #ifdef USART_RX_DMA_SUPPORT
 // dma config
 #else
-// irq config
-//  usart_irq_register(this->usart_config->interrupts.rx_data_full, "USART_RX_DATA_FULL");
+    // irq config
+    usart_irq_register(this->usart_config->interrupts.rx_data_full, "USART_RX_DATA_FULL");
 #endif
 
     // enable usart RX + interrupts
@@ -229,8 +244,8 @@ void HardwareSerial::end()
 #ifdef USART_RX_DMA_SUPPORT
 // dma config
 #else
-// irq config
- usart_irq_resign(this->usart_config->interrupts.rx_data_full, "USART_RX_DATA_FULL");
+    // irq config
+    usart_irq_resign(this->usart_config->interrupts.rx_data_full, "USART_RX_DATA_FULL");
 #endif
 
     USART_DeInit(this->usart_config->peripheral.register_base);
@@ -245,8 +260,8 @@ void HardwareSerial::end()
 
 int HardwareSerial::available()
 {
-    return ((unsigned int)(SERIAL_RX_BUFFER_SIZE + _rxBufferHead - _rxBufferTail)) % SERIAL_RX_BUFFER_SIZE;
-    // return this->_rx_buffer->count();
+    // return ((unsigned int)(SERIAL_RX_BUFFER_SIZE + _rxBufferHead - _rxBufferTail)) % SERIAL_RX_BUFFER_SIZE;
+    return this->_rx_buffer->count();
 }
 
 int HardwareSerial::availableForWrite()
@@ -257,35 +272,37 @@ int HardwareSerial::availableForWrite()
 
 int HardwareSerial::peek()
 {
-    if (_rxBufferHead == _rxBufferTail) {
-        return -1;
-    } else {
-        return _rxBuffer[_rxBufferTail];
-    }
-    // uint8_t ch;
-    // if (this->_rx_buffer->peek())
-    // {
-    //     return ch;
+    // if (_rxBufferHead == _rxBufferTail) {
+    //     return -1;
+    // } else {
+    //     return _rxBuffer[_rxBufferTail];
     // }
-    // return -1;
+    uint8_t ch;
+    if (this->_rx_buffer->peek()) {
+        return ch;
+    }
+    return -1;
 }
 
 int HardwareSerial::read()
 {
     // if the head isn't ahead of the tail, we don't have any characters
-    if (_rxBufferHead == _rxBufferTail) {
-        return -1;
-    } else {
-        uint8_t c     = _rxBuffer[_rxBufferTail];
-        _rxBufferTail = (uint16_t)(_rxBufferTail + 1) % SERIAL_RX_BUFFER_SIZE;
-        return c;
-    }
-    // uint8_t ch;
-    // if (this->_rx_buffer->pop(ch))
-    // {
-    //     return ch;
+    // if (_rxBufferHead == _rxBufferTail) {
+    //     return -1;
+    // } else {
+    //     uint8_t c     = _rxBuffer[_rxBufferTail];
+    //     _rxBufferTail = (uint16_t)(_rxBufferTail + 1) % SERIAL_RX_BUFFER_SIZE;
+    //     return c;
     // }
-    // return -1;
+    if (this->_rx_buffer == nullptr) {
+        LOG_ERROR("this->_rx_buffer is nullptr");
+        return -1;
+    }
+    uint8_t ch;
+    if (this->_rx_buffer->pop(ch)) {
+        return ch;
+    }
+    return -1;
 }
 
 void HardwareSerial::flush()
@@ -302,25 +319,9 @@ void HardwareSerial::flush()
 
 size_t HardwareSerial::write(uint8_t ch)
 {
-    // if (!this->_is_initialized) {
-    //     return 0;
-    // }
-    // this->_tx_timeout = 1000;
-    // if (this->_tx_buffer == nullptr)
-    //     GPIO_TogglePins(GPIO_PORT_B, GPIO_PIN_14);
-    // while (!this->_tx_buffer->push(ch)) {
-    //     // wait for tx buffer to empty
-    //     //  add callback to inform the user that the buffer is full
-    //     if (this->_tx_buffer_full_callback != NULL) {
-    //         this->_tx_buffer_full_callback();
-    //     }
-    //     // TODO: add a timeout
-    //     if (this->_tx_timeout-- <= 1)
-    //         break;
-    // }
-
-    // USART_FuncCmd(this->usart_config->peripheral.register_base, USART_TX, ENABLE);
-    // USART_FuncCmd(this->usart_config->peripheral.register_base, USART_INT_TX_EMPTY, ENABLE);
+    if (!this->_is_initialized) {
+        return 0;
+    }
 
     while (RESET == USART_GetStatus(this->usart_config->peripheral.register_base, USART_FLAG_TX_EMPTY)) {
     }

@@ -61,7 +61,7 @@
   ..\..\Arduino\Core\drivers\adc\adc_config.h \
   ..\..\Arduino\Core\variants\hc32f460xx\variant.h \
   ..\..\Arduino\WCharacter.h ..\..\Arduino\WMath.h \
-  ..\..\Arduino\HardwareSerial.h \
+  ..\..\Arduino\HardwareSerial.h ..\..\Arduino\RingBuffer.h \
   ..\..\Arduino\Core\drivers\usart\usart_config.h \
   ..\..\Arduino\RingBuffer.h ..\..\Arduino\wiring_digital.h \
   ..\..\Arduino\Core\drivers\sysclock\sysclock.h \

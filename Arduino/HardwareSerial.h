@@ -20,6 +20,7 @@
 #define HardwareSerial_h
 
 #include <stdint.h>
+#include "RingBuffer.h"
 #include "Stream.h"
 #include "core_types.h"
 #include "Print.h"
@@ -67,22 +68,23 @@
 #define SERIAL_8O2        (HARDSER_STOP_BIT_2 | HARDSER_PARITY_ODD | HARDSER_DATA_8)
 
 #define SERIAL_RX_BUFFER_SIZE 512
+#define SERIAL_TX_BUFFER_SIZE 128
+
+#if SERIAL_1_ENABLE
+extern uint8_t usart1_rx_buffer[SERIAL_RX_BUFFER_SIZE];
+extern uint8_t usart1_tx_buffer[SERIAL_TX_BUFFER_SIZE];
+#endif
 
 class HardwareSerial : public Stream
 {
-    typedef void (*tx_buffer_full_callback_t)(void);
-    typedef void (*rx_buffer_full_callback_t)(void);
 public:
     HardwareSerial(struct usart_config_t *usart_config,
                   gpio_pin_t tx_pin,
-                  gpio_pin_t rx_pin,
-                  size_t rxbuffer_size = 128,
-                  size_t txbuffer_size = 128);
+                  gpio_pin_t rx_pin);
     ~HardwareSerial();
     
     const usart_config_t *get_config() const { return this->usart_config; }
     const usart_receive_error_t get_rx_error() const { return this->usart_config->state.rx_error; }
-    void set_tx_buffer_full_callback(tx_buffer_full_callback_t callback) { this->_tx_buffer_full_callback = callback; }
     void set_tx_timeout(uint32_t timeout) { this->_tx_timeout = timeout; }
     void begin(uint32_t baud);
     void begin(uint32_t baud, uint16_t config);
@@ -122,20 +124,21 @@ public:
     gpio_pin_t tx_pin;
     gpio_pin_t rx_pin;
 
-    // RingBuffer<uint8_t> *_rx_buffer;
-    // RingBuffer<uint8_t> *_tx_buffer;
+    RingBuffer<uint8_t> *_rx_buffer;
+    RingBuffer<uint8_t> *_tx_buffer;
 
     volatile uint16_t _rxBufferHead;
     volatile uint16_t _rxBufferTail;
     uint8_t _rxBuffer[SERIAL_RX_BUFFER_SIZE];
     uint32_t _tx_timeout;
-    tx_buffer_full_callback_t _tx_buffer_full_callback;
     void USART_rx_data_available_irq(void);
     bool _is_initialized;
 };
 
 #if SERIAL_1_ENABLE
 extern HardwareSerial Serial;
+extern uint8_t usart1_rx_buffer[SERIAL_RX_BUFFER_SIZE];
+extern uint8_t usart1_tx_buffer[SERIAL_TX_BUFFER_SIZE];
 #endif
 
 #if SERIAL_2_ENABLE

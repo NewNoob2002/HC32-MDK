@@ -25,7 +25,8 @@
 #include "HardwareSerial.h"
 #include "hc32_ll.h"
 #include <Arduino.h>
-#include "HardwareI2c.h"
+#include <cm_backtrace.h>
+#include "HardwareI2cSlave.h"
 #include "MillisTaskManager.h"
 MillisTaskManager task;
 /**
@@ -219,8 +220,25 @@ static void DMA_ReloadConfig(void)
 static void led_blink()
 {
     GPIO_TogglePins(GPIO_PORT_B, GPIO_PIN_14);
-		Serial.printf("%s", "hello, String Test\n");
-    delay_ms(100);
+    // Serial.printf("%d", ringBuffer.get_read_index());
+}
+
+static void serial_read()
+{
+    static uint8_t ch[128];
+    static int index = 0;
+    
+    // 读取所有可用数据，但不等待
+    while (Serial.available() && index < 127) {
+        ch[index++] = Serial.read();
+    }
+    
+    // 如果收到换行符或者缓冲区已满，则处理并打印数据
+    if (index > 0 && (ch[index-1] == '\n' || index >= 127)) {
+        ch[index] = 0; // 添加字符串结束符
+        Serial.printf("%s", ch);
+        index = 0; // 重置索引
+    }
 }
 
 static void dmaSend()
@@ -252,29 +270,17 @@ int main(void)
     /* Configure BSP */
     clock_init();
     systick_init();
-
-    pinMode(PB14, OUTPUT);
     Serial.begin(115200);
-//    Slave_Initialize();
+    pinMode(PB14, OUTPUT);
+    Slave_Initialize();
     /* Peripheral registers write protected */
     LL_PERIPH_WP(EXAMPLE_PERIPH_WP);
 
-    task.Register(led_blink, 10);
+    task.Register(led_blink, 100);
+    task.Register(serial_read, 100);
     //    task.Register(dmaSend, 10);
 
     while (1) {
         task.Running(millis());
     }
 }
-
-/**
- * @}
- */
-
-/**
- * @}
- */
-
-/*******************************************************************************
- * EOF (not truncated)
- ******************************************************************************/

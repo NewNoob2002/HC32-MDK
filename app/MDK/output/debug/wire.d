@@ -1,6 +1,5 @@
-./output/debug/adc.o: ..\..\Arduino\Core\drivers\adc\adc.cpp \
-  ..\..\Arduino\Core\drivers\adc\adc.h \
-  ..\..\Arduino\Core\drivers\adc\adc_config.h ..\..\Driver\inc\hc32_ll.h \
+./output/debug/wire.o: ..\..\Arduino\Core\drivers\i2c\Wire.cpp \
+  ..\..\Arduino\Core\drivers\i2c\Wire.h ..\..\Driver\inc\hc32_ll.h \
   ..\..\Driver\inc\hc32_ll_def.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stddef.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__config \
@@ -32,27 +31,30 @@
   ..\..\Driver\inc\hc32_ll_rmu.h ..\..\Driver\inc\hc32_ll_spi.h \
   ..\..\Driver\inc\hc32_ll_sram.h ..\..\Driver\inc\hc32_ll_tmr0.h \
   ..\..\Driver\inc\hc32_ll_tmra.h ..\..\Driver\inc\hc32_ll_usart.h \
-  ..\..\Driver\inc\hc32_ll_utility.h ..\..\Arduino\core_debug.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdio.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
-  ..\..\Arduino\Core\drivers\panic\panic.h \
-  ..\..\Arduino\Core\drivers\panic\panic_api.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdlib.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
-  ..\..\Arduino\HardwareSerial.h ..\..\Arduino\RingBuffer.h \
-  ..\..\Arduino\Stream.h \
+  ..\..\Driver\inc\hc32_ll_utility.h ..\..\Arduino\Print.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\inttypes.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\inttypes.h \
-  ..\..\Arduino\Print.h ..\..\Arduino\WString.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdio.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h ..\..\Arduino\WString.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdlib.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\string.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\ctype.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\ctype.h \
   ..\..\Arduino\Core\avr\pgmspace.h ..\..\Arduino\Printable.h \
-  ..\..\Arduino\core_types.h \
+  ..\..\Arduino\Stream.h ..\..\Arduino\Print.h \
+  ..\..\Arduino\Core\drivers\gpio\gpio.h \
+  ..\..\Arduino\Core\drivers\gpio\addon_gpio.h \
+  ..\..\Arduino\Core\drivers\adc\adc.h \
+  ..\..\Arduino\Core\drivers\adc\adc_config.h ..\..\Arduino\WVariant.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdbool.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  ..\..\Arduino\Core\variants\hc32f460xx\variant.h \
+  ..\..\Arduino\core_types.h ..\..\Arduino\core_debug.h \
+  ..\..\Arduino\Core\drivers\panic\panic.h \
+  ..\..\Arduino\Core\drivers\panic\panic_api.h \
+  ..\..\Arduino\HardwareSerial.h ..\..\Arduino\RingBuffer.h \
+  ..\..\Arduino\Stream.h ..\..\Arduino\core_types.h \
   ..\..\Arduino\Core\drivers\usart\usart_config.h \
-  ..\..\Arduino\RingBuffer.h ..\..\Arduino\WVariant.h \
-  ..\..\Arduino\Core\drivers\adc\adc.h \
-  ..\..\Arduino\Core\variants\hc32f460xx\variant.h
+  ..\..\Arduino\RingBuffer.h ..\..\Arduino\WVariant.h

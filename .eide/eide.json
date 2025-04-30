@@ -62,13 +62,16 @@
             "path": "Arduino/Stream.cpp"
           },
           {
-            "path": "Arduino/Core/drivers/irqn/irqn.cpp"
-          },
-          {
             "path": "Arduino/HardwareSerial.cpp"
           },
           {
+            "path": "Arduino/Core/drivers/irqn/irqn.cpp"
+          },
+          {
             "path": "Arduino/Core/drivers/usart/usart_config.cpp"
+          },
+          {
+            "path": "Arduino/Core/drivers/i2c/Wire.cpp"
           }
         ],
         "folders": []
@@ -233,22 +236,7 @@
             "path": "Libraries/MillisTaskManager/MillisTaskManager.cpp"
           },
           {
-            "path": "Libraries/HardWareI2c/HardwareI2c.cpp"
-          }
-        ],
-        "folders": []
-      },
-      {
-        "name": "cm_backtrace",
-        "files": [
-          {
-            "path": "Libraries/cm_backtrace/cm_backtrace.c"
-          },
-          {
-            "path": "Libraries/cm_backtrace/FaultHandler.cpp"
-          },
-          {
-            "path": "Libraries/cm_backtrace/cmb_cfg.h"
+            "path": "Arduino/Core/drivers/i2c/HardwareI2cSlave.cpp"
           }
         ],
         "folders": []
@@ -259,7 +247,7 @@
   "deviceName": "HC32F460JETA",
   "packDir": ".pack/HDSC/HC32F460.1.0.12",
   "miscInfo": {
-    "uid": "2285de2c212d7402271850c8de5be132"
+    "uid": "965d82f675bc9aef5d34696ccf20aaee"
   },
   "targets": {
     "hc32f460jeta_Debug": {
@@ -400,7 +388,6 @@
           "CMSIS/Device/HDSC/hc32f4xx/Include",
           "Driver/inc",
           "Libraries/MillisTaskManager",
-          "Libraries/HardWareI2C",
           "Libraries/cm_backtrace",
           "Libraries/cm_backtrace/Languages/en-US",
           "Arduino",
@@ -408,18 +395,21 @@
           "Arduino/Core/drivers/gpio",
           "Arduino/Core/drivers/adc",
           "Arduino/Core/drivers/panic",
+          "Arduino/Core/drivers/usart",
           "Arduino/Core/drivers/irqn",
           "Arduino/Core/drivers/sysclock",
           "Arduino/Core/variants/hc32f460xx",
+          "Arduino/Core/drivers/i2c",
+          "Arduino/Core/drivers/spi",
           ".cmsis/include",
-          "app/MDK/RTE/_hc32f460jeta_Debug",
-          "Arduino/Core/drivers/usart"
+          "app/MDK/RTE/_hc32f460jeta_Debug"
         ],
         "libList": [],
         "defineList": [
           "__DEBUG",
           "HC32F460",
-          "USE_DDL_DRIVER"
+          "USE_DDL_DRIVER",
+          "__CORE_DEBUG"
         ]
       },
       "builderOptions": {
