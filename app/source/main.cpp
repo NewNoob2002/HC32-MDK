@@ -217,9 +217,7 @@ static void DMA_ReloadConfig(void)
 
 static void led_blink()
 {
-    BSP_LED_On(LED_BLUE);
-    delay_ms(100);
-    BSP_LED_Off(LED_BLUE);
+		GPIO_TogglePins(GPIO_PORT_B, GPIO_PIN_14);
     delay_ms(100);
 }
 

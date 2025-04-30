@@ -13,6 +13,7 @@
 ".\output\debug\dtostrf.o"
 ".\output\debug\print.o"
 ".\output\debug\stream.o"
+".\output\debug\irqn.o"
 ".\output\debug\ev_hc32f460_lqfp100_v2.o"
 ".\output\debug\system_hc32f460.o"
 ".\output\debug\startup_hc32f460.o"

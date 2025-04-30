@@ -22,44 +22,17 @@ Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
 C:\Users\gtc\Desktop\hc32\HC32-MDK\app\MDK\hc32f460jeta.uvprojx
-Project File Date:  04/29/2025
+Project File Date:  04/30/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'hc32f460jeta_Debug'
-../../Arduino/Core/drivers/irqn/irqn.cpp(1): warning: In file included from...
-../../Arduino/Core/drivers/irqn/irqn.h(14): error: unknown type name 'en_result_t'
-    en_result_t _irqn_aa_get(IRQn_Type &irqn);
-    ^
-../../Arduino/Core/drivers/irqn/irqn.h(15): error: unknown type name 'en_result_t'
-    en_result_t _irqn_aa_resign(IRQn_Type &irqn);
-    ^
-../../Arduino/Core/drivers/irqn/irqn.cpp(93): error: unknown type name 'en_result_t'
-en_result_t _irqn_aa_get(IRQn_Type &irqn)
-^
-../../Arduino/Core/drivers/irqn/irqn.cpp(100): error: use of undeclared identifier 'Error'
-        return Error;
-               ^
-../../Arduino/Core/drivers/irqn/irqn.cpp(108): error: use of undeclared identifier 'Ok'
-    return Ok;
-           ^
-../../Arduino/Core/drivers/irqn/irqn.cpp(111): error: unknown type name 'en_result_t'
-en_result_t _irqn_aa_resign(IRQn_Type &irqn)
-^
-../../Arduino/Core/drivers/irqn/irqn.cpp(120): error: use of undeclared identifier 'Ok'
-    return Ok;
-           ^
-7 errors generated.
 compiling irqn.cpp...
-../source/main.cpp(220): error: use of undeclared identifier 'LED_BLUE'
-    BSP_LED_On(LED_BLUE);
-               ^
-../source/main.cpp(222): error: use of undeclared identifier 'LED_BLUE'
-    BSP_LED_Off(LED_BLUE);
-                ^
-2 errors generated.
-compiling main.cpp...
-".\output\debug\hc32f460jeta.axf" - 9 Error(s), 0 Warning(s).
+linking...
+Program Size: Code=20890 RO-data=1246 RW-data=28 ZI-data=17340  
+FromELF: creating hex file...
+After Build - User command #2: fromelf --bin -o "C:\Users\gtc\Desktop\hc32\HC32-MDK\app\MDK\output\debug\hc32f460jeta.bin" "C:\Users\gtc\Desktop\hc32\HC32-MDK\app\MDK\output\debug\hc32f460jeta.axf
+".\output\debug\hc32f460jeta.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -82,7 +55,6 @@ Package Vendor: HDSC
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.5.0
-Target not created.
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

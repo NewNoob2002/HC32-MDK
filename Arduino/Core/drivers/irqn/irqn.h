@@ -11,8 +11,8 @@ extern "C"
 {
 #endif
 
-    en_result_t _irqn_aa_get(IRQn_Type &irqn);
-    en_result_t _irqn_aa_resign(IRQn_Type &irqn);
+    int32_t _irqn_aa_get(IRQn_Type &irqn);
+    int32_t _irqn_aa_resign(IRQn_Type &irqn);
 
 #ifdef __CORE_DEBUG
 
@@ -22,9 +22,9 @@ extern "C"
      * @param name name of the IRQn (for debug purposes)
      * @return Ok or Error
      */
-    inline en_result_t irqn_aa_get(IRQn_Type &irqn, const char *name)
+    inline int32_t irqn_aa_get(IRQn_Type &irqn, const char *name)
     {
-        if (_irqn_aa_get(irqn) != Ok)
+        if (_irqn_aa_get(irqn) != LL_OK)
         {
             panic_begin();
             panic_printf("IRQn auto-assignment failed for %s", name);
@@ -32,7 +32,7 @@ extern "C"
         }
 
         CORE_DEBUG_PRINTF("IRQ%d auto-assigned to %s\n", int(irqn), name);
-        return Ok;
+        return LL_OK;
     }
 
     /**
@@ -41,9 +41,9 @@ extern "C"
      * @param name name of the IRQn (for debug purposes)
      * @return Ok or Error
      */
-    inline en_result_t irqn_aa_resign(IRQn_Type &irqn, const char *name)
+    inline int32_t irqn_aa_resign(IRQn_Type &irqn, const char *name)
     {
-        if (_irqn_aa_resign(irqn) != Ok)
+        if (_irqn_aa_resign(irqn) != LL_OK)
         {
             panic_begin();
             panic_printf("IRQn auto-resign failed for %s", name);
@@ -51,7 +51,7 @@ extern "C"
         }
 
         CORE_DEBUG_PRINTF("%s auto-resigned IRQ%d\n", name, int(irqn));
-        return Ok;
+        return LL_OK;
     }
 
 #else
