@@ -1,6 +1,6 @@
-#include <string.h>
 #include <irqn.h>
 #include "HardwareI2cSlave.h"
+#include "locale.h"
 /*******************************************************************************
  * Local type definitions ('typedef')
  ******************************************************************************/
@@ -25,9 +25,6 @@ typedef enum {
  */
 typedef struct {
     stc_i2c_com_mode_t enMode;             /*!< I2C communication mode*/
-    uint32_t u32Len;                       /*!< I2C communication data length*/
-    uint8_t *pBuf;                         /*!< I2C communication data buffer pointer*/
-    __IO uint32_t u32DataIndex;            /*!< I2C communication data transfer index*/
     __IO stc_i2c_com_status_t enComStatus; /*!< I2C communication status*/
 } stc_i2c_communication_t;
 
@@ -83,103 +80,6 @@ static uint8_t u8TxBuf[TEST_DATA_LEN];
 static uint8_t u8RxBuf[TEST_DATA_LEN];
 static stc_i2c_communication_t stcI2cCom;
 
-/*******************************************************************************
- * Function implementation - global ('extern') and local ('static')
- ******************************************************************************/
-
-/**
- * @brief  Slave receive data
- *
- * @param  pu8RxData             Pointer to the data buffer
- * @param  u32Size               Data size
- * @retval int32_t:
- *            - LL_OK:           Success
- *            - LL_ERR_BUSY:     Busy
- */
-static int32_t I2C_Slave_Receive_IT(uint8_t *pu8RxData, uint32_t u32Size)
-{
-    int32_t i32Ret = LL_OK;
-
-    if (I2C_COM_IDLE == stcI2cCom.enComStatus) {
-        stcI2cCom.enComStatus = I2C_COM_BUSY;
-
-        stcI2cCom.u32DataIndex = 0U;
-        stcI2cCom.enMode       = MD_RX;
-        stcI2cCom.u32Len       = u32Size;
-        stcI2cCom.pBuf         = pu8RxData;
-
-        I2C_Cmd(I2C_UNIT, ENABLE);
-        /* Config slave address match and receive full interrupt function*/
-        I2C_IntCmd(I2C_UNIT, I2C_INT_MATCH_ADDR0 | I2C_INT_RX_FULL, ENABLE);
-    } else {
-        i32Ret = LL_ERR_BUSY;
-    }
-
-    return i32Ret;
-}
-
-/**
- * @brief  Slave transmit data
- *
- * @param  pu8TxData             Pointer to the data buffer
- * @param  u32Size               Data size
- * @retval int32_t:
- *            - LL_OK:           Success
- *            - LL_ERR_BUSY:     Busy
- */
-static int32_t I2C_Slave_Transmit_IT(uint8_t *pu8TxData, uint32_t u32Size)
-{
-    int32_t i32Ret = LL_OK;
-
-    if (I2C_COM_IDLE == stcI2cCom.enComStatus) {
-        stcI2cCom.enComStatus = I2C_COM_BUSY;
-
-        stcI2cCom.u32DataIndex = 0U;
-        stcI2cCom.enMode       = MD_TX;
-        stcI2cCom.u32Len       = u32Size;
-        stcI2cCom.pBuf         = pu8TxData;
-
-        I2C_Cmd(I2C_UNIT, ENABLE);
-        /* Config slave address match interrupt function*/
-        I2C_IntCmd(I2C_UNIT, I2C_INT_MATCH_ADDR0, ENABLE);
-    } else {
-        i32Ret = LL_ERR_BUSY;
-    }
-
-    return i32Ret;
-}
-
-/**
- * @brief   static function for buffer write.
- * @param   [in] u8Data         the data to be write.
- * @retval  None
- */
-static void BufWrite(uint8_t u8Data)
-{
-    if (stcI2cCom.u32DataIndex < stcI2cCom.u32Len) {
-        u8RxBuf[stcI2cCom.u32DataIndex] = u8Data;
-        stcI2cCom.u32DataIndex++;
-    }
-}
-
-/**
- * @brief   Static function for buffer read.
- * @param   None
- * @retval  uint8_t             The data read out from buffer.
- */
-static uint8_t BufRead(void)
-{
-    uint8_t temp;
-    if (stcI2cCom.u32DataIndex < stcI2cCom.u32Len) {
-        temp = u8RxBuf[stcI2cCom.u32DataIndex];
-        stcI2cCom.u32DataIndex++;
-    } else {
-        temp = 0xFFU;
-    }
-
-    return temp;
-}
-
 /**
  * @brief   I2C EEI(communication error or event) interrupt callback function
  * @param   None
@@ -195,7 +95,10 @@ static void I2C_EEI_Callback(void)
             /* Enable tx end interrupt function*/
             I2C_IntCmd(I2C_UNIT, I2C_INT_TX_CPLT, ENABLE);
             /* Write the first data to DTR immediately */
-            I2C_WriteData(I2C_UNIT, BufRead());
+            uint8_t data;
+            if (SlaveTxBuffer->pop(data)) {
+                I2C_WriteData(I2C_UNIT, data);
+            }
 
             /* Enable stop and NACK interrupt */
             I2C_IntCmd(I2C_UNIT, I2C_INT_STOP | I2C_INT_NACK, ENABLE);
@@ -245,7 +148,10 @@ static void I2C_TEI_Callback(void)
 {
     if ((SET == I2C_GetStatus(I2C_UNIT, I2C_FLAG_TX_CPLT)) &&
         (RESET == I2C_GetStatus(I2C_UNIT, I2C_FLAG_NACKF))) {
-        I2C_WriteData(I2C_UNIT, BufRead());
+        uint8_t data;
+        if (SlaveTxBuffer->pop(data)) {
+            I2C_WriteData(I2C_UNIT, data);
+        }
     }
 }
 
@@ -390,4 +296,25 @@ uint8_t Slave_Read(void)
         return data;
     }
     return 0;
+}
+
+HardwareI2cSlave :: HardwareI2cSlave()
+{
+    this->__SlaveRxBuffer = nullptr;
+    this->__SlaveTxBuffer = nullptr;
+}
+
+HardwareI2cSlave :: ~HardwareI2cSlave()
+{
+    if(this->__SlaveRxBuffer != nullptr)
+    {
+        delete this->__SlaveRxBuffer;
+    }
+    if(this->__SlaveTxBuffer != nullptr)
+    {
+        delete this->__SlaveTxBuffer;
+    }
+    
+    this->__SlaveRxBuffer = nullptr;
+    this->__SlaveTxBuffer = nullptr;
 }

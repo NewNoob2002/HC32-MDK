@@ -51,6 +51,9 @@ MillisTaskManager task;
                            LL_PERIPH_PWC_CLK_RMU | LL_PERIPH_SRAM)
 #define EXAMPLE_PERIPH_WP (LL_PERIPH_EFM | LL_PERIPH_FCG | LL_PERIPH_SRAM)
 
+// 函数前向声明
+static void analyzeI2cData(uint8_t* data, uint16_t length);
+
 static void led_blink()
 {
     GPIO_TogglePins(GPIO_PORT_B, GPIO_PIN_14);
@@ -59,21 +62,90 @@ static void led_blink()
 
 static void serial_read()
 {
-    static uint8_t ch[128];
-    static int index = 0;
-
-    if (SlaveRxBuffer->count() > 0) {
-        ch[index++] = Slave_Read();
+    static uint8_t buffer[128];  // 存储数据的缓冲区
+    static uint16_t bufferIndex = 0;  // 缓冲区当前位置
+    static uint32_t lastReceiveTime = 0;  // 上次接收数据的时间
+    const uint32_t timeoutMs = 50;  // 数据包超时时间(ms)
+    
+    // 1. 从环形缓冲区读取数据到本地buffer
+    uint32_t availableBytes = SlaveRxBuffer->count();
+    if (availableBytes > 0) {
+        lastReceiveTime = millis();  // 更新接收时间
+        
+        // 读取数据，避免缓冲区溢出
+        while (availableBytes > 0 && bufferIndex < sizeof(buffer)) {
+            buffer[bufferIndex++] = Slave_Read();
+            availableBytes--;
+        }
     }
-
-    if (index > 127) { // 如果收到换行符或者缓冲区已满，则处理并打印数据
-        for (int i = 0; i < index; i++) {
-            Serial.printf("0x%02X ", ch[i]);
+    
+    // 2. 检查是否应该处理已接收的数据 (满足以下任一条件)
+    // - 缓冲区已满
+    // - 自上次接收数据起已超时(一个数据包的传输完成)
+    bool shouldProcess = false;
+    
+    if (bufferIndex >= sizeof(buffer)) {
+        shouldProcess = true;  // 缓冲区已满
+    } else if (bufferIndex > 0 && (millis() - lastReceiveTime) > timeoutMs) {
+        shouldProcess = true;  // 接收超时，认为一个数据包接收完成
+    }
+    
+    // 3. 处理接收到的数据
+    if (shouldProcess) {
+        // 打印接收到的数据
+        Serial.printf("I2C Received %d bytes: ", bufferIndex);
+        for (uint16_t i = 0; i < bufferIndex; i++) {
+            Serial.printf("0x%02X ", buffer[i]);
         }
         Serial.println();
-        index = 0;
+        
+        // 在这里可以添加更多数据分析和处理逻辑
+        // 例如：分析数据包结构，解析命令，提取有效载荷等
+        analyzeI2cData(buffer, bufferIndex);
+        
+        // 重置缓冲区索引，准备接收下一个数据包
+        bufferIndex = 0;
     }
 }
+
+// 分析和处理I2C接收到的数据
+static void analyzeI2cData(uint8_t* data, uint16_t length)
+{
+    // 检查数据包是否有效
+    if (length < 1) {
+        return;  // 数据包太短
+    }
+    
+    // 假设数据包格式: [命令字节][数据...]
+    uint8_t command = data[0];
+    
+    // 根据命令类型处理数据
+    switch (command) {
+        case 0x01:  // 示例：读取命令
+            Serial.println("Read command received");
+            // 处理读取命令
+            break;
+            
+        case 0x02:  // 示例：写入命令
+            if (length >= 3) {  // 确保有足够的数据
+                uint8_t address = data[1];
+                uint8_t value = data[2];
+                Serial.printf("Write command: address=0x%02X, value=0x%02X\n", address, value);
+                // 处理写入命令
+            }
+            break;
+            
+        case 0x03:  // 示例：状态查询命令
+            Serial.println("Status query command received");
+            // 处理状态查询
+            break;
+            
+        default:
+            Serial.printf("Unknown command: 0x%02X\n", command);
+            break;
+    }
+}
+
 /**
  * @brief  Main function of SPI tx/rx dma project
  * @param  None
