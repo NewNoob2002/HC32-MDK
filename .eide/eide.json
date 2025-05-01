@@ -47,9 +47,6 @@
             "path": "Arduino/Core/drivers/sysclock/sysclock.cpp"
           },
           {
-            "path": "Arduino/Core/drivers/sysclock/systick.cpp"
-          },
-          {
             "path": "Arduino/itoa.c"
           },
           {
@@ -72,6 +69,9 @@
           },
           {
             "path": "Arduino/Core/drivers/i2c/Wire.cpp"
+          },
+          {
+            "path": "Arduino/Core/drivers/sysclock/systick.c"
           }
         ],
         "folders": []
@@ -366,22 +366,32 @@
         },
         "options": "null"
       },
-      "uploader": "JLink",
+      "uploader": "pyOCD",
       "uploadConfig": {
         "bin": "",
-        "baseAddr": "",
-        "cpuInfo": {
-          "vendor": "XHSC",
-          "cpuName": "HC32F460xE"
-        },
-        "proType": 1,
-        "speed": 8000,
+        "targetName": "cortex_m",
+        "baseAddr": "0x08000000",
+        "speed": "4M",
+        "config": ".eide/hc32f460jeta_debug.pyocd.yaml",
         "otherCmds": ""
       },
-      "uploadConfigMap": {},
+      "uploadConfigMap": {
+        "JLink": {
+          "bin": "",
+          "baseAddr": "",
+          "cpuInfo": {
+            "vendor": "XHSC",
+            "cpuName": "HC32F460xE"
+          },
+          "proType": 1,
+          "speed": 8000,
+          "otherCmds": ""
+        }
+      },
       "custom_dep": {
         "name": "default",
         "incList": [
+          ".",
           "app/source",
           "bsp/ev_hc32f460_lqfp100_v2",
           "CMSIS/Include",

@@ -24,46 +24,46 @@ typedef enum {
  * @brief I2c communication structure
  */
 typedef struct {
-    stc_i2c_com_mode_t    enMode;         /*!< I2C communication mode*/
-    uint32_t              u32Len;         /*!< I2C communication data length*/
-    uint8_t              *pBuf;           /*!< I2C communication data buffer pointer*/
-    __IO uint32_t         u32DataIndex;   /*!< I2C communication data transfer index*/
-    __IO stc_i2c_com_status_t  enComStatus;    /*!< I2C communication status*/
+    stc_i2c_com_mode_t enMode;             /*!< I2C communication mode*/
+    uint32_t u32Len;                       /*!< I2C communication data length*/
+    uint8_t *pBuf;                         /*!< I2C communication data buffer pointer*/
+    __IO uint32_t u32DataIndex;            /*!< I2C communication data transfer index*/
+    __IO stc_i2c_com_status_t enComStatus; /*!< I2C communication status*/
 } stc_i2c_communication_t;
 
 /*******************************************************************************
  * Local pre-processor symbols/macros ('#define')
  ******************************************************************************/
 /* unlock/lock peripheral */
-#define EXAMPLE_PERIPH_WE               (LL_PERIPH_GPIO | LL_PERIPH_EFM | LL_PERIPH_FCG | \
-                                         LL_PERIPH_PWC_CLK_RMU | LL_PERIPH_SRAM)
-#define EXAMPLE_PERIPH_WP               (LL_PERIPH_EFM | LL_PERIPH_FCG | LL_PERIPH_SRAM)
+#define EXAMPLE_PERIPH_WE (LL_PERIPH_GPIO | LL_PERIPH_EFM | LL_PERIPH_FCG | \
+                           LL_PERIPH_PWC_CLK_RMU | LL_PERIPH_SRAM)
+#define EXAMPLE_PERIPH_WP (LL_PERIPH_EFM | LL_PERIPH_FCG | LL_PERIPH_SRAM)
 
 /* Define slave device address for example */
-#define DEVICE_ADDR                     (0x11U)
+#define DEVICE_ADDR (0x11U)
 /* I2C address mode */
-#define I2C_ADDR_MD_7BIT                (0U)
-#define I2C_ADDR_MD_10BIT               (1U)
+#define I2C_ADDR_MD_7BIT  (0U)
+#define I2C_ADDR_MD_10BIT (1U)
 /* Config I2C address mode: I2C_ADDR_MD_7BIT or I2C_ADDR_MD_10BIT */
-#define I2C_ADDR_MD                     (I2C_ADDR_MD_7BIT)
+#define I2C_ADDR_MD (I2C_ADDR_MD_7BIT)
 
 /* Note: The polarity of EEI interrupt should be higher than other I2C interrupt */
-#define I2C_EEI_IRQN_DEF                (INT001_IRQn)
-#define I2C_RXI_IRQN_DEF                (INT002_IRQn)
-#define I2C_TXI_IRQN_DEF                (INT003_IRQn)
-#define I2C_TEI_IRQN_DEF                (INT004_IRQn)
+#define I2C_EEI_IRQN_DEF (INT001_IRQn)
+#define I2C_RXI_IRQN_DEF (INT002_IRQn)
+#define I2C_TXI_IRQN_DEF (INT003_IRQn)
+#define I2C_TEI_IRQN_DEF (INT004_IRQn)
 
-#define I2C_INT_EEI_DEF                 (INT_SRC_I2C2_EEI)
-#define I2C_INT_RXI_DEF                 (INT_SRC_I2C2_RXI)
-#define I2C_INT_TXI_DEF                 (INT_SRC_I2C2_TXI)
-#define I2C_INT_TEI_DEF                 (INT_SRC_I2C2_TEI)
+#define I2C_INT_EEI_DEF  (INT_SRC_I2C2_EEI)
+#define I2C_INT_RXI_DEF  (INT_SRC_I2C2_RXI)
+#define I2C_INT_TXI_DEF  (INT_SRC_I2C2_TXI)
+#define I2C_INT_TEI_DEF  (INT_SRC_I2C2_TEI)
 
-#define TIMEOUT                         (0x40000UL)
+#define TIMEOUT          (0x40000UL)
 
 /* Define Write and read data length for the example */
-#define TEST_DATA_LEN                   (256U)
+#define TEST_DATA_LEN (512U)
 /* Define i2c baudrate */
-#define I2C_BAUDRATE                    (400000UL)
+#define I2C_BAUDRATE (400000UL)
 
 /*******************************************************************************
  * Global variable definitions (declared in header file with 'extern')
@@ -76,6 +76,10 @@ typedef struct {
 /*******************************************************************************
  * Local variable definitions ('static')
  ******************************************************************************/
+RingBuffer<uint8_t> *SlaveRxBuffer = nullptr;
+RingBuffer<uint8_t> *SlaveTxBuffer = nullptr;
+
+static uint8_t u8TxBuf[TEST_DATA_LEN];
 static uint8_t u8RxBuf[TEST_DATA_LEN];
 static stc_i2c_communication_t stcI2cCom;
 
@@ -100,9 +104,9 @@ static int32_t I2C_Slave_Receive_IT(uint8_t *pu8RxData, uint32_t u32Size)
         stcI2cCom.enComStatus = I2C_COM_BUSY;
 
         stcI2cCom.u32DataIndex = 0U;
-        stcI2cCom.enMode = MD_RX;
-        stcI2cCom.u32Len = u32Size;
-        stcI2cCom.pBuf = pu8RxData;
+        stcI2cCom.enMode       = MD_RX;
+        stcI2cCom.u32Len       = u32Size;
+        stcI2cCom.pBuf         = pu8RxData;
 
         I2C_Cmd(I2C_UNIT, ENABLE);
         /* Config slave address match and receive full interrupt function*/
@@ -131,9 +135,9 @@ static int32_t I2C_Slave_Transmit_IT(uint8_t *pu8TxData, uint32_t u32Size)
         stcI2cCom.enComStatus = I2C_COM_BUSY;
 
         stcI2cCom.u32DataIndex = 0U;
-        stcI2cCom.enMode = MD_TX;
-        stcI2cCom.u32Len = u32Size;
-        stcI2cCom.pBuf = pu8TxData;
+        stcI2cCom.enMode       = MD_TX;
+        stcI2cCom.u32Len       = u32Size;
+        stcI2cCom.pBuf         = pu8TxData;
 
         I2C_Cmd(I2C_UNIT, ENABLE);
         /* Config slave address match interrupt function*/
@@ -225,13 +229,12 @@ static void I2C_EEI_Callback(void)
         I2C_Cmd(I2C_UNIT, DISABLE);
         /* Communication finished */
         stcI2cCom.enComStatus = I2C_COM_IDLE;
-			  I2C_Cmd(I2C_UNIT, ENABLE);
+        I2C_Cmd(I2C_UNIT, ENABLE);
         /* Config slave address match and receive full interrupt function*/
         I2C_IntCmd(I2C_UNIT, I2C_INT_MATCH_ADDR0 | I2C_INT_RX_FULL, ENABLE);
     } else {
     }
 }
-
 
 /**
  * @brief   I2C TEI(transfer end) interrupt callback function
@@ -254,7 +257,9 @@ static void I2C_TEI_Callback(void)
 static void I2C_RXI_Callback(void)
 {
     if (SET == I2C_GetStatus(I2C_UNIT, I2C_FLAG_RX_FULL)) {
-        BufWrite(I2C_ReadData(I2C_UNIT));
+        uint8_t data    = I2C_ReadData(I2C_UNIT);
+        bool didOverrun = false;
+        SlaveRxBuffer->push(data, true, didOverrun);
     }
 }
 
@@ -299,14 +304,19 @@ inline void i2c_irq_resign(stc_irq_signin_config_t &irq, const char *name)
  */
 int32_t Slave_Initialize(void)
 {
-			/* Enable I2C Peripheral*/
+    /* Enable I2C Peripheral*/
     FCG_Fcg1PeriphClockCmd(I2C_FCG_USE, ENABLE);
-    (void)memset(u8RxBuf, (int32_t)0x01U, 128);
+    if (SlaveRxBuffer == nullptr) {
+        SlaveRxBuffer = new RingBuffer<uint8_t>(u8RxBuf, TEST_DATA_LEN);
+    }
+    if (SlaveTxBuffer == nullptr) {
+        SlaveTxBuffer = new RingBuffer<uint8_t>(u8TxBuf, TEST_DATA_LEN);
+    }
 
     /* Initialize I2C port*/
     GPIO_SetFunc(I2C_SCL_PORT, I2C_SCL_PIN, I2C_GPIO_SCL_FUNC);
     GPIO_SetFunc(I2C_SDA_PORT, I2C_SDA_PIN, I2C_GPIO_SDA_FUNC);
-	
+
     int32_t i32Ret;
     stc_i2c_init_t stcI2cInit;
     stc_irq_signin_config_t stcIrqRegCfg;
@@ -319,8 +329,8 @@ int32_t Slave_Initialize(void)
     (void)I2C_StructInit(&stcI2cInit);
     stcI2cInit.u32ClockDiv = I2C_CLK_DIV2;
     stcI2cInit.u32Baudrate = I2C_BAUDRATE;
-    stcI2cInit.u32SclTime = 5U;
-    i32Ret = I2C_Init(I2C_UNIT, &stcI2cInit, &fErr);
+    stcI2cInit.u32SclTime  = 5U;
+    i32Ret                 = I2C_Init(I2C_UNIT, &stcI2cInit, &fErr);
 
     if (LL_OK == i32Ret) {
         /* Set slave address*/
@@ -329,7 +339,7 @@ int32_t Slave_Initialize(void)
 #else
         I2C_SlaveAddrConfig(I2C_UNIT, I2C_ADDR0, I2C_ADDR_7BIT, DEVICE_ADDR);
 #endif
-        stcIrqRegCfg.enIntSrc = I2C_INT_EEI_DEF;
+        stcIrqRegCfg.enIntSrc    = I2C_INT_EEI_DEF;
         stcIrqRegCfg.pfnCallback = &I2C_EEI_Callback;
         i2c_irq_register(stcIrqRegCfg, "I2C_EEI_IRQN_DEF");
         // stcIrqRegCfg.enIRQn = I2C_EEI_IRQN_DEF;
@@ -340,7 +350,7 @@ int32_t Slave_Initialize(void)
         // NVIC_SetPriority(stcIrqRegCfg.enIRQn, DDL_IRQ_PRIO_DEFAULT);
         // NVIC_EnableIRQ(stcIrqRegCfg.enIRQn);
 
-        stcIrqRegCfg.enIntSrc = I2C_INT_RXI_DEF;
+        stcIrqRegCfg.enIntSrc    = I2C_INT_RXI_DEF;
         stcIrqRegCfg.pfnCallback = &I2C_RXI_Callback;
         i2c_irq_register(stcIrqRegCfg, "I2C_RXI_IRQN_DEF");
         // stcIrqRegCfg.enIRQn = I2C_RXI_IRQN_DEF;
@@ -351,7 +361,7 @@ int32_t Slave_Initialize(void)
         // NVIC_SetPriority(stcIrqRegCfg.enIRQn, DDL_IRQ_PRIO_DEFAULT);
         // NVIC_EnableIRQ(stcIrqRegCfg.enIRQn);
 
-        stcIrqRegCfg.enIntSrc = I2C_INT_TEI_DEF;
+        stcIrqRegCfg.enIntSrc    = I2C_INT_TEI_DEF;
         stcIrqRegCfg.pfnCallback = &I2C_TEI_Callback;
         i2c_irq_register(stcIrqRegCfg, "I2C_TEI_IRQN_DEF");
         // stcIrqRegCfg.enIRQn = I2C_TEI_IRQN_DEF;
@@ -361,10 +371,23 @@ int32_t Slave_Initialize(void)
         // NVIC_ClearPendingIRQ(stcIrqRegCfg.enIRQn);
         // NVIC_SetPriority(stcIrqRegCfg.enIRQn, DDL_IRQ_PRIO_DEFAULT);
         // NVIC_EnableIRQ(stcIrqRegCfg.enIRQn);
-				
-		I2C_Cmd(I2C_UNIT, ENABLE);
+
+        I2C_Cmd(I2C_UNIT, ENABLE);
         /* Config slave address match and receive full interrupt function*/
         I2C_IntCmd(I2C_UNIT, I2C_INT_MATCH_ADDR0 | I2C_INT_RX_FULL, ENABLE);
     }
     return i32Ret;
+}
+
+uint8_t Slave_Read(void)
+{
+    if (SlaveRxBuffer == nullptr) {
+        Serial.println("SlaveRxBuffer is not initialized");
+        return 0;
+    }
+    uint8_t data;
+    if (SlaveRxBuffer->pop(data)) {
+        return data;
+    }
+    return 0;
 }

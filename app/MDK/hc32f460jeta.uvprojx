@@ -439,11 +439,6 @@
               <FilePath>..\..\Arduino\Core\drivers\sysclock\sysclock.cpp</FilePath>
             </File>
             <File>
-              <FileName>systick.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\..\Arduino\Core\drivers\sysclock\systick.cpp</FilePath>
-            </File>
-            <File>
               <FileName>itoa.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Arduino\itoa.c</FilePath>
@@ -482,6 +477,16 @@
               <FileName>Wire.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\..\Arduino\Core\drivers\i2c\Wire.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>systick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Arduino\Core\drivers\sysclock\systick.c</FilePath>
+            </File>
+            <File>
+              <FileName>SPI.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\Arduino\Core\drivers\spi\SPI.cpp</FilePath>
             </File>
           </Files>
         </Group>

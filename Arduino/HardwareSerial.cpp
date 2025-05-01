@@ -103,8 +103,10 @@ HardwareSerial::HardwareSerial(struct usart_config_t *usart_config,
 HardwareSerial::~HardwareSerial()
 {
     // 释放RingBuffer
-    delete this->_rx_buffer;
-    delete this->_tx_buffer;
+		if(_rx_buffer != nullptr)
+			delete this->_rx_buffer;
+		if(_tx_buffer != nullptr)
+			delete this->_tx_buffer;
 
     this->_rx_buffer = nullptr;
     this->_tx_buffer = nullptr;

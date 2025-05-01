@@ -1,4 +1,5 @@
-./output/debug/print.o: ..\..\Arduino\Print.cpp ..\..\Arduino\Arduino.h \
+./output/debug/spi.o: ..\..\Arduino\Core\drivers\spi\SPI.cpp \
+  ..\..\Arduino\Arduino.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdbool.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__config \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
@@ -67,4 +68,4 @@
   ..\..\Arduino\RingBuffer.h ..\..\Arduino\wiring_digital.h \
   ..\..\Arduino\Core\drivers\sysclock\sysclock.h \
   ..\..\Arduino\Core\drivers\gpio\direct_access.h \
-  ..\..\Arduino\WVariant.h
+  ..\..\Arduino\WVariant.h ..\..\Arduino\Core\drivers\spi\SPI.h

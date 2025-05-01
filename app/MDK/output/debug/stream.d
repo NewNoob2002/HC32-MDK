@@ -30,8 +30,9 @@
   ..\..\Arduino\core_types.h ..\..\Arduino\Core\avr\interrupt.h \
   ..\..\Arduino\Core\avr\io.h ..\..\Arduino\Core\avr\dtostrf.h \
   ..\..\Arduino\binary.h ..\..\Arduino\itoa.h \
-  ..\..\Arduino\wiring_constants.h ..\..\Arduino\WVariant.h \
-  ..\..\Driver\inc\hc32_ll.h ..\..\Driver\inc\hc32_ll_def.h \
+  ..\..\Arduino\wiring_constants.h ..\..\Arduino\delay.h \
+  ..\..\Arduino\WVariant.h ..\..\Driver\inc\hc32_ll.h \
+  ..\..\Driver\inc\hc32_ll_def.h \
   ..\..\CMSIS\Device\HDSC\hc32f4xx\Include\hc32f4xx.h \
   ..\..\CMSIS\Device\HDSC\hc32f4xx\Include\hc32f460.h \
   ..\..\CMSIS\Include\core_cm4.h ..\..\CMSIS\Include\cmsis_version.h \
@@ -44,7 +45,7 @@
   ..\..\Driver\inc\hc32_ll_def.h \
   ..\..\CMSIS\Device\HDSC\hc32f4xx\Include\hc32f4xx.h \
   ..\source\hc32f4xx_conf.h \
-  ..\..\Arduino\Core\drivers\sysclock\systick.h ..\..\Arduino\delay.h \
+  ..\..\Arduino\Core\drivers\sysclock\systick.h \
   ..\..\Driver\inc\hc32_ll_adc.h ..\..\Driver\inc\hc32_ll_aos.h \
   ..\..\Driver\inc\hc32_ll_clk.h ..\..\Driver\inc\hc32_ll_crc.h \
   ..\..\Driver\inc\hc32_ll_dbgc.h ..\..\Driver\inc\hc32_ll_dma.h \

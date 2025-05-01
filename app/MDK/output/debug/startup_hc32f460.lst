@@ -901,9 +901,9 @@ ARM Macro Assembler    Page 14
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4 --fpu=SoftVFP
  --depend=.\output\debug\startup_hc32f460.d -o.\output\debug\startup_hc32f460.o
- -IC:\Users\gtc\AppData\Local\Arm\Packs\HDSC\HC32F460\1.0.12\Device\Include --p
-redefine="__UVISION_VERSION SETA 536" --list=.\output\debug\startup_hc32f460.ls
-t ..\..\CMSIS\Device\HDSC\hc32f4xx\Source\ARM\startup_hc32f460.s
+ -IC:\Users\guoti\AppData\Local\Arm\Packs\HDSC\HC32F460\1.0.12\Device\Include -
+-predefine="__UVISION_VERSION SETA 536" --list=.\output\debug\startup_hc32f460.
+lst ..\..\CMSIS\Device\HDSC\hc32f4xx\Source\ARM\startup_hc32f460.s
 
 
 

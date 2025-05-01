@@ -1,6 +1,7 @@
 #ifndef _HardWAREI2C_H
 #define _HardWAREI2C_H
-#include "hc32_ll.h"
+#include <hc32_ll.h>
+#include <RingBuffer.h>
 
 /* Define I2C unit used for the example */
 #define I2C_UNIT                        (CM_I2C2)
@@ -16,5 +17,9 @@
 
 int32_t Slave_Initialize(void);
 
+extern RingBuffer<uint8_t> *SlaveRxBuffer;
+extern RingBuffer<uint8_t> *SlaveTxBuffer;
+
+uint8_t Slave_Read(void);
 #endif
 

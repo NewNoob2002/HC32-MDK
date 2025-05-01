@@ -2,7 +2,14 @@
 #define DELAY_h
 #include <stdint.h>
 
-void delay_ms(uint32_t ms);
+#ifdef __cplusplus
+extern "C" {
+#endif
 
+void delay_ms(uint32_t ms);
 void delay_us(uint32_t us);
+
+#ifdef __cplusplus
+}
+#endif
 #endif

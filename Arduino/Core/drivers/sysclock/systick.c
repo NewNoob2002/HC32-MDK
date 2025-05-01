@@ -1,6 +1,7 @@
 #include <hc32_ll.h>
 
 #include "systick.h"
+#include "delay.h"
 /**
  * @brief system uptime counter, incremented by systick interrupt every 1ms
  */
@@ -16,7 +17,7 @@
 static volatile uint32_t SystemTickCount = 0;
 
 
-extern "C" void SysTick_Handler(void)
+void SysTick_Handler(void)
 {
   SystemTickCount++;
 	__DSB();
@@ -29,12 +30,12 @@ void systick_init()
   SysTick_Config(clkFreq.u32SysclkFreq / SYSTICK_TICK_FREQ); // tick every 1 ms
 }
 
-uint32_t systick_millis()
+uint32_t millis()
 {
   return SystemTickCount;
 }
 
-uint32_t systick_micros()
+uint32_t micros()
 {
   // based on implementation by STM32duino
   // https://github.com/stm32duino/Arduino_Core_STM32/blob/586319c6c2cee268747c8826d93e84b26d1549fd/libraries/SrcWrapper/src/stm32/clock.c#L29
@@ -60,16 +61,6 @@ uint32_t systick_micros()
 
   // calculate microseconds
   return (ms * 1000) + (((ticks_per_ms - ticks) * 1000) / ticks_per_ms);
-}
-
-uint32_t millis()
-{
-	return systick_millis();
-}
-
-uint32_t micros()
-{
-	return systick_micros();
 }
 
 void delay_ms(uint32_t ms)
