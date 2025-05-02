@@ -1,13 +1,12 @@
 ./output/debug/sysclock.o: \
   ..\..\Arduino\Core\drivers\sysclock\sysclock.cpp \
-  ..\..\Arduino\Core\drivers\sysclock\sysclock.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdint.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__config \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
   ..\..\Driver\inc\hc32_ll.h ..\..\Driver\inc\hc32_ll_def.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stddef.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__config \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stddef.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__nullptr \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdint.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
   ..\..\CMSIS\Device\HDSC\hc32f4xx\Include\hc32f4xx.h \
   ..\..\CMSIS\Device\HDSC\hc32f4xx\Include\hc32f460.h \
   ..\..\CMSIS\Include\core_cm4.h ..\..\CMSIS\Include\cmsis_version.h \
@@ -32,4 +31,42 @@
   ..\..\Driver\inc\hc32_ll_rmu.h ..\..\Driver\inc\hc32_ll_spi.h \
   ..\..\Driver\inc\hc32_ll_sram.h ..\..\Driver\inc\hc32_ll_tmr0.h \
   ..\..\Driver\inc\hc32_ll_tmra.h ..\..\Driver\inc\hc32_ll_usart.h \
-  ..\..\Driver\inc\hc32_ll_utility.h
+  ..\..\Driver\inc\hc32_ll_utility.h ..\..\Arduino\Arduino.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdbool.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdarg.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdio.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdlib.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\string.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\inttypes.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\inttypes.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\math.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\type_traits \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstddef \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\version \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\limits \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__undef_macros \
+  ..\..\Arduino\core_types.h ..\..\Arduino\Core\avr\pgmspace.h \
+  ..\..\Arduino\Core\avr\interrupt.h ..\..\Arduino\Core\avr\io.h \
+  ..\..\Arduino\Core\avr\dtostrf.h ..\..\Arduino\binary.h \
+  ..\..\Arduino\itoa.h ..\..\Arduino\wiring_constants.h \
+  ..\..\Arduino\delay.h ..\..\Arduino\WVariant.h \
+  ..\..\Arduino\Core\drivers\adc\adc.h \
+  ..\..\Arduino\Core\drivers\adc\adc_config.h \
+  ..\..\Arduino\Core\variants\hc32f460xx\variant.h \
+  ..\..\Arduino\WCharacter.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\ctype.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\ctype.h ..\..\Arduino\WString.h \
+  ..\..\Arduino\WMath.h ..\..\Arduino\HardwareSerial.h \
+  ..\..\Arduino\RingBuffer.h ..\..\Arduino\Stream.h \
+  ..\..\Arduino\Print.h ..\..\Arduino\Printable.h \
+  ..\..\Arduino\Core\drivers\usart\usart_config.h \
+  ..\..\Arduino\RingBuffer.h ..\..\Arduino\wiring_digital.h \
+  ..\..\Arduino\Core\drivers\sysclock\sysclock.h \
+  ..\..\Arduino\Core\drivers\gpio\direct_access.h \
+  ..\..\Arduino\WVariant.h \
+  ..\..\Arduino\Core\drivers\sysclock\sysclock.h

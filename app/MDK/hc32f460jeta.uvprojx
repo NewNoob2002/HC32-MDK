@@ -337,9 +337,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>__DEBUG,HC32F460,USE_DDL_DRIVER,__CORE_DEBUG</Define>
+              <Define>__DEBUG,HC32F460,USE_DDL_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\source;..\..\bsp\ev_hc32f460_lqfp100_v2;..\..\CMSIS\Include;..\..\CMSIS\Device\HDSC\hc32f4xx\Include;..\..\Driver\inc;..\..\Libraries\MillisTaskManager;..\..\Libraries\cm_backtrace;..\..\Libraries\cm_backtrace\Languages\en-US;..\..\Arduino;..\..\Arduino\Core\avr;..\..\Arduino\Core\drivers\gpio;..\..\Arduino\Core\drivers\adc;..\..\Arduino\Core\drivers\panic;..\..\Arduino\Core\drivers\usart;..\..\Arduino\Core\drivers\irqn;..\..\Arduino\Core\drivers\sysclock;..\..\Arduino\Core\variants\hc32f460xx;..\..\Arduino\Core\drivers\i2c;..\..\Arduino\Core\drivers\spi</IncludePath>
+              <IncludePath>..\source;..\source\inc;..\..\bsp\ev_hc32f460_lqfp100_v2;..\..\CMSIS\Include;..\..\CMSIS\Device\HDSC\hc32f4xx\Include;..\..\Driver\inc;..\..\Arduino;..\..\Arduino\Core\avr;..\..\Arduino\Core\drivers\gpio;..\..\Arduino\Core\drivers\adc;..\..\Arduino\Core\drivers\panic;..\..\Arduino\Core\drivers\usart;..\..\Arduino\Core\drivers\irqn;..\..\Arduino\Core\drivers\sysclock;..\..\Arduino\Core\variants\hc32f460xx;..\..\Arduino\Core\drivers\i2c;..\..\Arduino\Core\drivers\spi;..\..\Libraries\rt-thread\include;..\..\Libraries\rt-thread\include\libc;..\..\Libraries\rt-thread\bsp;..\..\Libraries\MillisTaskManager;..\..\Libraries\Parser\include;..\..\Libraries\EnhancedButton\src</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -387,6 +387,21 @@
               <FileName>main.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\source\main.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Task.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\source\src\Task.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Key.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\source\src\Key.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Led.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\source\src\Led.cpp</FilePath>
             </File>
           </Files>
         </Group>
@@ -742,6 +757,126 @@
               <FileName>HardwareI2cSlave.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\..\Arduino\Core\drivers\i2c\HardwareI2cSlave.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>SparkFun_Extensible_Message_Parser.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\Libraries\Parser\src\SparkFun_Extensible_Message_Parser.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Parse_BT.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\Libraries\Parser\src\Parse_BT.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>EnhancedButton.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\Libraries\EnhancedButton\src\EnhancedButton.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>rt-thread</GroupName>
+          <Files>
+            <File>
+              <FileName>context_rvds.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\Libraries\rt-thread\libcpu\arm\cortex-m4\context_rvds.S</FilePath>
+            </File>
+            <File>
+              <FileName>cpuport.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\rt-thread\libcpu\arm\cortex-m4\cpuport.c</FilePath>
+            </File>
+            <File>
+              <FileName>clock.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\rt-thread\src\clock.c</FilePath>
+            </File>
+            <File>
+              <FileName>components.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\rt-thread\src\components.c</FilePath>
+            </File>
+            <File>
+              <FileName>cpu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\rt-thread\src\cpu.c</FilePath>
+            </File>
+            <File>
+              <FileName>idle.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\rt-thread\src\idle.c</FilePath>
+            </File>
+            <File>
+              <FileName>ipc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\rt-thread\src\ipc.c</FilePath>
+            </File>
+            <File>
+              <FileName>irq.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\rt-thread\src\irq.c</FilePath>
+            </File>
+            <File>
+              <FileName>kservice.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\rt-thread\src\kservice.c</FilePath>
+            </File>
+            <File>
+              <FileName>mem.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\rt-thread\src\mem.c</FilePath>
+            </File>
+            <File>
+              <FileName>memheap.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\rt-thread\src\memheap.c</FilePath>
+            </File>
+            <File>
+              <FileName>mempool.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\rt-thread\src\mempool.c</FilePath>
+            </File>
+            <File>
+              <FileName>object.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\rt-thread\src\object.c</FilePath>
+            </File>
+            <File>
+              <FileName>scheduler.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\rt-thread\src\scheduler.c</FilePath>
+            </File>
+            <File>
+              <FileName>slab.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\rt-thread\src\slab.c</FilePath>
+            </File>
+            <File>
+              <FileName>thread.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\rt-thread\src\thread.c</FilePath>
+            </File>
+            <File>
+              <FileName>timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\rt-thread\src\timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>board.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\rt-thread\bsp\board.c</FilePath>
+            </File>
+            <File>
+              <FileName>rtconfig.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\Libraries\rt-thread\bsp\rtconfig.h</FilePath>
+            </File>
+            <File>
+              <FileName>usart.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\Libraries\rt-thread\bsp\usart.cpp</FilePath>
             </File>
           </Files>
         </Group>

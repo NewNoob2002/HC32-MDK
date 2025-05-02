@@ -49,7 +49,7 @@ extern "C"{
 
 #include "wiring_constants.h"
 #include "delay.h"
-
+#include "systick.h"
   /* sketch */
 //void setup( void ) ;
 //void loop( void ) ;
@@ -71,7 +71,7 @@ extern "C"{
 #include "Stream.h"
 //#include "pulse.h"
 #endif
-#include "systick.h"
+
 #ifdef __cplusplus
 //#include "drivers/usart/Usart.h"
 #endif

@@ -55,4 +55,25 @@
   ..\..\Arduino\RingBuffer.h ..\..\Arduino\WVariant.h \
   ..\..\Arduino\Core\drivers\adc\adc.h \
   ..\..\Arduino\Core\drivers\adc\adc_config.h \
-  ..\..\Arduino\Core\variants\hc32f460xx\variant.h
+  ..\..\Arduino\Core\variants\hc32f460xx\variant.h ..\source\inc\debug.h \
+  ..\..\Libraries\rt-thread\include\rtthread.h \
+  ..\..\Libraries\rt-thread\bsp\rtconfig.h \
+  ..\..\Libraries\rt-thread\include\rtdebug.h \
+  ..\..\Libraries\rt-thread\include\rtdef.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdarg.h \
+  ..\..\Libraries\rt-thread\include\rtservice.h ..\..\Arduino\Arduino.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\math.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\type_traits \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstddef \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\version \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\limits \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__undef_macros \
+  ..\..\Arduino\Core\avr\interrupt.h ..\..\Arduino\Core\avr\io.h \
+  ..\..\Arduino\Core\avr\dtostrf.h ..\..\Arduino\binary.h \
+  ..\..\Arduino\itoa.h ..\..\Arduino\wiring_constants.h \
+  ..\..\Arduino\delay.h ..\..\Arduino\WCharacter.h ..\..\Arduino\WMath.h \
+  ..\..\Arduino\wiring_digital.h \
+  ..\..\Arduino\Core\drivers\sysclock\sysclock.h \
+  ..\..\Arduino\Core\drivers\gpio\direct_access.h \
+  ..\..\Arduino\WVariant.h

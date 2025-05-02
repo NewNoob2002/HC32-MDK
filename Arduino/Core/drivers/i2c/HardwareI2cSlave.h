@@ -28,6 +28,8 @@ class HardwareI2cSlave : public Stream
 public:
     HardwareI2cSlave();
     ~HardwareI2cSlave();
+    bool begin(void);
+    void updateBuffers(RingBuffer<uint8_t> *rxBuffer, RingBuffer<uint8_t> *txBuffer);
     virtual int available(void);
     int availableForWrite(void);
     virtual int peek(void);
@@ -55,5 +57,13 @@ public:
 private:
     RingBuffer<uint8_t> *__SlaveRxBuffer;
     RingBuffer<uint8_t> *__SlaveTxBuffer;
+
+    bool initialized;
 };
+
+extern HardwareI2cSlave I2C_Slave;
+
+// 声明更新I2C_Slave对象内部指针的函数
+void UpdateI2CSlave();
+
 #endif

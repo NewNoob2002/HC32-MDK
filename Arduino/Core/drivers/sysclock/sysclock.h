@@ -65,8 +65,17 @@ typedef struct system_clock_frequencies
  */
 extern system_clock_frequencies_t SYSTEM_CLOCK_FREQUENCIES;
 
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 /**
  * @brief update the SYSTEM_CLOCK_FREQUENCIES variable
  */
 void update_system_clock_frequencies();
 void clock_init(void);
+	
+#ifdef __cplusplus
+}
+#endif

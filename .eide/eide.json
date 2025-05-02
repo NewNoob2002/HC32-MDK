@@ -12,6 +12,15 @@
         "files": [
           {
             "path": "app/source/main.cpp"
+          },
+          {
+            "path": "app/source/src/Task.cpp"
+          },
+          {
+            "path": "app/source/src/Key.cpp"
+          },
+          {
+            "path": "app/source/src/Led.cpp"
           }
         ],
         "folders": []
@@ -72,6 +81,9 @@
           },
           {
             "path": "Arduino/Core/drivers/sysclock/systick.c"
+          },
+          {
+            "path": "Arduino/Core/drivers/spi/SPI.cpp"
           }
         ],
         "folders": []
@@ -237,6 +249,81 @@
           },
           {
             "path": "Arduino/Core/drivers/i2c/HardwareI2cSlave.cpp"
+          },
+          {
+            "path": "Libraries/Parser/src/SparkFun_Extensible_Message_Parser.cpp"
+          },
+          {
+            "path": "Libraries/Parser/src/Parse_BT.cpp"
+          },
+          {
+            "path": "Libraries/EnhancedButton/src/EnhancedButton.cpp"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "rt-thread",
+        "files": [
+          {
+            "path": "Libraries/rt-thread/libcpu/arm/cortex-m4/context_rvds.S"
+          },
+          {
+            "path": "Libraries/rt-thread/libcpu/arm/cortex-m4/cpuport.c"
+          },
+          {
+            "path": "Libraries/rt-thread/src/clock.c"
+          },
+          {
+            "path": "Libraries/rt-thread/src/components.c"
+          },
+          {
+            "path": "Libraries/rt-thread/src/cpu.c"
+          },
+          {
+            "path": "Libraries/rt-thread/src/idle.c"
+          },
+          {
+            "path": "Libraries/rt-thread/src/ipc.c"
+          },
+          {
+            "path": "Libraries/rt-thread/src/irq.c"
+          },
+          {
+            "path": "Libraries/rt-thread/src/kservice.c"
+          },
+          {
+            "path": "Libraries/rt-thread/src/mem.c"
+          },
+          {
+            "path": "Libraries/rt-thread/src/memheap.c"
+          },
+          {
+            "path": "Libraries/rt-thread/src/mempool.c"
+          },
+          {
+            "path": "Libraries/rt-thread/src/object.c"
+          },
+          {
+            "path": "Libraries/rt-thread/src/scheduler.c"
+          },
+          {
+            "path": "Libraries/rt-thread/src/slab.c"
+          },
+          {
+            "path": "Libraries/rt-thread/src/thread.c"
+          },
+          {
+            "path": "Libraries/rt-thread/src/timer.c"
+          },
+          {
+            "path": "Libraries/rt-thread/bsp/board.c"
+          },
+          {
+            "path": "Libraries/rt-thread/bsp/rtconfig.h"
+          },
+          {
+            "path": "Libraries/rt-thread/bsp/usart.cpp"
           }
         ],
         "folders": []
@@ -244,10 +331,10 @@
     ]
   },
   "outDir": "build",
-  "deviceName": "HC32F460JETA",
-  "packDir": ".pack/HDSC/HC32F460.1.0.12",
+  "deviceName": null,
+  "packDir": null,
   "miscInfo": {
-    "uid": "965d82f675bc9aef5d34696ccf20aaee"
+    "uid": "66391db77ca4ba0c905b3f1ac609419f"
   },
   "targets": {
     "hc32f460jeta_Debug": {
@@ -366,40 +453,28 @@
         },
         "options": "null"
       },
-      "uploader": "pyOCD",
+      "uploader": "JLink",
       "uploadConfig": {
         "bin": "",
-        "targetName": "cortex_m",
-        "baseAddr": "0x08000000",
-        "speed": "4M",
-        "config": ".eide/hc32f460jeta_debug.pyocd.yaml",
+        "baseAddr": "",
+        "cpuInfo": {
+          "vendor": "null",
+          "cpuName": "null"
+        },
+        "proType": 1,
+        "speed": 8000,
         "otherCmds": ""
       },
-      "uploadConfigMap": {
-        "JLink": {
-          "bin": "",
-          "baseAddr": "",
-          "cpuInfo": {
-            "vendor": "XHSC",
-            "cpuName": "HC32F460xE"
-          },
-          "proType": 1,
-          "speed": 8000,
-          "otherCmds": ""
-        }
-      },
+      "uploadConfigMap": {},
       "custom_dep": {
         "name": "default",
         "incList": [
-          ".",
           "app/source",
+          "app/source/inc",
           "bsp/ev_hc32f460_lqfp100_v2",
           "CMSIS/Include",
           "CMSIS/Device/HDSC/hc32f4xx/Include",
           "Driver/inc",
-          "Libraries/MillisTaskManager",
-          "Libraries/cm_backtrace",
-          "Libraries/cm_backtrace/Languages/en-US",
           "Arduino",
           "Arduino/Core/avr",
           "Arduino/Core/drivers/gpio",
@@ -411,6 +486,12 @@
           "Arduino/Core/variants/hc32f460xx",
           "Arduino/Core/drivers/i2c",
           "Arduino/Core/drivers/spi",
+          "Libraries/rt-thread/include",
+          "Libraries/rt-thread/include/libc",
+          "Libraries/rt-thread/bsp",
+          "Libraries/MillisTaskManager",
+          "Libraries/Parser/include",
+          "Libraries/EnhancedButton/src",
           ".cmsis/include",
           "app/MDK/RTE/_hc32f460jeta_Debug"
         ],
@@ -418,8 +499,7 @@
         "defineList": [
           "__DEBUG",
           "HC32F460",
-          "USE_DDL_DRIVER",
-          "__CORE_DEBUG"
+          "USE_DDL_DRIVER"
         ]
       },
       "builderOptions": {

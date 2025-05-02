@@ -1,5 +1,5 @@
 #include "irqn.h"
-
+#include <debug.h>
 /**
  * @brief IRQn auto-assignment bitfield
  * @note each IRQn is represented by a single bit
@@ -7,8 +7,8 @@
 uint8_t irqn_bitfield[IRQN_AA_AVAILABLE_COUNT / 8] = {0};
 
 #define IRQN_BITFIELD_GET_FIELD_INDEX(irqn) (irqn / 8)
-#define IRQN_BITFIELD_GET_FIELD_BIT(irqn) (irqn % 8)
-#define IRQN_BITFIELD_GET_FIELD_MASK(irqn) (1 << IRQN_BITFIELD_GET_FIELD_BIT(irqn))
+#define IRQN_BITFIELD_GET_FIELD_BIT(irqn)   (irqn % 8)
+#define IRQN_BITFIELD_GET_FIELD_MASK(irqn)  (1 << IRQN_BITFIELD_GET_FIELD_BIT(irqn))
 
 /**
  * @brief get IRQn bitfield value
@@ -23,12 +23,9 @@ inline bool irqn_bitfield_get(size_t irqn_index)
  */
 inline void irqn_bitfield_set(size_t irqn_index, bool value)
 {
-    if (value)
-    {
+    if (value) {
         irqn_bitfield[IRQN_BITFIELD_GET_FIELD_INDEX(irqn_index)] |= IRQN_BITFIELD_GET_FIELD_MASK(irqn_index);
-    }
-    else
-    {
+    } else {
         irqn_bitfield[IRQN_BITFIELD_GET_FIELD_INDEX(irqn_index)] &= ~IRQN_BITFIELD_GET_FIELD_MASK(irqn_index);
     }
 }
@@ -40,10 +37,8 @@ inline void irqn_bitfield_set(size_t irqn_index, bool value)
  */
 inline bool irqn_bitfield_next(size_t &irqn_index)
 {
-    for (size_t i = 0; i < IRQN_AA_AVAILABLE_COUNT; i++)
-    {
-        if (!irqn_bitfield_get(i))
-        {
+    for (size_t i = 0; i < IRQN_AA_AVAILABLE_COUNT; i++) {
+        if (!irqn_bitfield_get(i)) {
             irqn_index = i;
             return true;
         }
@@ -94,8 +89,7 @@ int32_t _irqn_aa_get(IRQn_Type &irqn)
 {
     // get next available IRQn index
     size_t irqn_index;
-    if (!irqn_bitfield_next(irqn_index))
-    {
+    if (!irqn_bitfield_next(irqn_index)) {
         // no more IRQn available
         return LL_ERR;
     }
@@ -119,3 +113,42 @@ int32_t _irqn_aa_resign(IRQn_Type &irqn)
     // done
     return LL_OK;
 }
+
+#ifdef __CORE_DEBUG
+
+int32_t irqn_aa_get(IRQn_Type &irqn, const char *name)
+{
+    if (_irqn_aa_get(irqn) != LL_OK) {
+        panic_begin();
+        panic_printf("IRQn auto-assignment failed for %s", name);
+        panic_end();
+    }
+
+    LOG_DEBUG("IRQ%d auto-assigned to %s", int(irqn), name);
+    return LL_OK;
+}
+
+int32_t irqn_aa_resign(IRQn_Type &irqn, const char *name)
+{
+    if (_irqn_aa_resign(irqn) != LL_OK) {
+        panic_begin();
+        panic_printf("IRQn auto-resign failed for %s", name);
+        panic_end();
+    }
+
+    LOG_DEBUG("%s auto-resigned IRQ%d", name, int(irqn));
+    return LL_OK;
+}
+
+#else
+
+int32_t irqn_aa_get(IRQn_Type &irqn, const char *name)
+{
+	return _irqn_aa_get(irqn);
+}
+
+int32_t irqn_aa_resign(IRQn_Type &irqn, const char *name)
+{
+	return _irqn_aa_resign(irqn);
+}
+#endif

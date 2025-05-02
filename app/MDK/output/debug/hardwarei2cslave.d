@@ -1,11 +1,9 @@
 ./output/debug/hardwarei2cslave.o: \
   ..\..\Arduino\Core\drivers\i2c\HardwareI2cSlave.cpp \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\string.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__config \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
   ..\..\Arduino\Core\drivers\irqn\irqn.h ..\..\Driver\inc\hc32_ll.h \
   ..\..\Driver\inc\hc32_ll_def.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stddef.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__config \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stddef.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__nullptr \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdint.h \
@@ -46,6 +44,8 @@
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\inttypes.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\inttypes.h \
   ..\..\Arduino\Print.h ..\..\Arduino\WString.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\string.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\ctype.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\ctype.h \
   ..\..\Arduino\Core\avr\pgmspace.h ..\..\Arduino\Printable.h \
@@ -57,4 +57,7 @@
   ..\..\Arduino\Core\drivers\adc\adc.h \
   ..\..\Arduino\Core\drivers\adc\adc_config.h \
   ..\..\Arduino\Core\variants\hc32f460xx\variant.h \
-  ..\..\Arduino\Core\drivers\i2c\HardwareI2cSlave.h
+  ..\..\Arduino\Core\drivers\i2c\HardwareI2cSlave.h \
+  ..\..\Arduino\Stream.h ..\..\Arduino\delay.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\locale.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\locale.h

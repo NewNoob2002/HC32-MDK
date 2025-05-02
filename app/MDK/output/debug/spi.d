@@ -28,8 +28,9 @@
   ..\..\Arduino\Core\avr\interrupt.h ..\..\Arduino\Core\avr\io.h \
   ..\..\Arduino\Core\avr\dtostrf.h ..\..\Arduino\binary.h \
   ..\..\Arduino\itoa.h ..\..\Arduino\wiring_constants.h \
-  ..\..\Arduino\delay.h ..\..\Arduino\WVariant.h \
-  ..\..\Driver\inc\hc32_ll.h ..\..\Driver\inc\hc32_ll_def.h \
+  ..\..\Arduino\delay.h ..\..\Arduino\Core\drivers\sysclock\systick.h \
+  ..\..\Arduino\WVariant.h ..\..\Driver\inc\hc32_ll.h \
+  ..\..\Driver\inc\hc32_ll_def.h \
   ..\..\CMSIS\Device\HDSC\hc32f4xx\Include\hc32f4xx.h \
   ..\..\CMSIS\Device\HDSC\hc32f4xx\Include\hc32f460.h \
   ..\..\CMSIS\Include\core_cm4.h ..\..\CMSIS\Include\cmsis_version.h \
@@ -41,15 +42,13 @@
   ..\..\CMSIS\Device\HDSC\hc32f4xx\Include\system_hc32f460.h \
   ..\..\Driver\inc\hc32_ll_def.h \
   ..\..\CMSIS\Device\HDSC\hc32f4xx\Include\hc32f4xx.h \
-  ..\source\hc32f4xx_conf.h \
-  ..\..\Arduino\Core\drivers\sysclock\systick.h \
-  ..\..\Driver\inc\hc32_ll_adc.h ..\..\Driver\inc\hc32_ll_aos.h \
-  ..\..\Driver\inc\hc32_ll_clk.h ..\..\Driver\inc\hc32_ll_crc.h \
-  ..\..\Driver\inc\hc32_ll_dbgc.h ..\..\Driver\inc\hc32_ll_dma.h \
-  ..\..\Driver\inc\hc32_ll_efm.h ..\..\Driver\inc\hc32_ll_fcg.h \
-  ..\..\Driver\inc\hc32_ll_fcm.h ..\..\Driver\inc\hc32_ll_gpio.h \
-  ..\..\Driver\inc\hc32_ll_i2c.h ..\..\Driver\inc\hc32_ll_icg.h \
-  ..\..\Driver\inc\hc32_ll_interrupts.h \
+  ..\source\hc32f4xx_conf.h ..\..\Driver\inc\hc32_ll_adc.h \
+  ..\..\Driver\inc\hc32_ll_aos.h ..\..\Driver\inc\hc32_ll_clk.h \
+  ..\..\Driver\inc\hc32_ll_crc.h ..\..\Driver\inc\hc32_ll_dbgc.h \
+  ..\..\Driver\inc\hc32_ll_dma.h ..\..\Driver\inc\hc32_ll_efm.h \
+  ..\..\Driver\inc\hc32_ll_fcg.h ..\..\Driver\inc\hc32_ll_fcm.h \
+  ..\..\Driver\inc\hc32_ll_gpio.h ..\..\Driver\inc\hc32_ll_i2c.h \
+  ..\..\Driver\inc\hc32_ll_icg.h ..\..\Driver\inc\hc32_ll_interrupts.h \
   ..\..\Driver\inc\hc32_ll_keyscan.h ..\..\Driver\inc\hc32_ll_pwc.h \
   ..\..\Driver\inc\hc32_ll_rmu.h ..\..\Driver\inc\hc32_ll_spi.h \
   ..\..\Driver\inc\hc32_ll_sram.h ..\..\Driver\inc\hc32_ll_tmr0.h \

@@ -1,5 +1,6 @@
 #include <irqn.h>
 #include "HardwareI2cSlave.h"
+#include "delay.h"
 #include "locale.h"
 /*******************************************************************************
  * Local type definitions ('typedef')
@@ -285,36 +286,93 @@ int32_t Slave_Initialize(void)
     return i32Ret;
 }
 
-uint8_t Slave_Read(void)
+HardwareI2cSlave ::HardwareI2cSlave()
 {
-    if (SlaveRxBuffer == nullptr) {
+    this->initialized     = false;
+    this->__SlaveRxBuffer = nullptr;
+    this->__SlaveTxBuffer = nullptr;
+}
+
+HardwareI2cSlave ::~HardwareI2cSlave()
+{
+    this->__SlaveRxBuffer = nullptr;
+    this->__SlaveTxBuffer = nullptr;
+}
+
+bool HardwareI2cSlave ::begin(void)
+{
+    if (Slave_Initialize() == LL_OK) {
+        updateBuffers(SlaveRxBuffer, SlaveTxBuffer);
+        this->initialized = true;
+        return true;
+    }
+    return false;
+}
+
+int HardwareI2cSlave ::available(void)
+{
+    if (this->initialized == false)
+        return 0;
+    return this->__SlaveRxBuffer->count();
+}
+
+int HardwareI2cSlave ::availableForWrite(void)
+{
+    return this->__SlaveTxBuffer->capacity() - this->__SlaveTxBuffer->count();
+}
+
+int HardwareI2cSlave ::peek(void)
+{
+    if (this->initialized == false)
+        return 0;
+    return this->__SlaveRxBuffer->peek();
+}
+
+int HardwareI2cSlave ::read(void)
+{
+    if (this->initialized == false)
+        return 0;
+
+    if (this->__SlaveRxBuffer == nullptr) {
         Serial.println("SlaveRxBuffer is not initialized");
         return 0;
     }
     uint8_t data;
-    if (SlaveRxBuffer->pop(data)) {
+    if (this->__SlaveRxBuffer->pop(data)) {
         return data;
+    }
+    return -1;
+}
+
+void HardwareI2cSlave ::flush(void)
+{
+    if (this->initialized == false)
+        return;
+    this->__SlaveTxBuffer->clear();
+}
+
+size_t HardwareI2cSlave ::write(uint8_t n)
+{
+    if (this->initialized == false)
+        return 0;
+    while (this->__SlaveTxBuffer->isFull()) {
+        delay_ms(1);
+    }
+    if (this->__SlaveTxBuffer->push(n)) {
+        return 1;
     }
     return 0;
 }
 
-HardwareI2cSlave :: HardwareI2cSlave()
+// 添加updateBuffers的实现
+void HardwareI2cSlave::updateBuffers(RingBuffer<uint8_t> *rxBuffer, RingBuffer<uint8_t> *txBuffer)
 {
-    this->__SlaveRxBuffer = nullptr;
-    this->__SlaveTxBuffer = nullptr;
+    if (rxBuffer != nullptr) {
+        this->__SlaveRxBuffer = rxBuffer;
+    }
+    if (txBuffer != nullptr) {
+        this->__SlaveTxBuffer = txBuffer;
+    }
 }
 
-HardwareI2cSlave :: ~HardwareI2cSlave()
-{
-    if(this->__SlaveRxBuffer != nullptr)
-    {
-        delete this->__SlaveRxBuffer;
-    }
-    if(this->__SlaveTxBuffer != nullptr)
-    {
-        delete this->__SlaveTxBuffer;
-    }
-    
-    this->__SlaveRxBuffer = nullptr;
-    this->__SlaveTxBuffer = nullptr;
-}
+HardwareI2cSlave I2C_Slave;
