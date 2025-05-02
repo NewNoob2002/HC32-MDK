@@ -34,4 +34,5 @@
   ..\..\Libraries\rt-thread\include\rtdef.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdarg.h \
   ..\..\Libraries\rt-thread\include\rtservice.h \
-  ..\..\Arduino\Core\drivers\sysclock\sysclock.h
+  ..\..\Arduino\Core\drivers\sysclock\sysclock.h \
+  ..\..\Libraries\rt-thread\bsp\usart.h

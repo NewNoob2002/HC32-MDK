@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include "panic.h"
-#include "HardwareSerial.h"
+#include <rtthread.h>
 #ifdef __CORE_DEBUG
 
 // allow user to re-define the debug macros with custom ones
@@ -13,7 +13,7 @@
 #endif
 
 #ifndef CORE_DEBUG_PRINTF
-#define CORE_DEBUG_PRINTF(fmt, ...) Serial.printf(fmt, ##__VA_ARGS__)
+#define CORE_DEBUG_PRINTF(fmt, ...) rt_kprintf(fmt, ##__VA_ARGS__)
 #endif
 
 #ifndef CORE_ASSERT

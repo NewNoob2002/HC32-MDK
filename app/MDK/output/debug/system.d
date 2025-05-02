@@ -1,4 +1,4 @@
-./output/debug/key.o: ..\source\src\Key.cpp ..\..\Arduino\Arduino.h \
+./output/debug/system.o: ..\source\src\System.cpp ..\..\Arduino\Arduino.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdbool.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__config \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
@@ -66,14 +66,9 @@
   ..\..\Arduino\RingBuffer.h ..\..\Arduino\wiring_digital.h \
   ..\..\Arduino\Core\drivers\sysclock\sysclock.h \
   ..\..\Arduino\Core\drivers\gpio\direct_access.h \
-  ..\..\Arduino\WVariant.h ..\source\inc\global.h \
-  ..\..\Libraries\rt-thread\include\rtthread.h \
+  ..\..\Arduino\WVariant.h ..\..\Libraries\rt-thread\include\rtthread.h \
   ..\..\Libraries\rt-thread\bsp\rtconfig.h \
   ..\..\Libraries\rt-thread\include\rtdebug.h \
   ..\..\Libraries\rt-thread\include\rtdef.h \
-  ..\..\Libraries\rt-thread\include\rtservice.h ..\source\inc\debug.h \
-  ..\source\inc\Key.h \
-  ..\..\Libraries\EnhancedButton\src\EnhancedButton.h \
-  ..\source\inc\Led.h ..\source\inc\Task.h ..\source\inc\powerControl.h \
-  ..\source\inc\System.h ..\source\inc\mcu_define.h \
-  ..\source\inc\settings.h ..\source\inc\Key.h
+  ..\..\Libraries\rt-thread\include\rtservice.h \
+  ..\..\Libraries\rt-thread\include\rthw.h ..\source\inc\System.h

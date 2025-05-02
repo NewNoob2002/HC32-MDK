@@ -54,10 +54,10 @@ SystemParameter DisplayPannelParameter;
 /*******************************************************************************
  * Local type definitions ('typedef')
  ******************************************************************************/
-static struct rt_thread i2cSlave_thread;
+static struct rt_thread keyCheck_thread;
 ALIGN(RT_ALIGN_SIZE)
-static rt_uint8_t i2cSlave_thread_stack[1024];
-static rt_uint8_t i2cSlave_thread_priority = 6;
+static rt_uint8_t keyCheck_thread_stack[1024];
+static rt_uint8_t keyCheck_thread_priority = 6;
 
 static struct rt_thread led_thread;
 ALIGN(RT_ALIGN_SIZE)
@@ -76,7 +76,6 @@ static rt_uint8_t message_thread_priority = 7;
                            LL_PERIPH_PWC_CLK_RMU | LL_PERIPH_SRAM)
 #define EXAMPLE_PERIPH_WP (LL_PERIPH_EFM | LL_PERIPH_FCG | LL_PERIPH_SRAM)
 
-
 /**
  * @brief  Main function of SPI tx/rx dma project
  * @param  None
@@ -87,48 +86,50 @@ int main(void)
     /* Peripheral registers write unprotected */
     LL_PERIPH_WE(EXAMPLE_PERIPH_WE);
     /* Configure BSP */
-    Serial.begin(115200);
-	
-		//start Init device
-	  unsigned short reg_value = *((unsigned short *)0x400540C0UL);
+
+    // start Init device
+    unsigned short reg_value = *((unsigned short *)0x400540C0UL);
     if (reg_value & 0x0100U) {
         LOG_INFO("Software reset");
-//        Power_Control_Pin_Switch(1);
+        //        Power_Control_Pin_Switch(1);
     } else if (reg_value & 0x0002U) {
         LOG_INFO("EWDT or Hardware reset");
     } else if (reg_value & 0x2000U) {
         LOG_ERROR("XTAL error");
     }
     pinMode(PB14, OUTPUT);
+    keyInit();
     I2C_Slave.begin();
 
     /* Peripheral registers write protected */
     LL_PERIPH_WP(EXAMPLE_PERIPH_WP);
 
-    // rt_thread_init(&i2cSlave_thread,
-    //                "i2cSlave",
-    //                i2c_slave_task,
-    //                RT_NULL,
-    //                &i2cSlave_thread_stack,
-    //                sizeof(i2cSlave_thread_stack),
-    //                i2cSlave_thread_priority,
-    //                100);
     rt_thread_init(&led_thread,
                    "led",
-                   led_task,
+                   ledStatusUpdateTask,
                    RT_NULL,
                    &led_thread_stack,
                    sizeof(led_thread_stack),
                    led_thread_priority,
                    100);
     rt_thread_init(&message_thread,
-                   "led",
+                   "message_task",
                    btReadTask,
                    RT_NULL,
                    &message_thread_stack,
                    sizeof(message_thread_stack),
                    message_thread_priority,
-                   1000);             
+                   1000);
+    rt_thread_init(&keyCheck_thread,
+                   "keyCheck",
+                   KeyMonitor,
+                   RT_NULL,
+                   &keyCheck_thread_stack,
+                   sizeof(keyCheck_thread_stack),
+                   keyCheck_thread_priority,
+                   100);
+
     rt_thread_startup(&message_thread);
     rt_thread_startup(&led_thread);
+    rt_thread_startup(&keyCheck_thread);
 }

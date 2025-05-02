@@ -106,7 +106,7 @@
 // <h>Memory Management Configuration
 // <c1>Dynamic Heap Management
 //  <i>Dynamic Heap Management
-//#define RT_USING_HEAP
+#define RT_USING_HEAP
 // </c>
 // <c1>using small memory
 //  <i>using small memory
@@ -128,28 +128,28 @@
 //  <i>Default: 128  (128Byte)
 #define RT_CONSOLEBUF_SIZE          128
 // </h>
+//#include "finsh_config.h"
+//#if defined(RT_USING_FINSH)
+//    #define FINSH_USING_MSH
+//    #define FINSH_USING_MSH_ONLY
+//    // <h>Finsh Configuration
+//    // <o>the priority of finsh thread <1-7>
+//    //  <i>the priority of finsh thread
+//    //  <i>Default: 6
+//    #define __FINSH_THREAD_PRIORITY     5
+//    #define FINSH_THREAD_PRIORITY       (RT_THREAD_PRIORITY_MAX / 8 * __FINSH_THREAD_PRIORITY + 1)
+//    // <o>the stack of finsh thread <1-4096>
+//    //  <i>the stack of finsh thread
+//    //  <i>Default: 4096  (4096Byte)
+//    #define FINSH_THREAD_STACK_SIZE     512
+//    // <o>the history lines of finsh thread <1-32>
+//    //  <i>the history lines of finsh thread
+//    //  <i>Default: 5
+//    #define FINSH_HISTORY_LINES         1
 
-#if defined(RT_USING_FINSH)
-    #define FINSH_USING_MSH
-    #define FINSH_USING_MSH_ONLY
-    // <h>Finsh Configuration
-    // <o>the priority of finsh thread <1-7>
-    //  <i>the priority of finsh thread
-    //  <i>Default: 6
-    #define __FINSH_THREAD_PRIORITY     5
-    #define FINSH_THREAD_PRIORITY       (RT_THREAD_PRIORITY_MAX / 8 * __FINSH_THREAD_PRIORITY + 1)
-    // <o>the stack of finsh thread <1-4096>
-    //  <i>the stack of finsh thread
-    //  <i>Default: 4096  (4096Byte)
-    #define FINSH_THREAD_STACK_SIZE     512
-    // <o>the history lines of finsh thread <1-32>
-    //  <i>the history lines of finsh thread
-    //  <i>Default: 5
-    #define FINSH_HISTORY_LINES         1
-
-    #define FINSH_USING_SYMTAB
-    // </h>
-#endif
+//    #define FINSH_USING_SYMTAB
+//    // </h>
+//#endif
 
 // <<< end of configuration section >>>
 

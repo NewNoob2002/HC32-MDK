@@ -4,7 +4,8 @@
 #include <SparkFun_Extensible_Message_Parser.h>
 
 #include <Task.h>
-
+// debug set
+bool DebugTask = true;
 /// @brief Bluetooth parser
 SEMP_PARSE_ROUTINE const btParserTable[] = {
     sempBluetoothPreamble,
@@ -22,23 +23,35 @@ bool btReadTaskStopRequest = false;
 uint8_t bluetoothRxBuffer[1024];
 
 SEMP_Bluetooth_HEADER *messageHeader = nullptr;
-uint8_t *messageTxBuffer = nullptr;
+uint8_t *messageTxBuffer             = nullptr;
 
 static int messageLength = 0;
-uint8_t messageType = 0x00;
-uint16_t messageId = 0x00;
+uint8_t messageType      = 0x00;
+uint16_t messageId       = 0x00;
 
-void led_task(void *e)
+void ledStatusUpdateTask(void *e)
 {
+    static uint32_t lastCheckTime = 0;
+	  if (DebugTask == true)
+        LOG_INFO("Task ledStatusUpdateTask started");
     while (1) {
-        GPIO_TogglePins(GPIO_PORT_B, GPIO_PIN_14);
-        rt_thread_mdelay(100);
+        if (millis() - lastCheckTime > 10) {
+            ChargerLedUpdate();
+            PowerLedUpdate();
+            DataLedUpdate();
+            GnssLedUpdate();
+            FunctionKeyLedUpdate();
+						lastCheckTime = millis();
+        }
+        rt_thread_mdelay(10);
     }
 }
 
 void i2c_slave_task(void *e)
 {
     uint8_t rxBuff[512];
+    if (DebugTask == true)
+        LOG_INFO("Task i2c_slave_task started");
     while (1) {
         if (I2C_Slave.available()) {
             int len = I2C_Slave.readBytes(rxBuff, 512);
@@ -46,6 +59,8 @@ void i2c_slave_task(void *e)
         }
         rt_thread_mdelay(1000);
     }
+    if (DebugTask == true)
+        LOG_INFO("Task i2c_slave_task end");
 }
 
 void btDataProcess(SEMP_PARSE_STATE *parse, uint16_t type)
@@ -54,7 +69,7 @@ void btDataProcess(SEMP_PARSE_STATE *parse, uint16_t type)
     messageId     = messageHeader->messageId;
     messageType   = messageHeader->messageType;
 
-    LOG_DEBUG("this is the 0x%02x message\n", messageId);
+    LOG_DEBUG("this is the 0x%02x message", messageId);
     switch (messageId) {
         case 0x01: // 查询型号版本
         {
@@ -75,7 +90,8 @@ void btReadTask(void *e)
     if (!Btparse)
         LOG_ERROR("Failed to initialize the Bt parser");
     btReadTaskRunning = true;
-    LOG_INFO("Task btReadTask started");
+    if (DebugTask == true)
+        LOG_INFO("Task btReadTask started");
     while (btReadTaskStopRequest == false) {
         if (I2C_Slave.available() > 0) {
             rxBytes = I2C_Slave.readBytes(bluetoothRxBuffer, sizeof(bluetoothRxBuffer));
@@ -86,6 +102,7 @@ void btReadTask(void *e)
 
         rt_thread_mdelay(10);
     }
-
+    if (DebugTask == true)
+        LOG_INFO("Task btReadTask end");
     btReadTaskRunning = false;
 }

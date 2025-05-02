@@ -77,6 +77,6 @@
   ..\source\inc\Key.h \
   ..\..\Libraries\EnhancedButton\src\EnhancedButton.h \
   ..\source\inc\Led.h ..\source\inc\Task.h ..\source\inc\powerControl.h \
-  ..\source\inc\mcu_define.h \
+  ..\source\inc\System.h ..\source\inc\mcu_define.h \
   ..\..\Libraries\Parser\include\SparkFun_Extensible_Message_Parser.h \
   ..\source\inc\Task.h

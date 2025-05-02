@@ -1,11 +1,15 @@
-./output/debug/led.o: ..\source\src\Led.cpp ..\source\inc\settings.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdint.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__config \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
-  ..\..\Arduino\Arduino.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdbool.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+./output/debug/led.o: ..\source\src\Led.cpp \
+  ..\..\Libraries\rt-thread\include\rtthread.h \
+  ..\..\Libraries\rt-thread\bsp\rtconfig.h \
+  ..\..\Libraries\rt-thread\include\rtdebug.h \
+  ..\..\Libraries\rt-thread\include\rtdef.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdarg.h \
+  ..\..\Libraries\rt-thread\include\rtservice.h ..\..\Arduino\Arduino.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdbool.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__config \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdint.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stddef.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stddef.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__nullptr \
@@ -67,13 +71,8 @@
   ..\..\Arduino\RingBuffer.h ..\..\Arduino\wiring_digital.h \
   ..\..\Arduino\Core\drivers\sysclock\sysclock.h \
   ..\..\Arduino\Core\drivers\gpio\direct_access.h \
-  ..\..\Arduino\WVariant.h ..\source\inc\global.h \
-  ..\..\Libraries\rt-thread\include\rtthread.h \
-  ..\..\Libraries\rt-thread\bsp\rtconfig.h \
-  ..\..\Libraries\rt-thread\include\rtdebug.h \
-  ..\..\Libraries\rt-thread\include\rtdef.h \
-  ..\..\Libraries\rt-thread\include\rtservice.h ..\source\inc\debug.h \
-  ..\source\inc\Key.h \
+  ..\..\Arduino\WVariant.h ..\source\inc\settings.h \
+  ..\source\inc\global.h ..\source\inc\debug.h ..\source\inc\Key.h \
   ..\..\Libraries\EnhancedButton\src\EnhancedButton.h \
   ..\source\inc\Led.h ..\source\inc\Task.h ..\source\inc\powerControl.h \
-  ..\source\inc\mcu_define.h ..\source\inc\Led.h
+  ..\source\inc\System.h ..\source\inc\mcu_define.h ..\source\inc\Led.h

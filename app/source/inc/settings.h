@@ -1,7 +1,7 @@
 #pragma once
 #include <stdint.h>
 
-#include <Arduino.h>
+//#include <Arduino.h>
 
 typedef struct _present_device
 {

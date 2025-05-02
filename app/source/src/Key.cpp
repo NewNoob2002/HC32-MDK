@@ -1,4 +1,5 @@
-#include "global.h"
+#include <Arduino.h>
+#include <global.h>
 #include <settings.h>
 
 #include <Key.h>
@@ -25,7 +26,7 @@ void buttonEventCallback(EnhancedButton *btn, EnhancedButton::Event_t event)
 
   case EnhancedButton::EVENT_LONG_PRESS_START:
     LOG_INFO("long press start");
-    chargeLedOn();
+    chargeLedBlink(0);
     break;
 
   case EnhancedButton::EVENT_LONG_PRESS_HOLD:
@@ -54,7 +55,11 @@ void keyInit()
   // 注册按键事件回调
   functionKey.attachCallback(buttonEventCallback);
 }
-void keyScan()
+void KeyMonitor(void *e)
 {
-  functionKey.update(!digitalRead(FunctionKey_PIN));
+	while(1)
+	{
+		functionKey.update(!digitalRead(FunctionKey_PIN));
+		rt_thread_mdelay(15);
+	}
 }

@@ -33,5 +33,8 @@ void functionKeyLedOn();
 void functionKeyLedOff();
 void functionKeyLedBlink(int rate);
 
-void ledStatusUpdate();
-void PowerControlTask();
+void ChargerLedUpdate();
+void PowerLedUpdate();
+void DataLedUpdate();
+void GnssLedUpdate();
+void FunctionKeyLedUpdate();

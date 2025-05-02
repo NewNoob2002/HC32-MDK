@@ -57,6 +57,4 @@
   ..\..\Driver\inc\hc32_ll_sram.h ..\..\Driver\inc\hc32_ll_tmr0.h \
   ..\..\Driver\inc\hc32_ll_tmra.h ..\..\Driver\inc\hc32_ll_usart.h \
   ..\..\Driver\inc\hc32_ll_utility.h ..\..\Arduino\RingBuffer.h \
-  ..\..\Arduino\Core\drivers\usart\usart.h \
-  ..\..\Arduino\Core\drivers\usart\usart_config.h \
-  ..\..\Arduino\Core\avr\..\..\core_types.h
+  ..\..\Libraries\rt-thread\bsp\usart.h

@@ -7,7 +7,7 @@ extern EnhancedButton functionKey;
 
 void keyInit();
 
-void keyScan();
+void KeyMonitor(void *e);
 #endif
 
 

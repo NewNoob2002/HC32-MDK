@@ -3,6 +3,7 @@
 ".\output\debug\task.o"
 ".\output\debug\key.o"
 ".\output\debug\led.o"
+".\output\debug\system.o"
 ".\output\debug\variant.o"
 ".\output\debug\wiring_digital.o"
 ".\output\debug\wstring.o"

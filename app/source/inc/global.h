@@ -10,6 +10,7 @@
 #include "Led.h"
 #include "Task.h"
 #include "powerControl.h"
+#include "System.h"
 #include "mcu_define.h"
 
 extern float batteryLevelPercent;

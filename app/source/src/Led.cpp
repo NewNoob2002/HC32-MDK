@@ -1,13 +1,16 @@
+#include <rtthread.h>
+#include <Arduino.h>
 #include "settings.h"
 #include "global.h"
-#include <Led.h>
-ledState powerLed = {false, 0, 0};
-ledState functionKeyLed = {false, 0, 0};
-ledState chargerLed = {false, 0, 0};
-ledState gnssLed = {false, 0, 0};
-ledState dataLed = {false, 0, 0};
 
-//Timer0 timer0(&TIMER02A_config, ledStatusUpdate);
+#include <Led.h>
+ledState powerLed       = {false, 0, 0};
+ledState functionKeyLed = {false, 0, 0};
+ledState chargerLed     = {false, 0, 0};
+ledState gnssLed        = {false, 0, 0};
+ledState dataLed        = {false, 0, 0};
+
+// Timer0 timer0(&TIMER02A_config, ledStatusUpdate);
 
 void ledInit()
 {
@@ -16,8 +19,8 @@ void ledInit()
     pinMode(DATA_LED_PIN, OUTPUT);
     pinMode(GNSS_STATE_LED_PIN, OUTPUT);
     pinMode(FunctionKey_LED_PIN, OUTPUT);
-//	  timer0.start(1000000, 1);
-//    timer0.resume();
+    //	  timer0.start(1000000, 1);
+    //    timer0.resume();
 }
 
 // 充电灯
@@ -35,8 +38,7 @@ void chargeLedOff()
 
 void chargeLedBlink(int rate)
 {
-    if (CHG_LED_PIN != PIN_UNDEFINED)
-    {
+    if (CHG_LED_PIN != PIN_UNDEFINED) {
         chargerLed.currentRate = rate;
     }
 }
@@ -113,23 +115,15 @@ void functionKeyLedBlink(int rate)
         functionKeyLed.currentRate = rate;
 }
 
-
-
-
-
-
 void ChargerLedUpdate()
 {
-    if (CHG_LED_PIN != PIN_UNDEFINED)
-    {
+    if (CHG_LED_PIN != PIN_UNDEFINED) {
         // if (online_devices.mp2762 == false)
         //     return;
 
-        if (chargerLed.currentRate > 0)
-        {
+        if (chargerLed.currentRate > 0) {
             const uint32_t now = millis();
-            if (now - chargerLed.lastToggleTime >= (uint32_t)chargerLed.currentRate)
-            {
+            if (now - chargerLed.lastToggleTime >= (uint32_t)chargerLed.currentRate) {
                 chargerLed.isOn = !chargerLed.isOn;
                 digitalWrite(CHG_LED_PIN, chargerLed.isOn ? LOW : HIGH);
                 chargerLed.lastToggleTime = now;
@@ -181,15 +175,12 @@ void ChargerLedUpdate()
 
 void PowerLedUpdate()
 {
-    if (POWER_LED_PIN != PIN_UNDEFINED)
-    {
+    if (POWER_LED_PIN != PIN_UNDEFINED) {
         if (online_devices.bq40z50 == false)
             return;
-        if (powerLed.currentRate > 0)
-        {
+        if (powerLed.currentRate > 0) {
             const uint32_t now = millis();
-            if (now - powerLed.lastToggleTime >= (uint32_t)powerLed.currentRate)
-            {
+            if (now - powerLed.lastToggleTime >= (uint32_t)powerLed.currentRate) {
                 powerLed.isOn = !powerLed.isOn;
                 digitalWrite(POWER_LED_PIN, powerLed.isOn ? LOW : HIGH);
                 powerLed.lastToggleTime = now;
@@ -200,13 +191,10 @@ void PowerLedUpdate()
 
 void DataLedUpdate()
 {
-    if (DATA_LED_PIN != PIN_UNDEFINED)
-    {
-        if (dataLed.currentRate > 0)
-        {
+    if (DATA_LED_PIN != PIN_UNDEFINED) {
+        if (dataLed.currentRate > 0) {
             const uint32_t now = millis();
-            if (now - dataLed.lastToggleTime >= (uint32_t)dataLed.currentRate)
-            {
+            if (now - dataLed.lastToggleTime >= (uint32_t)dataLed.currentRate) {
                 dataLed.isOn = !dataLed.isOn;
                 digitalWrite(DATA_LED_PIN, dataLed.isOn ? LOW : HIGH);
                 dataLed.lastToggleTime = now;
@@ -217,13 +205,10 @@ void DataLedUpdate()
 
 void GnssLedUpdate()
 {
-    if (GNSS_STATE_LED_PIN != PIN_UNDEFINED)
-    {
-        if (gnssLed.currentRate > 0)
-        {
+    if (GNSS_STATE_LED_PIN != PIN_UNDEFINED) {
+        if (gnssLed.currentRate > 0) {
             const uint32_t now = millis();
-            if (now - gnssLed.lastToggleTime >= (uint32_t)gnssLed.currentRate)
-            {
+            if (now - gnssLed.lastToggleTime >= (uint32_t)gnssLed.currentRate) {
                 gnssLed.isOn = !gnssLed.isOn;
                 digitalWrite(GNSS_STATE_LED_PIN, gnssLed.isOn ? LOW : HIGH);
                 gnssLed.lastToggleTime = now;
@@ -234,26 +219,14 @@ void GnssLedUpdate()
 
 void FunctionKeyLedUpdate()
 {
-    if (FunctionKey_LED_PIN != PIN_UNDEFINED)
-    {
-        if (functionKeyLed.currentRate > 0)
-        {
+    if (FunctionKey_LED_PIN != PIN_UNDEFINED) {
+        if (functionKeyLed.currentRate > 0) {
             const uint32_t now = millis();
-            if (now - functionKeyLed.lastToggleTime >= (uint32_t)functionKeyLed.currentRate)
-            {
+            if (now - functionKeyLed.lastToggleTime >= (uint32_t)functionKeyLed.currentRate) {
                 functionKeyLed.isOn = !functionKeyLed.isOn;
                 digitalWrite(FunctionKey_LED_PIN, functionKeyLed.isOn ? LOW : HIGH);
                 functionKeyLed.lastToggleTime = now;
             }
         }
     }
-}
-
-void ledStatusUpdate()
-{
-    ChargerLedUpdate();
-    PowerLedUpdate();
-    DataLedUpdate();
-    GnssLedUpdate();
-    FunctionKeyLedUpdate();
 }

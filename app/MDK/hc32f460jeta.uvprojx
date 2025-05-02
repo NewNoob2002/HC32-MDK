@@ -337,9 +337,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>__DEBUG,HC32F460,USE_DDL_DRIVER</Define>
+              <Define>__DEBUG,HC32F460,USE_DDL_DRIVER,__CORE_DEBUG</Define>
               <Undefine></Undefine>
-              <IncludePath>..\source;..\source\inc;..\..\bsp\ev_hc32f460_lqfp100_v2;..\..\CMSIS\Include;..\..\CMSIS\Device\HDSC\hc32f4xx\Include;..\..\Driver\inc;..\..\Arduino;..\..\Arduino\Core\avr;..\..\Arduino\Core\drivers\gpio;..\..\Arduino\Core\drivers\adc;..\..\Arduino\Core\drivers\panic;..\..\Arduino\Core\drivers\usart;..\..\Arduino\Core\drivers\irqn;..\..\Arduino\Core\drivers\sysclock;..\..\Arduino\Core\variants\hc32f460xx;..\..\Arduino\Core\drivers\i2c;..\..\Arduino\Core\drivers\spi;..\..\Libraries\rt-thread\include;..\..\Libraries\rt-thread\include\libc;..\..\Libraries\rt-thread\bsp;..\..\Libraries\MillisTaskManager;..\..\Libraries\Parser\include;..\..\Libraries\EnhancedButton\src</IncludePath>
+              <IncludePath>..\source;..\source\inc;..\..\bsp\ev_hc32f460_lqfp100_v2;..\..\CMSIS\Include;..\..\CMSIS\Device\HDSC\hc32f4xx\Include;..\..\Driver\inc;..\..\Arduino;..\..\Arduino\Core\avr;..\..\Arduino\Core\drivers\gpio;..\..\Arduino\Core\drivers\adc;..\..\Arduino\Core\drivers\panic;..\..\Arduino\Core\drivers\usart;..\..\Arduino\Core\drivers\irqn;..\..\Arduino\Core\drivers\sysclock;..\..\Arduino\Core\variants\hc32f460xx;..\..\Arduino\Core\drivers\i2c;..\..\Arduino\Core\drivers\spi;..\..\Libraries\rt-thread\include;..\..\Libraries\rt-thread\include\libc;..\..\Libraries\rt-thread\bsp;..\..\Libraries\rt-thread\components\finsh;..\..\Libraries\MillisTaskManager;..\..\Libraries\Parser\include;..\..\Libraries\EnhancedButton\src</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -402,6 +402,11 @@
               <FileName>Led.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\source\src\Led.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>System.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\source\src\System.cpp</FilePath>
             </File>
           </Files>
         </Group>
