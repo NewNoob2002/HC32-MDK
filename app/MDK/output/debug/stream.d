@@ -5,7 +5,12 @@
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdint.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h ..\..\Arduino\Print.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdio.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h ..\..\Arduino\WString.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stddef.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stddef.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__nullptr \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdarg.h \
+  ..\..\Arduino\WString.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdlib.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\string.h \
@@ -16,10 +21,6 @@
   ..\..\Arduino\Arduino.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdbool.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdarg.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stddef.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stddef.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__nullptr \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\math.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\type_traits \
@@ -62,7 +63,17 @@
   ..\..\Arduino\WCharacter.h ..\..\Arduino\WMath.h \
   ..\..\Arduino\HardwareSerial.h ..\..\Arduino\RingBuffer.h \
   ..\..\Arduino\Core\drivers\usart\usart_config.h \
-  ..\..\Arduino\RingBuffer.h ..\..\Arduino\wiring_digital.h \
+  ..\..\Arduino\RingBuffer.h ..\..\Arduino\Core\drivers\i2c\Wire.h \
+  ..\..\Arduino\Core\drivers\gpio\gpio.h \
+  ..\..\Arduino\Core\drivers\gpio\addon_gpio.h ..\..\Arduino\WVariant.h \
+  ..\..\Arduino\core_types.h ..\..\Arduino\core_debug.h \
+  ..\..\Arduino\Core\drivers\panic\panic.h \
+  ..\..\Arduino\Core\drivers\panic\panic_api.h \
+  ..\..\Libraries\rt-thread\include\rtthread.h \
+  ..\..\Libraries\rt-thread\bsp\rtconfig.h \
+  ..\..\Libraries\rt-thread\include\rtdebug.h \
+  ..\..\Libraries\rt-thread\include\rtdef.h \
+  ..\..\Libraries\rt-thread\include\rtservice.h \
+  ..\..\Arduino\wiring_digital.h \
   ..\..\Arduino\Core\drivers\sysclock\sysclock.h \
-  ..\..\Arduino\Core\drivers\gpio\direct_access.h \
-  ..\..\Arduino\WVariant.h
+  ..\..\Arduino\Core\drivers\gpio\direct_access.h

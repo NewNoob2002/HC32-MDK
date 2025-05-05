@@ -66,10 +66,12 @@ void rt_hw_board_init() {
   clock_init();
   /* System Clock Update */
   SystemCoreClockUpdate();
-
-	usart_init(115200);
+	
+//	NVIC_SetVector(NVIC_VectTab_FLASH, 0x00);
   /* System Tick Configuration */
   _SysTick_Config(SystemCoreClock / RT_TICK_PER_SECOND);
+	
+	usart_init(115200);
 	
   /* Call components board initial (use INIT_BOARD_EXPORT()) */
 #ifdef RT_USING_COMPONENTS_INIT

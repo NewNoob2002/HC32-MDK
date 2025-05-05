@@ -55,11 +55,3 @@ void keyInit()
   // 注册按键事件回调
   functionKey.attachCallback(buttonEventCallback);
 }
-void KeyMonitor(void *e)
-{
-	while(1)
-	{
-		functionKey.update(!digitalRead(FunctionKey_PIN));
-		rt_thread_mdelay(15);
-	}
-}

@@ -3,11 +3,12 @@
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdint.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__config \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  ..\..\Arduino\Core\variants\hc32f460xx\variant.h \
+  ..\..\Arduino\Core\drivers\i2c\Wire.h ..\..\Driver\inc\hc32_ll.h \
   ..\..\Driver\inc\hc32_ll_def.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stddef.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stddef.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__nullptr \
-  ..\..\Driver\inc\hc32_ll_fcg.h ..\..\Driver\inc\hc32_ll_def.h \
   ..\..\CMSIS\Device\HDSC\hc32f4xx\Include\hc32f4xx.h \
   ..\..\CMSIS\Device\HDSC\hc32f4xx\Include\hc32f460.h \
   ..\..\CMSIS\Include\core_cm4.h ..\..\CMSIS\Include\cmsis_version.h \
@@ -17,27 +18,9 @@
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\arm_acle.h \
   ..\..\CMSIS\Include\mpu_armv7.h \
   ..\..\CMSIS\Device\HDSC\hc32f4xx\Include\system_hc32f460.h \
+  ..\..\Driver\inc\hc32_ll_def.h \
   ..\..\CMSIS\Device\HDSC\hc32f4xx\Include\hc32f4xx.h \
-  ..\source\hc32f4xx_conf.h ..\..\Driver\inc\hc32_ll_i2c.h \
-  ..\..\Arduino\core_log.h ..\..\Arduino\HardwareSerial.h \
-  ..\..\Arduino\RingBuffer.h ..\..\Arduino\Stream.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\inttypes.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\inttypes.h \
-  ..\..\Arduino\Print.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdio.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h ..\..\Arduino\WString.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdlib.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\string.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\ctype.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\ctype.h \
-  ..\..\Arduino\Core\avr\pgmspace.h ..\..\Arduino\Printable.h \
-  ..\..\Arduino\core_types.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdbool.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
-  ..\..\Arduino\Core\drivers\usart\usart_config.h \
-  ..\..\Driver\inc\hc32_ll.h \
+  ..\source\hc32f4xx_conf.h \
   ..\..\Arduino\Core\drivers\sysclock\systick.h \
   ..\..\Driver\inc\hc32_ll_adc.h ..\..\Driver\inc\hc32_ll_aos.h \
   ..\..\Driver\inc\hc32_ll_clk.h ..\..\Driver\inc\hc32_ll_crc.h \
@@ -50,14 +33,24 @@
   ..\..\Driver\inc\hc32_ll_rmu.h ..\..\Driver\inc\hc32_ll_spi.h \
   ..\..\Driver\inc\hc32_ll_sram.h ..\..\Driver\inc\hc32_ll_tmr0.h \
   ..\..\Driver\inc\hc32_ll_tmra.h ..\..\Driver\inc\hc32_ll_usart.h \
-  ..\..\Driver\inc\hc32_ll_utility.h ..\..\Arduino\RingBuffer.h \
-  ..\..\Arduino\Core\drivers\i2c\Wire.h \
+  ..\..\Driver\inc\hc32_ll_utility.h \
   ..\..\Arduino\Core\drivers\gpio\gpio.h \
   ..\..\Arduino\Core\drivers\gpio\addon_gpio.h \
   ..\..\Arduino\Core\drivers\adc\adc.h \
   ..\..\Arduino\Core\drivers\adc\adc_config.h ..\..\Arduino\WVariant.h \
-  ..\..\Arduino\Core\variants\hc32f460xx\variant.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdbool.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
   ..\..\Arduino\core_types.h ..\..\Arduino\core_debug.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdio.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
   ..\..\Arduino\Core\drivers\panic\panic.h \
   ..\..\Arduino\Core\drivers\panic\panic_api.h \
-  ..\..\Arduino\HardwareSerial.h ..\..\Arduino\WVariant.h
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdlib.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
+  ..\..\Libraries\rt-thread\include\rtthread.h \
+  ..\..\Libraries\rt-thread\bsp\rtconfig.h \
+  ..\..\Libraries\rt-thread\include\rtdebug.h \
+  ..\..\Libraries\rt-thread\include\rtdef.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdarg.h \
+  ..\..\Libraries\rt-thread\include\rtservice.h ..\..\Arduino\WVariant.h \
+  ..\source\inc\debug.h

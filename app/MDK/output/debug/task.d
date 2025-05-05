@@ -63,17 +63,22 @@
   ..\..\Arduino\RingBuffer.h ..\..\Arduino\Stream.h \
   ..\..\Arduino\Print.h ..\..\Arduino\Printable.h \
   ..\..\Arduino\Core\drivers\usart\usart_config.h \
-  ..\..\Arduino\RingBuffer.h ..\..\Arduino\wiring_digital.h \
-  ..\..\Arduino\Core\drivers\sysclock\sysclock.h \
-  ..\..\Arduino\Core\drivers\gpio\direct_access.h \
-  ..\..\Arduino\WVariant.h \
-  ..\..\Arduino\Core\drivers\i2c\HardwareI2cSlave.h \
-  ..\..\Arduino\Stream.h ..\source\inc\global.h \
+  ..\..\Arduino\RingBuffer.h ..\..\Arduino\Core\drivers\i2c\Wire.h \
+  ..\..\Arduino\Core\drivers\gpio\gpio.h \
+  ..\..\Arduino\Core\drivers\gpio\addon_gpio.h ..\..\Arduino\WVariant.h \
+  ..\..\Arduino\core_types.h ..\..\Arduino\core_debug.h \
+  ..\..\Arduino\Core\drivers\panic\panic.h \
+  ..\..\Arduino\Core\drivers\panic\panic_api.h \
   ..\..\Libraries\rt-thread\include\rtthread.h \
   ..\..\Libraries\rt-thread\bsp\rtconfig.h \
   ..\..\Libraries\rt-thread\include\rtdebug.h \
   ..\..\Libraries\rt-thread\include\rtdef.h \
-  ..\..\Libraries\rt-thread\include\rtservice.h ..\source\inc\debug.h \
+  ..\..\Libraries\rt-thread\include\rtservice.h \
+  ..\..\Arduino\wiring_digital.h \
+  ..\..\Arduino\Core\drivers\sysclock\sysclock.h \
+  ..\..\Arduino\Core\drivers\gpio\direct_access.h \
+  ..\..\Arduino\Core\drivers\i2c\HardwareI2cSlave.h \
+  ..\..\Arduino\Stream.h ..\source\inc\global.h ..\source\inc\debug.h \
   ..\source\inc\Key.h \
   ..\..\Libraries\EnhancedButton\src\EnhancedButton.h \
   ..\source\inc\Led.h ..\source\inc\Task.h ..\source\inc\powerControl.h \

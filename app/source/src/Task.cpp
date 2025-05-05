@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include <HardwareI2cSlave.h>
+#include <adc.h>
 #include <global.h>
 #include <SparkFun_Extensible_Message_Parser.h>
 
@@ -47,20 +48,17 @@ void ledStatusUpdateTask(void *e)
     }
 }
 
-void i2c_slave_task(void *e)
+void KeyMonitor(void *e)
 {
-    uint8_t rxBuff[512];
-    if (DebugTask == true)
-        LOG_INFO("Task i2c_slave_task started");
-    while (1) {
-        if (I2C_Slave.available()) {
-            int len = I2C_Slave.readBytes(rxBuff, 512);
-            Serial.write(rxBuff, len);
-        }
-        rt_thread_mdelay(1000);
-    }
-    if (DebugTask == true)
-        LOG_INFO("Task i2c_slave_task end");
+	if (DebugTask == true)
+      LOG_INFO("Task KeyMonitor started");
+	while(1)
+	{
+		functionKey.update(!digitalRead(FunctionKey_PIN));
+		rt_thread_mdelay(15);
+	}
+	if (DebugTask == true)
+      LOG_INFO("Task KeyMonitor end");
 }
 
 void btDataProcess(SEMP_PARSE_STATE *parse, uint16_t type)
@@ -99,7 +97,6 @@ void btReadTask(void *e)
                 sempParseNextByte(Btparse, bluetoothRxBuffer[x]);
             }
         }
-
         rt_thread_mdelay(10);
     }
     if (DebugTask == true)

@@ -1,7 +1,9 @@
+#include <Arduino.h>
+
 #include "debug.h"
-#include "AdcExpand.h"
+#include <adc.h>
 #include "led.h"
-#include "Charger.h"
+//#include "Charger.h"
 #include "settings.h"
 
 #include "powerControl.h"
@@ -18,37 +20,10 @@ unsigned int PowerKeyTrigger = 0;
 unsigned int PowerOffCount = 0;
 unsigned int PowerOffFlag = 0;
 
-// 采样时间数组
-uint8_t au8SampTime[1] = {100};
-
-bool adc_config_average(adc_device_t *adc_device, en_adc_avcnt_t avgCount)
-{
-    if(ADC_ConfigAvg(adc_device->adc.register_base, avgCount) == 0)
-    {
-        LOG_INFO("ADC average config %d", avgCount);
-        return true;
-    }
-    LOG_ERROR("ADC average config failed");
-    return false;
-}
-
-bool adc_add_average_channel(adc_device_t *adc_device, uint32_t channel)
-{
-    if(ADC_AddAvgChannel(adc_device->adc.register_base, channel) == 0)
-    {
-        LOG_INFO("ADC add average channel %d", channel);
-        return true;
-    }
-    LOG_ERROR("ADC add average channel failed");
-    return false;
-}
-
 void adcInit()
 {
     adc_device_init(&ADC1_device);
-    adc_enable_channel(&ADC1_device, ADC_PIN_CH0, au8SampTime[0]);
-    adc_config_average(&ADC1_device, AdcAvcnt_8);
-    adc_add_average_channel(&ADC1_device, ADC_PIN_CH0);
+    adc_enable_channel(&ADC1_device, ADC_PIN_CH0);
     online_devices.adc = true;
 }
 
@@ -81,7 +56,7 @@ void AdcPolling()
         else
             PowerKeyTrigger = 0;
         voltage = ADC_CAL_VOL(u16AdcValue);
-#if 0
+#if 1
         LOG_INFO("ADC value: %d", u16AdcValue);
         LOG_INFO("Voltage: %d mV", voltage);
         LOG_INFO("PowerKeyTrigger: %d", PowerKeyTrigger);
@@ -133,39 +108,39 @@ void WatchdogFeed()
 void PowerControlInit()
 {
     adcInit();
-    // Power_Control_Pin_Init();
-    // WatchdogFeedPinInit();
+    Power_Control_Pin_Init();
+    WatchdogFeedPinInit();
 }
 
 void PowerControlTask()
 {
-    if (PowerKeyTrigger >= 5)
-    {
-        functionKeyLedOn();
-        DisplayPannelParameter.poweroff_flag = 1;
-    }
-    if ((PowerKeyTrigger >= 6) || (PowerOffFlag))
-    {
-        PowerKeyTrigger = 0;
-        powerLedOff();
-        functionKeyLedOff();
-        USB_Switch_GPIO_Control(1);
+//    if (PowerKeyTrigger >= 5)
+//    {
+//        functionKeyLedOn();
+//        DisplayPannelParameter.poweroff_flag = 1;
+//    }
+//    if ((PowerKeyTrigger >= 6) || (PowerOffFlag))
+//    {
+//        PowerKeyTrigger = 0;
+//        powerLedOff();
+//        functionKeyLedOff();
+//        USB_Switch_GPIO_Control(1);
 
-        if (8 == PowerOffFlag)
-            delay(2000);
+//        if (8 == PowerOffFlag)
+//            delay(2000);
 
-        Power_Control_Pin_Switch(0);
-        /// USB_Switch_GPIO_Control(1);
-        while (1)
-        {
-            delay(300);
-            ChargeingStateCheck();
-            if (PowerKeyTrigger >= 6)
-            {
-                NVIC_SystemReset();
-            }
-        }
-    }
+//        Power_Control_Pin_Switch(0);
+//        /// USB_Switch_GPIO_Control(1);
+//        while (1)
+//        {
+//            delay(300);
+//            ChargeingStateCheck();
+//            if (PowerKeyTrigger >= 6)
+//            {
+//                NVIC_SystemReset();
+//            }
+//        }
+//    }
     AdcPolling();
     // ChargerControlMonitor();
     // FunctionKeyLedRecordIndicate();

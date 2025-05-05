@@ -23,14 +23,14 @@ void rt_hw_console_output(const char *str)
     }
 }
 
-char rt_hw_console_getchar(void)
-{
-    int ch = -1;
+//char rt_hw_console_getchar(void)
+//{
+//    int ch = -1;
 
-    if (Serial.available())
-        ch = Serial.read();
-    else
-        rt_thread_mdelay(10);
+//    if (Serial.available())
+//        ch = Serial.read();
+//    else
+//        rt_thread_mdelay(10);
 
-    return ch;
-}
+//    return ch;
+//}

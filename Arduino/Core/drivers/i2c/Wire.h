@@ -41,19 +41,21 @@ struct i2c_peripheral_config_t
 
 class TwoWire{
 public:
-	TwoWire(struct i2c_peripheral_config_t *config, gpio_pin_t scl_pin, gpio_pin_t sda_pin);
+	TwoWire(struct i2c_peripheral_config_t *config, gpio_pin_t scl_pin, gpio_pin_t sda_pin, uint32_t clockFre);
 
-	void begin();
+	int32_t begin();
 
 	void end();
 	void setClock(uint32_t clockFreq);
 
 	bool beginTransmission(uint8_t address);
-	uint8_t endTransmission(bool stopBit = true);
+	int8_t endTransmission(bool stopBit = true);
 
 	size_t write(uint8_t data);
 	size_t write(const uint8_t * data, size_t quantity);
 
+  size_t requestFrom(uint8_t device_addr, uint8_t *buffer, size_t quantity, bool stopBit = true);
+//  size_t read(uint8_t *data, size_t quantity);
 
 private:
     struct i2c_peripheral_config_t *_config;
@@ -62,8 +64,6 @@ private:
     gpio_pin_t _sda_pin;
 
     uint32_t _clock_frequency;
-
-    uint8_t _max_trytimes;
 };
 
 extern TwoWire Wire;

@@ -1,6 +1,8 @@
+#include <Arduino.h>
 #include "adc.h"
 //#include "../../yield.h"
 #include "core_debug.h"
+#include "debug.h"
 
 /**
  * @brief assert that channel id is valid
@@ -28,22 +30,35 @@
  * @brief debug printf for ADC
  */
 #define ADC_DEBUG_PRINTF(device, fmt, ...) \
-    CORE_DEBUG_PRINTF("[%s] " fmt, ADC_REG_TO_NAME(device->adc.register_base), ##__VA_ARGS__)
+    rt_kprintf("[%s] " fmt "\n", ADC_REG_TO_NAME(device->adc.register_base), ##__VA_ARGS__)
 
 //
 // ADC init
 //
-
+void adc_clock_init(bool select_systemClock = true)
+{
+	if(select_systemClock == true)
+	{
+		CLK_SetClockDiv((CLK_BUS_PCLK2 | CLK_BUS_PCLK4), (CLK_PCLK2_DIV8 | CLK_PCLK4_DIV2));
+	}
+	else
+	{
+		LOG_ERROR("XTAL have inited, please select systemClock as adc clk");
+	}
+	CLK_SetPeriClockSrc(CLK_PERIPHCLK_PCLK);
+}
 /**
  * @brief ADC peripheral init
  */
 inline void adc_adc_init(const adc_device_t *device)
 {
+		stc_adc_init_t stcAdcInit;
+		adc_clock_init();
     // enable ADC peripheral clock
     FCG_Fcg3PeriphClockCmd(device->adc.clock_id, ENABLE);
 
     // initialize ADC peripheral
-    stc_adc_init_t stcAdcInit = {
+    stcAdcInit = {
 			  .u16ScanMode = device->init_params.scan_mode,
         .u16Resolution = device->init_params.resolution,
         .u16DataAlign = device->init_params.data_alignment,
@@ -68,28 +83,28 @@ void adc_device_init(adc_device_t *device)
 
     // set initialized flag
     device->state.initialized = true;
-//    ADC_DEBUG_PRINTF(device, "initialized device\n");
+    // Use a direct print instead of the macro for this specific message to avoid formatting issues
+    ADC_DEBUG_PRINTF(device, "initialized device");
 }
-
 //
 // ADC Channel API
 //
 
 inline uint8_t adc_channel_to_mask(const adc_device_t *device, const uint8_t channel)
 {
-//    ASSERT_CHANNEL_ID(device, channel);
+    ASSERT_CHANNEL_ID(device, channel);
     return channel;
 }
 
 void adc_enable_channel(const adc_device_t *device, const uint8_t adc_channel, uint8_t sample_time)
 {
-//    ASSERT_INITIALIZED(device, STRINGIFY(adc_enable_channel));
-//    ASSERT_CHANNEL_ID(device, adc_channel);
-//    CORE_ASSERT(sample_time > 0, "adc channel sample_time must be > 0")
+    ASSERT_INITIALIZED(device, STRINGIFY(adc_enable_channel));
+    ASSERT_CHANNEL_ID(device, adc_channel);
+    CORE_ASSERT(sample_time > 0, "adc channel sample_time must be > 0")
 
-//    ADC_DEBUG_PRINTF(device, "enable channel %d, sample_time=%d\n", adc_channel, sample_time);
+    ADC_DEBUG_PRINTF(device, "enable channel %d, sample_time=%d", adc_channel, sample_time);
 	  /* 4.1 Set the ADC pin to analog input mode. */
-//    AdcSetPinAnalogMode(); 待完成*******
+//		pinMode(PA0, INPUT_ANALOG);
 	
 		uint8_t adc_channel_bit = adc_channel_to_mask(device, adc_channel);
 	
@@ -110,7 +125,7 @@ void adc_disable_channel(const adc_device_t *device, const uint8_t adc_channel)
 
 //    ASSERT_CHANNEL_ID(device, adc_channel);
 
-//    ADC_DEBUG_PRINTF(device, "disable channel %d\n", adc_channel);
+    ADC_DEBUG_PRINTF(device, "disable channel %d\n", adc_channel);
 //    ADC_DelAdcChannel(device->adc.register_base, adc_channel_to_mask(device, adc_channel));
 }
 

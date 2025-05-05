@@ -17,7 +17,3 @@ extern float batteryLevelPercent;
 extern float batteryTempC;
 extern float batteryChargingPercentPerHour;
 extern float batteryVoltage;
-
-//extern HardwareI2C i2c;
-//extern Charger mp2762;
-//extern Fuelgauge bq40z50;

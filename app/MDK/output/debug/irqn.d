@@ -38,27 +38,14 @@
   ..\..\Arduino\Core\drivers\panic\panic_api.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdlib.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
-  ..\..\Arduino\HardwareSerial.h ..\..\Arduino\RingBuffer.h \
-  ..\..\Arduino\Stream.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\inttypes.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\inttypes.h \
-  ..\..\Arduino\Print.h ..\..\Arduino\WString.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\string.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\ctype.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\ctype.h \
-  ..\..\Arduino\Core\avr\pgmspace.h ..\..\Arduino\Printable.h \
-  ..\..\Arduino\core_types.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdbool.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
-  ..\..\Arduino\Core\drivers\usart\usart_config.h \
-  ..\..\Arduino\RingBuffer.h ..\..\Arduino\WVariant.h \
-  ..\..\Arduino\Core\drivers\adc\adc.h \
-  ..\..\Arduino\Core\drivers\adc\adc_config.h \
-  ..\..\Arduino\Core\variants\hc32f460xx\variant.h ..\source\inc\debug.h \
   ..\..\Libraries\rt-thread\include\rtthread.h \
   ..\..\Libraries\rt-thread\bsp\rtconfig.h \
   ..\..\Libraries\rt-thread\include\rtdebug.h \
   ..\..\Libraries\rt-thread\include\rtdef.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdarg.h \
-  ..\..\Libraries\rt-thread\include\rtservice.h
+  ..\..\Libraries\rt-thread\include\rtservice.h ..\..\Arduino\WVariant.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdbool.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  ..\..\Arduino\Core\drivers\adc\adc.h \
+  ..\..\Arduino\Core\drivers\adc\adc_config.h \
+  ..\..\Arduino\Core\variants\hc32f460xx\variant.h ..\source\inc\debug.h

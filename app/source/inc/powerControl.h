@@ -3,7 +3,7 @@
 #include <stdint.h>
 // #include "settings.h"
 //macros
-#define ADC_PIN_CH0  ADC1_IN0   // 对应 PA0
+#define ADC_PIN_CH0  ADC_CH0   // 对应 PA0
 
 #define MCU_ON_OFF_PIN     PB3     
 

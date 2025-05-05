@@ -1,7 +1,7 @@
 #include <irqn.h>
-#include "HardwareI2cSlave.h"
+#include <debug.h>
 #include "delay.h"
-#include "locale.h"
+#include "HardwareI2cSlave.h"
 /*******************************************************************************
  * Local type definitions ('typedef')
  ******************************************************************************/
@@ -334,7 +334,7 @@ int HardwareI2cSlave ::read(void)
         return 0;
 
     if (this->__SlaveRxBuffer == nullptr) {
-        Serial.println("SlaveRxBuffer is not initialized");
+        LOG_ERROR("SlaveRxBuffer is not initialized");
         return 0;
     }
     uint8_t data;

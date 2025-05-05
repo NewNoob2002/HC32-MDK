@@ -67,6 +67,7 @@ extern "C"{
 //#include "Tone.h"
 #include "WMath.h"
 #include "HardwareSerial.h"
+#include <Wire.h>
 // #include "RingBuf.h"
 #include "Stream.h"
 //#include "pulse.h"

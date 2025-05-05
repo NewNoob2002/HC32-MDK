@@ -6,8 +6,6 @@
 extern EnhancedButton functionKey;
 
 void keyInit();
-
-void KeyMonitor(void *e);
 #endif
 
 

@@ -1,10 +1,7 @@
-#include "core_log.h"
-#include "hc32_ll_usart.h"
-#include "hc32f460.h"
 #include <hc32_ll.h>
 #include <gpio.h>
 #include <irqn.h>
-#include <core_debug.h>
+#include <debug.h>
 #include <sysclock.h>
 
 #include <HardwareSerial.h>
