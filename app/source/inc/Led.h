@@ -1,5 +1,6 @@
 #pragma once
 
+#include <stdint.h>
 #if 0
 #define CHG_LED_PIN PH2
 #define FunctionKey_PIN PA15
@@ -13,24 +14,19 @@
 #define FunctionKey_LED_PIN PB5
 
 void ledInit();
-void chargeLedOn();
-void chargeLedOff();
+void chargeLedSwitch(uint8_t newState);
 void chargeLedBlink(int rate);
 
-void powerLedOn();
-void powerLedOff();
+void powerLedSwitch(uint8_t newState);
 void powerLedBlink(int rate);
 
-void dataLedOn();
-void dataLedOff();
+void dataLedSwitch(uint8_t newState);
 void dataLedBlink(int rate);
 
-void gnssLedOn();
-void gnssLedOff();
+void gnssLedSwitch(uint8_t newState);
 void gnssLedBlink(int rate);
 
-void functionKeyLedOn();
-void functionKeyLedOff();
+void functionKeyLedSwitch(uint8_t newState);
 void functionKeyLedBlink(int rate);
 
 void ChargerLedUpdate();

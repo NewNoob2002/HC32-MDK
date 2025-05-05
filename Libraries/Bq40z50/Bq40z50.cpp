@@ -1,4 +1,5 @@
 #include <debug.h>
+#include <settings.h>
 
 #include <Bq40z50.h>
 
@@ -172,4 +173,16 @@ uint16_t BQ40Z50::getCellVoltage3Mv()
 uint16_t BQ40Z50::getCellVoltage4Mv()
 {
   return(readRegister16(BQ40Z50_CELL_VOLTAGE_4));
+}
+
+float BQ40Z50::getRemainBatteryPercent()
+{
+	  uint16_t nowBatteryCapacity = getRemainingCapacityMah();
+    uint16_t fullBatteryCapacity = getFullChargeCapacityMah();
+    return ((float)nowBatteryCapacity / (float)fullBatteryCapacity) * 100.0;
+}
+
+float BQ40Z50::getBatteryChargingPercentPerHour()
+{
+	return (float)getAverageCurrentMa() / getFullChargeCapacityMah() * 100.0;
 }

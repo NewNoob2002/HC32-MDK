@@ -24,16 +24,10 @@ void ledInit()
 }
 
 // 充电灯
-void chargeLedOn()
+void chargeLedSwitch(uint8_t newState)
 {
     if (CHG_LED_PIN != PIN_UNDEFINED)
-        digitalWrite(CHG_LED_PIN, HIGH);
-}
-
-void chargeLedOff()
-{
-    if (CHG_LED_PIN != PIN_UNDEFINED)
-        digitalWrite(CHG_LED_PIN, LOW);
+        digitalWrite(CHG_LED_PIN, newState);
 }
 
 void chargeLedBlink(int rate)
@@ -43,16 +37,10 @@ void chargeLedBlink(int rate)
     }
 }
 
-void powerLedOn()
+void powerLedSwitch(uint8_t newState)
 {
     if (POWER_LED_PIN != PIN_UNDEFINED)
-        digitalWrite(POWER_LED_PIN, HIGH);
-}
-
-void powerLedOff()
-{
-    if (POWER_LED_PIN != PIN_UNDEFINED)
-        digitalWrite(POWER_LED_PIN, LOW);
+        digitalWrite(POWER_LED_PIN, newState);
 }
 
 void powerLedBlink(int rate)
@@ -61,16 +49,10 @@ void powerLedBlink(int rate)
         powerLed.currentRate = rate;
 }
 
-void dataLedOn()
+void dataLedSwitch(uint8_t newState)
 {
     if (DATA_LED_PIN != PIN_UNDEFINED)
-        digitalWrite(DATA_LED_PIN, HIGH);
-}
-
-void dataLedOff()
-{
-    if (DATA_LED_PIN != PIN_UNDEFINED)
-        digitalWrite(DATA_LED_PIN, LOW);
+        digitalWrite(DATA_LED_PIN, newState);
 }
 
 void dataLedBlink(int rate)
@@ -79,16 +61,10 @@ void dataLedBlink(int rate)
         dataLed.currentRate = rate;
 }
 
-void gnssLedOn()
+void gnssLedSwitch(uint8_t newState)
 {
     if (GNSS_STATE_LED_PIN != PIN_UNDEFINED)
-        digitalWrite(GNSS_STATE_LED_PIN, HIGH);
-}
-
-void gnssLedOff()
-{
-    if (GNSS_STATE_LED_PIN != PIN_UNDEFINED)
-        digitalWrite(GNSS_STATE_LED_PIN, LOW);
+        digitalWrite(GNSS_STATE_LED_PIN, newState);
 }
 
 void gnssLedBlink(int rate)
@@ -97,16 +73,10 @@ void gnssLedBlink(int rate)
         gnssLed.currentRate = rate;
 }
 
-void functionKeyLedOn()
+void functionKeyLedSwitch(uint8_t newState)
 {
     if (FunctionKey_LED_PIN != PIN_UNDEFINED)
-        digitalWrite(FunctionKey_LED_PIN, HIGH);
-}
-
-void functionKeyLedOff()
-{
-    if (FunctionKey_LED_PIN != PIN_UNDEFINED)
-        digitalWrite(FunctionKey_LED_PIN, LOW);
+        digitalWrite(FunctionKey_LED_PIN, newState);
 }
 
 void functionKeyLedBlink(int rate)
@@ -129,7 +99,7 @@ void ChargerLedUpdate()
                 chargerLed.lastToggleTime = now;
             }
         }
-        // 充电状态机控制（带模式扩展支持）
+        // 充电状态）
         static const struct
         {
             uint8_t status;
@@ -186,6 +156,11 @@ void PowerLedUpdate()
                 powerLed.lastToggleTime = now;
             }
         }
+				if(batteryLevelPercent >=50)
+				{
+					powerLedBlink(0);
+					powerLedSwitch(0);
+				}
     }
 }
 

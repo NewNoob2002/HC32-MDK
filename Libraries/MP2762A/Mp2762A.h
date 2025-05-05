@@ -4,6 +4,25 @@
 #include <Arduino.h>
 #include <Wire.h>
 
+#if 1
+#define CHARGER_ENABLE_PORT          (GPIO_PORT_A)
+#define CHARGER_ENABLE_PIN           (GPIO_PIN_04)
+
+#define CHARGER_CTRL_PORT            (GPIO_PORT_B)
+#define CHARGER_CTRL_PIN1            (GPIO_PIN_07)           ///1.65V
+#define CHARGER_CTRL_PIN2            (GPIO_PIN_06)           ///3.23V
+
+#define CHARGER_SWITCH_PORT          (GPIO_PORT_B)
+#define CHARGER_SWITCH_PIN           (GPIO_PIN_10)
+
+#define USB_SWITCH_PORT              (GPIO_PORT_B)
+#define USB_SWITCH_PIN               (GPIO_PIN_08)
+
+#define CHARGER_POWER_DET_PORT       (GPIO_PORT_A)
+#define CHARGER_POWER_DET_PIN        (GPIO_PIN_01)
+
+#endif
+
 #define MP2762A_SETCHARGE_CURRENT 0x02
 #define MP2762A_PRECHARGE_CURRENT 0x03
 #define MP2762A_PRECHARGE_THRESHOLD 0x07

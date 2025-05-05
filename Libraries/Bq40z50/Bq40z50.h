@@ -57,6 +57,9 @@ class BQ40Z50
     uint16_t getCellVoltage2Mv();
     uint16_t getCellVoltage3Mv();
     uint16_t getCellVoltage4Mv();
+		
+		float getRemainBatteryPercent();
+		float getBatteryChargingPercentPerHour();
 };
 
 extern BQ40Z50 *bq40z50;

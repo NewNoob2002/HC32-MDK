@@ -4,6 +4,7 @@
 #include <Arduino.h>
 #include <Bq40z50.h>
 #include <Mp2762A.h>
+#include <Led.h>
 #include <HardwareI2cSlave.h>
 #include <Task.h>
 #include <Wire.h>
@@ -35,15 +36,19 @@ SystemParameter DisplayPannelParameter;
  ******************************************************************************/
 static struct rt_thread keyCheck_thread;
 static rt_uint8_t keyCheck_thread_stack[1024];
-static rt_uint8_t keyCheck_thread_priority = 6;
+static rt_uint8_t keyCheck_thread_priority = 5;
 
 static struct rt_thread led_thread;
 static rt_uint8_t led_thread_stack[1024];
-static rt_uint8_t led_thread_priority = 6;
+static rt_uint8_t led_thread_priority = 5;
 
 static struct rt_thread message_thread;
 static rt_uint8_t message_thread_stack[2048];
 static rt_uint8_t message_thread_priority = 7;
+
+static struct rt_thread BatteryCheck_thread;
+static rt_uint8_t BatteryCheck_thread_stack[1024];
+static rt_uint8_t BatteryCheck_thread_priority = 6;
 /*******************************************************************************
  * Local pre-processor symbols/macros ('#define')
  ******************************************************************************/
@@ -53,6 +58,49 @@ static rt_uint8_t message_thread_priority = 7;
    LL_PERIPH_SRAM)
 #define EXAMPLE_PERIPH_WP (LL_PERIPH_EFM | LL_PERIPH_FCG | LL_PERIPH_SRAM)
 
+
+
+void Charging_State_Indication()
+{
+	if(online_devices.bq40z50 == true)
+	{
+		static char on_off = 0;
+
+		unsigned char value1 = 0;
+	    unsigned char value2 = 0;
+
+	    value1 = GPIO_ReadInputPins(CHARGER_CTRL_PORT, CHARGER_CTRL_PIN1);
+	    value2 = GPIO_ReadInputPins(CHARGER_CTRL_PORT, CHARGER_CTRL_PIN2);
+		
+		batteryLevelPercent = bq40z50->getRelativeStateOfCharge();
+		batteryTempC = bq40z50->getTemperatureC();
+		batteryChargingPercentPerHour = bq40z50->getBatteryChargingPercentPerHour();
+//	  Battery_Read_Information(&BAT_Parameter);			
+		AdcPolling();
+			  
+		///if (BAT_Parameter.EQ < 100)
+	    if (batteryLevelPercent < 99)
+		{
+			if (value1)
+			{
+				on_off = ~on_off;
+				chargeLedBlink(100);
+//				if (value2)
+//					Charge_Current_Select(3000);
+//				else
+//					Charge_Current_Select(500);
+//				Charge_Enable_Switch(1);
+			}
+		}
+		else if (batteryLevelPercent < 101)
+		{
+//			Charge_Led_Switch(1);
+//			DDL_DelayMS(100);
+//			Charge_Enable_Switch(1);
+		}
+		WatchdogFeed();
+	}
+}
 /**
  * @brief  Main function of SPI tx/rx dma project
  * @param  None
@@ -89,53 +137,49 @@ int main(void) {
 		LOG_INFO("Find Mp2762, 0x0B");
 		online_devices.bq40z50 = true;
 	}
+	    ///Poweroff charge
+//    USB_Switch_GPIO_Control(1);
+	while(1)
+	{
+		if (reg_value & 0x0100U)
+			break;
+		if (PowerKeyTrigger >= 6)
+			break;
+		Charging_State_Indication();
+		delay_ms(300);
+	}
+//	USB_Switch_GPIO_Control(0);
+//	
+//	Charge_Enable_Switch(0);
+		chargeLedSwitch(0);
+		PowerKeyTrigger = 0;
 	
-	mp2762a->registerReset();
-	mp2762a->setFastChargeVoltageMv(6600);
-	mp2762a->setPrechargeCurrentMa(500);
+		powerLedSwitch(1);
+		///Start receiver system power
+		Power_Control_Pin_Switch(1);
+	
+		functionKeyLedSwitch(1);
+		delay_ms(1000);
+		memset(&DisplayPannelParameter, 0, sizeof(SystemParameter));
+		memcpy(DisplayPannelParameter.hw_version, HW_VERSION, strlen(HW_VERSION));
+		memcpy(DisplayPannelParameter.sw_version, SW_VERSION, strlen(SW_VERSION));
+//	mp2762a->registerReset();
+//	mp2762a->setFastChargeVoltageMv(6600);
+//	mp2762a->setPrechargeCurrentMa(500);
 
-  mp2762a->setFastChargeCurrentMa(1600);
-      // get charge status
-  mp2762a->getChargeStatus();
-//	Wire.beginTransmission(0x0b);
-//  if (Wire.endTransmission() == 0)
-//	{
-//		LOG_INFO("Find 0x0B");
-//	}
-//	Wire.beginTransmission(0x0b);
-//	Wire.write(0x08);
-//	if (Wire.endTransmission(false) != 0) //Send a restart command. Do not release bus.
-//  {
-//    //Sensor did not ACK
-//    LOG_ERROR("Error: Sensor did not ack");
-//  }
-//	uint8_t buff[2];
-//	if( Wire.requestFrom(0x0b, buff, 2) > 0)
-//	{
-//		LOG_INFO("got value :%d", buff[1] << 8 | buff[0]);
-//	}
-//	else
-//		LOG_ERROR("cant get");
-//	bq40z50 = new BQ40Z50();
-//	bq40z50->begin();
-//	
-//	float remainingCapacity = bq40z50->getRemainingCapacityMah();
-//	float fullCapacity = bq40z50->getFullChargeCapacityMah();
-//	Serial.print("Remaining: ");
-//	Serial.print(remainingCapacity);
-//	Serial.print(" mAh, Full: ");
-//	Serial.print(fullCapacity);
-//	Serial.print(" mAh, Percentage: ");
-//	
-  //		LOG_ERROR("I2c init failed");
-  //    I2C_Slave.begin();
+//  mp2762a->setFastChargeCurrentMa(1600);
+//  mp2762a->getChargeStatus();
+
+  if(I2C_Slave.begin() != LL_OK)
+	{
+		delay_ms(1200);
+		powerLedSwitch(0);
+		NVIC_SystemReset();
+		powerLedSwitch(1);
+	}
 
   /* Peripheral registers write protected */
   LL_PERIPH_WP(EXAMPLE_PERIPH_WP);
-
-  rt_thread_init(&led_thread, "led", ledStatusUpdateTask, RT_NULL,
-                 &led_thread_stack, sizeof(led_thread_stack),
-                 led_thread_priority, 100);
   //    rt_thread_init(&message_thread,
   //                   "message_task",
   //                   btReadTask,
@@ -147,25 +191,16 @@ int main(void) {
   rt_thread_init(&keyCheck_thread, "keyCheck", KeyMonitor, RT_NULL,
                  &keyCheck_thread_stack, sizeof(keyCheck_thread_stack),
                  keyCheck_thread_priority, 100);
-
+	rt_thread_init(&led_thread, "led", ledStatusUpdateTask, RT_NULL,
+                 &led_thread_stack, sizeof(led_thread_stack),
+                 led_thread_priority, 100);
+	rt_thread_init(&BatteryCheck_thread, "BatteryCheck", BatteryCheckTask, RT_NULL,
+                 &BatteryCheck_thread_stack, sizeof(BatteryCheck_thread_stack),
+                 BatteryCheck_thread_priority, 100);
+	rt_thread_startup(&led_thread);
   //    rt_thread_startup(&message_thread);
-  rt_thread_startup(&led_thread);
   rt_thread_startup(&keyCheck_thread);
+	rt_thread_startup(&BatteryCheck_thread);
 								 
-	while(1)
-	{
-//	float remainingCapacity = bq40z50->getRemainingCapacityMah();
-//	float fullCapacity = bq40z50->getFullChargeCapacityMah();
-//	Serial.print("Remaining: ");
-//	Serial.print(remainingCapacity);
-//	Serial.print(" mAh, Full: ");
-//	Serial.print(fullCapacity);
-//	Serial.print(" mAh, Percentage: ");
-//	float tempC = remainingCapacity / fullCapacity;
-//	Serial.print(tempC, 4);
-//	Serial.println("");
-		uint16_t status = mp2762a->getChargeStatus();
-		LOG_INFO("now charge status: %d", status);
-		rt_thread_delay(1000);
-	}
+	LOG_DEBUG("Start Task Now Time: %d", millis());
 }

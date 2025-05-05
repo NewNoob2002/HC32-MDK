@@ -78,10 +78,12 @@
   ..\..\Arduino\Core\drivers\sysclock\sysclock.h \
   ..\..\Arduino\Core\drivers\gpio\direct_access.h \
   ..\..\Arduino\Core\drivers\i2c\HardwareI2cSlave.h \
-  ..\..\Arduino\Stream.h ..\source\inc\global.h ..\source\inc\debug.h \
-  ..\source\inc\Key.h \
+  ..\..\Arduino\Stream.h ..\..\Libraries\Bq40z50\Bq40z50.h \
+  ..\..\Libraries\MP2762A\Mp2762A.h ..\source\inc\global.h \
+  ..\source\inc\debug.h ..\source\inc\Key.h \
   ..\..\Libraries\EnhancedButton\src\EnhancedButton.h \
   ..\source\inc\Led.h ..\source\inc\Task.h ..\source\inc\powerControl.h \
   ..\source\inc\System.h ..\source\inc\mcu_define.h \
+  ..\source\inc\settings.h \
   ..\..\Libraries\Parser\include\SparkFun_Extensible_Message_Parser.h \
   ..\source\inc\Task.h

@@ -1,6 +1,6 @@
 Dependencies for Project 'hc32f460jeta', Target 'hc32f460jeta_Debug': (DO NOT MODIFY !)
 CompilerVersion: 6160000::V6.16::ARMCLANG
-F (..\source\main.cpp)(0x68188AE8)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/main.o -MD)
+F (..\source\main.cpp)(0x6818AC08)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/main.o -MD)
 I (..\..\Arduino\Arduino.h)(0x68182F86)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdbool.h)(0x602A3B6C)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\__config)(0x603507B6)
@@ -86,34 +86,34 @@ I (..\..\Arduino\Stream.h)(0x6812D31D)
 I (..\..\Arduino\Print.h)(0x68186739)
 I (..\..\Arduino\Printable.h)(0x6813224A)
 I (..\..\Arduino\Core\drivers\usart\usart_config.h)(0x6812D338)
-I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68187FA5)
+I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68189D92)
 I (..\..\Arduino\Core\drivers\gpio\gpio.h)(0x68176509)
 I (..\..\Arduino\Core\drivers\gpio\addon_gpio.h)(0x6812D31D)
 I (..\..\Arduino\core_debug.h)(0x6814E290)
 I (..\..\Arduino\Core\drivers\panic\panic.h)(0x6812D31D)
 I (..\..\Arduino\Core\drivers\panic\panic_api.h)(0x6812D31D)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
 I (..\..\Arduino\wiring_digital.h)(0x6812D338)
 I (..\..\Arduino\Core\drivers\sysclock\sysclock.h)(0x6813A676)
 I (..\..\Arduino\Core\drivers\gpio\direct_access.h)(0x6812D31D)
-I (..\..\Libraries\Bq40z50\Bq40z50.h)(0x68186FE8)
-I (..\..\Libraries\MP2762A\Mp2762A.h)(0x68188B6C)
+I (..\..\Libraries\Bq40z50\Bq40z50.h)(0x6818A436)
+I (..\..\Libraries\MP2762A\Mp2762A.h)(0x6818A25F)
+I (..\source\inc\Led.h)(0x6818A6BC)
 I (..\..\Arduino\Core\drivers\i2c\HardwareI2cSlave.h)(0x68138166)
-I (..\source\inc\Task.h)(0x6815DA74)
-I (..\source\inc\global.h)(0x6814DAA7)
+I (..\source\inc\Task.h)(0x6818AAF3)
+I (..\source\inc\global.h)(0x68189D17)
 I (..\source\inc\debug.h)(0x6810D216)
 I (..\source\inc\Key.h)(0x6815DA69)
 I (..\..\Libraries\EnhancedButton\src\EnhancedButton.h)(0x6814C15F)
-I (..\source\inc\Led.h)(0x6814DF90)
 I (..\source\inc\powerControl.h)(0x68174442)
 I (..\source\inc\System.h)(0x6814DA8B)
 I (..\source\inc\mcu_define.h)(0x6810D216)
 I (..\source\inc\settings.h)(0x6814DE5B)
-F (..\source\src\Task.cpp)(0x68174A3C)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/task.o -MD)
+F (..\source\src\Task.cpp)(0x6818AB66)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/task.o -MD)
 I (..\..\Arduino\Arduino.h)(0x68182F86)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdbool.h)(0x602A3B6C)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\__config)(0x603507B6)
@@ -199,14 +199,14 @@ I (..\..\Arduino\Stream.h)(0x6812D31D)
 I (..\..\Arduino\Print.h)(0x68186739)
 I (..\..\Arduino\Printable.h)(0x6813224A)
 I (..\..\Arduino\Core\drivers\usart\usart_config.h)(0x6812D338)
-I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68187FA5)
+I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68189D92)
 I (..\..\Arduino\Core\drivers\gpio\gpio.h)(0x68176509)
 I (..\..\Arduino\Core\drivers\gpio\addon_gpio.h)(0x6812D31D)
 I (..\..\Arduino\core_debug.h)(0x6814E290)
 I (..\..\Arduino\Core\drivers\panic\panic.h)(0x6812D31D)
 I (..\..\Arduino\Core\drivers\panic\panic_api.h)(0x6812D31D)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
@@ -214,17 +214,20 @@ I (..\..\Arduino\wiring_digital.h)(0x6812D338)
 I (..\..\Arduino\Core\drivers\sysclock\sysclock.h)(0x6813A676)
 I (..\..\Arduino\Core\drivers\gpio\direct_access.h)(0x6812D31D)
 I (..\..\Arduino\Core\drivers\i2c\HardwareI2cSlave.h)(0x68138166)
-I (..\source\inc\global.h)(0x6814DAA7)
+I (..\..\Libraries\Bq40z50\Bq40z50.h)(0x6818A436)
+I (..\..\Libraries\MP2762A\Mp2762A.h)(0x6818A25F)
+I (..\source\inc\global.h)(0x68189D17)
 I (..\source\inc\debug.h)(0x6810D216)
 I (..\source\inc\Key.h)(0x6815DA69)
 I (..\..\Libraries\EnhancedButton\src\EnhancedButton.h)(0x6814C15F)
-I (..\source\inc\Led.h)(0x6814DF90)
-I (..\source\inc\Task.h)(0x6815DA74)
+I (..\source\inc\Led.h)(0x6818A6BC)
+I (..\source\inc\Task.h)(0x6818AAF3)
 I (..\source\inc\powerControl.h)(0x68174442)
 I (..\source\inc\System.h)(0x6814DA8B)
 I (..\source\inc\mcu_define.h)(0x6810D216)
+I (..\source\inc\settings.h)(0x6814DE5B)
 I (..\..\Libraries\Parser\include\SparkFun_Extensible_Message_Parser.h)(0x681322B7)
-F (..\source\src\Key.cpp)(0x6815DA56)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/key.o -MD)
+F (..\source\src\Key.cpp)(0x68189F41)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/key.o -MD)
 I (..\..\Arduino\Arduino.h)(0x68182F86)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdbool.h)(0x602A3B6C)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\__config)(0x603507B6)
@@ -310,33 +313,33 @@ I (..\..\Arduino\Stream.h)(0x6812D31D)
 I (..\..\Arduino\Print.h)(0x68186739)
 I (..\..\Arduino\Printable.h)(0x6813224A)
 I (..\..\Arduino\Core\drivers\usart\usart_config.h)(0x6812D338)
-I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68187FA5)
+I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68189D92)
 I (..\..\Arduino\Core\drivers\gpio\gpio.h)(0x68176509)
 I (..\..\Arduino\Core\drivers\gpio\addon_gpio.h)(0x6812D31D)
 I (..\..\Arduino\core_debug.h)(0x6814E290)
 I (..\..\Arduino\Core\drivers\panic\panic.h)(0x6812D31D)
 I (..\..\Arduino\Core\drivers\panic\panic_api.h)(0x6812D31D)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
 I (..\..\Arduino\wiring_digital.h)(0x6812D338)
 I (..\..\Arduino\Core\drivers\sysclock\sysclock.h)(0x6813A676)
 I (..\..\Arduino\Core\drivers\gpio\direct_access.h)(0x6812D31D)
-I (..\source\inc\global.h)(0x6814DAA7)
+I (..\source\inc\global.h)(0x68189D17)
 I (..\source\inc\debug.h)(0x6810D216)
 I (..\source\inc\Key.h)(0x6815DA69)
 I (..\..\Libraries\EnhancedButton\src\EnhancedButton.h)(0x6814C15F)
-I (..\source\inc\Led.h)(0x6814DF90)
-I (..\source\inc\Task.h)(0x6815DA74)
+I (..\source\inc\Led.h)(0x6818A6BC)
+I (..\source\inc\Task.h)(0x6818AAF3)
 I (..\source\inc\powerControl.h)(0x68174442)
 I (..\source\inc\System.h)(0x6814DA8B)
 I (..\source\inc\mcu_define.h)(0x6810D216)
 I (..\source\inc\settings.h)(0x6814DE5B)
-F (..\source\src\Led.cpp)(0x6814DFFE)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/led.o -MD)
+F (..\source\src\Led.cpp)(0x6818A642)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/led.o -MD)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
@@ -425,7 +428,7 @@ I (..\..\Arduino\Stream.h)(0x6812D31D)
 I (..\..\Arduino\Print.h)(0x68186739)
 I (..\..\Arduino\Printable.h)(0x6813224A)
 I (..\..\Arduino\Core\drivers\usart\usart_config.h)(0x6812D338)
-I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68187FA5)
+I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68189D92)
 I (..\..\Arduino\Core\drivers\gpio\gpio.h)(0x68176509)
 I (..\..\Arduino\Core\drivers\gpio\addon_gpio.h)(0x6812D31D)
 I (..\..\Arduino\core_debug.h)(0x6814E290)
@@ -435,12 +438,12 @@ I (..\..\Arduino\wiring_digital.h)(0x6812D338)
 I (..\..\Arduino\Core\drivers\sysclock\sysclock.h)(0x6813A676)
 I (..\..\Arduino\Core\drivers\gpio\direct_access.h)(0x6812D31D)
 I (..\source\inc\settings.h)(0x6814DE5B)
-I (..\source\inc\global.h)(0x6814DAA7)
+I (..\source\inc\global.h)(0x68189D17)
 I (..\source\inc\debug.h)(0x6810D216)
 I (..\source\inc\Key.h)(0x6815DA69)
 I (..\..\Libraries\EnhancedButton\src\EnhancedButton.h)(0x6814C15F)
-I (..\source\inc\Led.h)(0x6814DF90)
-I (..\source\inc\Task.h)(0x6815DA74)
+I (..\source\inc\Led.h)(0x6818A6BC)
+I (..\source\inc\Task.h)(0x6818AAF3)
 I (..\source\inc\powerControl.h)(0x68174442)
 I (..\source\inc\System.h)(0x6814DA8B)
 I (..\source\inc\mcu_define.h)(0x6810D216)
@@ -530,14 +533,14 @@ I (..\..\Arduino\Stream.h)(0x6812D31D)
 I (..\..\Arduino\Print.h)(0x68186739)
 I (..\..\Arduino\Printable.h)(0x6813224A)
 I (..\..\Arduino\Core\drivers\usart\usart_config.h)(0x6812D338)
-I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68187FA5)
+I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68189D92)
 I (..\..\Arduino\Core\drivers\gpio\gpio.h)(0x68176509)
 I (..\..\Arduino\Core\drivers\gpio\addon_gpio.h)(0x6812D31D)
 I (..\..\Arduino\core_debug.h)(0x6814E290)
 I (..\..\Arduino\Core\drivers\panic\panic.h)(0x6812D31D)
 I (..\..\Arduino\Core\drivers\panic\panic_api.h)(0x6812D31D)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
@@ -546,7 +549,7 @@ I (..\..\Arduino\Core\drivers\sysclock\sysclock.h)(0x6813A676)
 I (..\..\Arduino\Core\drivers\gpio\direct_access.h)(0x6812D31D)
 I (..\..\Libraries\rt-thread\include\rthw.h)(0x6814D872)
 I (..\source\inc\System.h)(0x6814DA8B)
-F (..\source\src\powerControl.cpp)(0x68174995)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/powercontrol.o -MD)
+F (..\source\src\powerControl.cpp)(0x68189DF2)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/powercontrol.o -MD)
 I (..\..\Arduino\Arduino.h)(0x68182F86)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdbool.h)(0x602A3B6C)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\__config)(0x603507B6)
@@ -632,14 +635,14 @@ I (..\..\Arduino\Stream.h)(0x6812D31D)
 I (..\..\Arduino\Print.h)(0x68186739)
 I (..\..\Arduino\Printable.h)(0x6813224A)
 I (..\..\Arduino\Core\drivers\usart\usart_config.h)(0x6812D338)
-I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68187FA5)
+I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68189D92)
 I (..\..\Arduino\Core\drivers\gpio\gpio.h)(0x68176509)
 I (..\..\Arduino\Core\drivers\gpio\addon_gpio.h)(0x6812D31D)
 I (..\..\Arduino\core_debug.h)(0x6814E290)
 I (..\..\Arduino\Core\drivers\panic\panic.h)(0x6812D31D)
 I (..\..\Arduino\Core\drivers\panic\panic_api.h)(0x6812D31D)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
@@ -647,7 +650,7 @@ I (..\..\Arduino\wiring_digital.h)(0x6812D338)
 I (..\..\Arduino\Core\drivers\sysclock\sysclock.h)(0x6813A676)
 I (..\..\Arduino\Core\drivers\gpio\direct_access.h)(0x6812D31D)
 I (..\source\inc\debug.h)(0x6810D216)
-I (..\source\inc\led.h)(0x6814DF90)
+I (..\source\inc\led.h)(0x6818A6BC)
 I (..\source\inc\settings.h)(0x6814DE5B)
 I (..\source\inc\powerControl.h)(0x68174442)
 F (..\..\Arduino\Core\variants\hc32f460xx\variant.cpp)(0x6812D338)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/variant.o -MD)
@@ -761,7 +764,7 @@ I (..\..\Arduino\Core\drivers\panic\panic_api.h)(0x6812D31D)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdlib.h)(0x603507C8)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x603507D0)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
@@ -792,7 +795,7 @@ I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x603507D0)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdint.h)(0x602A3B7A)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
 I (..\..\Arduino\WMath.h)(0x6812D31D)
-F (..\..\Arduino\Core\drivers\adc\adc.cpp)(0x681750B4)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/adc.o -MD)
+F (..\..\Arduino\Core\drivers\adc\adc.cpp)(0x6818A877)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/adc.o -MD)
 I (..\..\Arduino\Arduino.h)(0x68182F86)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdbool.h)(0x602A3B6C)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\__config)(0x603507B6)
@@ -878,14 +881,14 @@ I (..\..\Arduino\Stream.h)(0x6812D31D)
 I (..\..\Arduino\Print.h)(0x68186739)
 I (..\..\Arduino\Printable.h)(0x6813224A)
 I (..\..\Arduino\Core\drivers\usart\usart_config.h)(0x6812D338)
-I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68187FA5)
+I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68189D92)
 I (..\..\Arduino\Core\drivers\gpio\gpio.h)(0x68176509)
 I (..\..\Arduino\Core\drivers\gpio\addon_gpio.h)(0x6812D31D)
 I (..\..\Arduino\core_debug.h)(0x6814E290)
 I (..\..\Arduino\Core\drivers\panic\panic.h)(0x6812D31D)
 I (..\..\Arduino\Core\drivers\panic\panic_api.h)(0x6812D31D)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
@@ -1063,14 +1066,14 @@ I (..\..\Arduino\Stream.h)(0x6812D31D)
 I (..\..\Arduino\Print.h)(0x68186739)
 I (..\..\Arduino\Printable.h)(0x6813224A)
 I (..\..\Arduino\Core\drivers\usart\usart_config.h)(0x6812D338)
-I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68187FA5)
+I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68189D92)
 I (..\..\Arduino\Core\drivers\gpio\gpio.h)(0x68176509)
 I (..\..\Arduino\Core\drivers\gpio\addon_gpio.h)(0x6812D31D)
 I (..\..\Arduino\core_debug.h)(0x6814E290)
 I (..\..\Arduino\Core\drivers\panic\panic.h)(0x6812D31D)
 I (..\..\Arduino\Core\drivers\panic\panic_api.h)(0x6812D31D)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
@@ -1171,14 +1174,14 @@ I (..\..\Arduino\Stream.h)(0x6812D31D)
 I (..\..\Arduino\Print.h)(0x68186739)
 I (..\..\Arduino\Printable.h)(0x6813224A)
 I (..\..\Arduino\Core\drivers\usart\usart_config.h)(0x6812D338)
-I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68187FA5)
+I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68189D92)
 I (..\..\Arduino\Core\drivers\gpio\gpio.h)(0x68176509)
 I (..\..\Arduino\Core\drivers\gpio\addon_gpio.h)(0x6812D31D)
 I (..\..\Arduino\core_debug.h)(0x6814E290)
 I (..\..\Arduino\Core\drivers\panic\panic.h)(0x6812D31D)
 I (..\..\Arduino\Core\drivers\panic\panic_api.h)(0x6812D31D)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
@@ -1271,14 +1274,14 @@ I (..\..\Arduino\WMath.h)(0x6812D31D)
 I (..\..\Arduino\HardwareSerial.h)(0x6812D338)
 I (..\..\Arduino\RingBuffer.h)(0x6812D338)
 I (..\..\Arduino\Core\drivers\usart\usart_config.h)(0x6812D338)
-I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68187FA5)
+I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68189D92)
 I (..\..\Arduino\Core\drivers\gpio\gpio.h)(0x68176509)
 I (..\..\Arduino\Core\drivers\gpio\addon_gpio.h)(0x6812D31D)
 I (..\..\Arduino\core_debug.h)(0x6814E290)
 I (..\..\Arduino\Core\drivers\panic\panic.h)(0x6812D31D)
 I (..\..\Arduino\Core\drivers\panic\panic_api.h)(0x6812D31D)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
@@ -1345,7 +1348,7 @@ I (..\..\Arduino\Core\drivers\panic\panic_api.h)(0x6812D31D)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdlib.h)(0x603507C8)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x603507D0)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
@@ -1419,7 +1422,7 @@ I (..\..\Arduino\Core\drivers\panic\panic_api.h)(0x6812D31D)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdlib.h)(0x603507C8)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x603507D0)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
@@ -1494,18 +1497,18 @@ I (..\..\Arduino\Core\drivers\panic\panic_api.h)(0x6812D31D)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdlib.h)(0x603507C8)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x603507D0)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
 I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
-F (..\..\Arduino\Core\drivers\i2c\Wire.cpp)(0x6818892D)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/wire.o -MD)
+F (..\..\Arduino\Core\drivers\i2c\Wire.cpp)(0x68189DAE)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/wire.o -MD)
 I (..\..\Arduino\delay.h)(0x6812D501)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdint.h)(0x602A3B7A)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\__config)(0x603507B6)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
 I (..\..\Arduino\Core\variants\hc32f460xx\variant.h)(0x68176512)
-I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68187FA5)
+I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68189D92)
 I (..\..\Driver\inc\hc32_ll.h)(0x6812D31D)
 I (..\..\Driver\inc\hc32_ll_def.h)(0x6812D31D)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\stddef.h)(0x602A3B6E)
@@ -1561,7 +1564,7 @@ I (..\..\Arduino\Core\drivers\panic\panic_api.h)(0x6812D31D)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdlib.h)(0x603507C8)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x603507D0)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
@@ -1693,14 +1696,14 @@ I (..\..\Arduino\Stream.h)(0x6812D31D)
 I (..\..\Arduino\Print.h)(0x68186739)
 I (..\..\Arduino\Printable.h)(0x6813224A)
 I (..\..\Arduino\Core\drivers\usart\usart_config.h)(0x6812D338)
-I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68187FA5)
+I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68189D92)
 I (..\..\Arduino\Core\drivers\gpio\gpio.h)(0x68176509)
 I (..\..\Arduino\Core\drivers\gpio\addon_gpio.h)(0x6812D31D)
 I (..\..\Arduino\core_debug.h)(0x6814E290)
 I (..\..\Arduino\Core\drivers\panic\panic.h)(0x6812D31D)
 I (..\..\Arduino\Core\drivers\panic\panic_api.h)(0x6812D31D)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
@@ -2549,7 +2552,7 @@ I (..\..\Arduino\Core\drivers\panic\panic_api.h)(0x6812D31D)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdlib.h)(0x603507C8)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x603507D0)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
@@ -2662,14 +2665,14 @@ I (..\..\Arduino\Stream.h)(0x6812D31D)
 I (..\..\Arduino\Print.h)(0x68186739)
 I (..\..\Arduino\Printable.h)(0x6813224A)
 I (..\..\Arduino\Core\drivers\usart\usart_config.h)(0x6812D338)
-I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68187FA5)
+I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68189D92)
 I (..\..\Arduino\Core\drivers\gpio\gpio.h)(0x68176509)
 I (..\..\Arduino\Core\drivers\gpio\addon_gpio.h)(0x6812D31D)
 I (..\..\Arduino\core_debug.h)(0x6814E290)
 I (..\..\Arduino\Core\drivers\panic\panic.h)(0x6812D31D)
 I (..\..\Arduino\Core\drivers\panic\panic_api.h)(0x6812D31D)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
@@ -2764,14 +2767,14 @@ I (..\..\Arduino\Stream.h)(0x6812D31D)
 I (..\..\Arduino\Print.h)(0x68186739)
 I (..\..\Arduino\Printable.h)(0x6813224A)
 I (..\..\Arduino\Core\drivers\usart\usart_config.h)(0x6812D338)
-I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68187FA5)
+I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68189D92)
 I (..\..\Arduino\Core\drivers\gpio\gpio.h)(0x68176509)
 I (..\..\Arduino\Core\drivers\gpio\addon_gpio.h)(0x6812D31D)
 I (..\..\Arduino\core_debug.h)(0x6814E290)
 I (..\..\Arduino\Core\drivers\panic\panic.h)(0x6812D31D)
 I (..\..\Arduino\Core\drivers\panic\panic_api.h)(0x6812D31D)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
@@ -2865,35 +2868,36 @@ I (..\..\Arduino\Stream.h)(0x6812D31D)
 I (..\..\Arduino\Print.h)(0x68186739)
 I (..\..\Arduino\Printable.h)(0x6813224A)
 I (..\..\Arduino\Core\drivers\usart\usart_config.h)(0x6812D338)
-I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68187FA5)
+I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68189D92)
 I (..\..\Arduino\Core\drivers\gpio\gpio.h)(0x68176509)
 I (..\..\Arduino\Core\drivers\gpio\addon_gpio.h)(0x6812D31D)
 I (..\..\Arduino\core_debug.h)(0x6814E290)
 I (..\..\Arduino\Core\drivers\panic\panic.h)(0x6812D31D)
 I (..\..\Arduino\Core\drivers\panic\panic_api.h)(0x6812D31D)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
 I (..\..\Arduino\wiring_digital.h)(0x6812D338)
 I (..\..\Arduino\Core\drivers\sysclock\sysclock.h)(0x6813A676)
 I (..\..\Arduino\Core\drivers\gpio\direct_access.h)(0x6812D31D)
-F (..\..\Libraries\Bq40z50\Bq40z50.cpp)(0x6818704B)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/bq40z50.o -MD)
+F (..\..\Libraries\Bq40z50\Bq40z50.cpp)(0x6818A45E)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/bq40z50.o -MD)
 I (..\source\inc\debug.h)(0x6810D216)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
 I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
-I (..\..\Libraries\Bq40z50\Bq40z50.h)(0x68186FE8)
+I (..\source\inc\settings.h)(0x6814DE5B)
+I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdint.h)(0x602A3B7A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\__config)(0x603507B6)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
+I (..\..\Libraries\Bq40z50\Bq40z50.h)(0x6818A436)
 I (..\..\Arduino\Arduino.h)(0x68182F86)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdbool.h)(0x602A3B6C)
-I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\__config)(0x603507B6)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x603507CA)
-I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdint.h)(0x602A3B7A)
-I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\stddef.h)(0x602A3B6E)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x603507D0)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\__nullptr)(0x602A3B74)
@@ -2972,7 +2976,7 @@ I (..\..\Arduino\Stream.h)(0x6812D31D)
 I (..\..\Arduino\Print.h)(0x68186739)
 I (..\..\Arduino\Printable.h)(0x6813224A)
 I (..\..\Arduino\Core\drivers\usart\usart_config.h)(0x6812D338)
-I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68187FA5)
+I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68189D92)
 I (..\..\Arduino\Core\drivers\gpio\gpio.h)(0x68176509)
 I (..\..\Arduino\Core\drivers\gpio\addon_gpio.h)(0x6812D31D)
 I (..\..\Arduino\core_debug.h)(0x6814E290)
@@ -2984,12 +2988,12 @@ I (..\..\Arduino\Core\drivers\gpio\direct_access.h)(0x6812D31D)
 F (..\..\Libraries\MP2762A\Mp2762A.cpp)(0x68188D0A)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/mp2762a.o -MD)
 I (..\source\inc\debug.h)(0x6810D216)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
 I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
-I (..\..\Libraries\MP2762A\Mp2762A.h)(0x68188B6C)
+I (..\..\Libraries\MP2762A\Mp2762A.h)(0x6818A25F)
 I (..\..\Arduino\Arduino.h)(0x68182F86)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdbool.h)(0x602A3B6C)
 I (C:\Keil_v5\ARM\ARMCLANG\include\libcxx\__config)(0x603507B6)
@@ -3074,7 +3078,7 @@ I (..\..\Arduino\Stream.h)(0x6812D31D)
 I (..\..\Arduino\Print.h)(0x68186739)
 I (..\..\Arduino\Printable.h)(0x6813224A)
 I (..\..\Arduino\Core\drivers\usart\usart_config.h)(0x6812D338)
-I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68187FA5)
+I (..\..\Arduino\Core\drivers\i2c\Wire.h)(0x68189D92)
 I (..\..\Arduino\Core\drivers\gpio\gpio.h)(0x68176509)
 I (..\..\Arduino\Core\drivers\gpio\addon_gpio.h)(0x6812D31D)
 I (..\..\Arduino\core_debug.h)(0x6814E290)
@@ -3086,7 +3090,7 @@ I (..\..\Arduino\Core\drivers\gpio\direct_access.h)(0x6812D31D)
 F (..\..\Libraries\rt-thread\libcpu\arm\cortex-m4\context_rvds.S)(0x60ED86CD)(--cpu Cortex-M4 --fpu=SoftVFP --li -g-IC:\Users\guoti\AppData\Local\Arm\Packs\HDSC\HC32F460\1.0.12\Device\Include--pd "__UVISION_VERSION SETA 536"--list .\output\debug\context_rvds.lst--xref -o .\output\debug\context_rvds.o--depend .\output\debug\context_rvds.d)
 F (..\..\Libraries\rt-thread\libcpu\arm\cortex-m4\cpuport.c)(0x60ED86CD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/cpuport.o -MD)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
@@ -3094,7 +3098,7 @@ I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
 F (..\..\Libraries\rt-thread\src\clock.c)(0x6813A5B8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/clock.o -MD)
 I (..\..\Libraries\rt-thread\include\rthw.h)(0x6814D872)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
@@ -3141,14 +3145,14 @@ I (..\..\Arduino\delay.h)(0x6812D501)
 F (..\..\Libraries\rt-thread\src\components.c)(0x6814CE5F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/components.o -MD)
 I (..\..\Libraries\rt-thread\include\rthw.h)(0x6814D872)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
 I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
 F (..\..\Libraries\rt-thread\src\cpu.c)(0x60ED86CD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/cpu.o -MD)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
@@ -3157,14 +3161,14 @@ I (..\..\Libraries\rt-thread\include\rthw.h)(0x6814D872)
 F (..\..\Libraries\rt-thread\src\idle.c)(0x60ED86CD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/idle.o -MD)
 I (..\..\Libraries\rt-thread\include\rthw.h)(0x6814D872)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
 I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
 F (..\..\Libraries\rt-thread\src\ipc.c)(0x60ED86CD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/ipc.o -MD)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
@@ -3173,14 +3177,14 @@ I (..\..\Libraries\rt-thread\include\rthw.h)(0x6814D872)
 F (..\..\Libraries\rt-thread\src\irq.c)(0x60ED86CD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/irq.o -MD)
 I (..\..\Libraries\rt-thread\include\rthw.h)(0x6814D872)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
 I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
 F (..\..\Libraries\rt-thread\src\kservice.c)(0x68174D5B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/kservice.o -MD)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
@@ -3229,7 +3233,7 @@ I (..\source\inc\mcu_define.h)(0x6810D216)
 F (..\..\Libraries\rt-thread\src\mem.c)(0x60ED86CD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/mem.o -MD)
 I (..\..\Libraries\rt-thread\include\rthw.h)(0x6814D872)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
@@ -3237,7 +3241,7 @@ I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
 F (..\..\Libraries\rt-thread\src\memheap.c)(0x60ED86CD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/memheap.o -MD)
 I (..\..\Libraries\rt-thread\include\rthw.h)(0x6814D872)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
@@ -3245,14 +3249,14 @@ I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
 F (..\..\Libraries\rt-thread\src\mempool.c)(0x60ED86CD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/mempool.o -MD)
 I (..\..\Libraries\rt-thread\include\rthw.h)(0x6814D872)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
 I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
 F (..\..\Libraries\rt-thread\src\object.c)(0x60ED86CD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/object.o -MD)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
@@ -3260,7 +3264,7 @@ I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rthw.h)(0x6814D872)
 F (..\..\Libraries\rt-thread\src\scheduler.c)(0x60ED86CD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/scheduler.o -MD)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
@@ -3269,7 +3273,7 @@ I (..\..\Libraries\rt-thread\include\rthw.h)(0x6814D872)
 F (..\..\Libraries\rt-thread\src\slab.c)(0x60ED86CD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/slab.o -MD)
 I (..\..\Libraries\rt-thread\include\rthw.h)(0x6814D872)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
@@ -3277,14 +3281,14 @@ I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
 F (..\..\Libraries\rt-thread\src\thread.c)(0x60ED86CD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/thread.o -MD)
 I (..\..\Libraries\rt-thread\include\rthw.h)(0x6814D872)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
 I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
 F (..\..\Libraries\rt-thread\src\timer.c)(0x60ED86CD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/timer.o -MD)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
@@ -3331,17 +3335,17 @@ I (..\..\Driver\inc\hc32_ll_usart.h)(0x6812D31D)
 I (..\..\Driver\inc\hc32_ll_utility.h)(0x6812D31D)
 I (..\..\Libraries\rt-thread\include\rthw.h)(0x6814D872)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
 I (..\..\Libraries\rt-thread\include\rtservice.h)(0x60ED86CD)
 I (..\..\Arduino\Core\drivers\sysclock\sysclock.h)(0x6813A676)
 I (..\..\Libraries\rt-thread\bsp\usart.h)(0x6814CDAC)
-F (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)()
+F (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)()
 F (..\..\Libraries\rt-thread\bsp\usart.cpp)(0x68186843)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-mlittle-endian -gdwarf-4 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../source -I ../source/inc -I ../../bsp/ev_hc32f460_lqfp100_v2 -I ../../CMSIS/Include -I ../../CMSIS/Device/HDSC/hc32f4xx/Include -I ../../Driver/inc -I ../../Arduino -I ../../Arduino/Core/avr -I ../../Arduino/Core/drivers/gpio -I ../../Arduino/Core/drivers/adc -I ../../Arduino/Core/drivers/panic -I ../../Arduino/Core/drivers/usart -I ../../Arduino/Core/drivers/irqn -I ../../Arduino/Core/drivers/sysclock -I ../../Arduino/Core/variants/hc32f460xx -I ../../Arduino/Core/drivers/i2c -I ../../Arduino/Core/drivers/spi -I ../../Libraries/rt-thread/include -I ../../Libraries/rt-thread/include/libc -I ../../Libraries/rt-thread/bsp -I ../../Libraries/rt-thread/components/finsh -I ../../Libraries/MillisTaskManager -I ../../Libraries/Parser/include -I ../../Libraries/EnhancedButton/src -I ../../Libraries/Bq40z50 -I ../../Libraries/MP2762A-IC:/Users/guoti/AppData/Local/Arm/Packs/HDSC/HC32F460/1.0.12/Device/Include-D__UVISION_VERSION="536" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER -D__CORE_DEBUG-o ./output/debug/usart.o -MD)
 I (..\..\Libraries\rt-thread\include\rtthread.h)(0x60ED86CD)
-I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6814D8A0)
+I (..\..\Libraries\rt-thread\bsp\rtconfig.h)(0x6818A859)
 I (..\..\Libraries\rt-thread\include\rtdebug.h)(0x60ED86CD)
 I (..\..\Libraries\rt-thread\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x603507D4)
