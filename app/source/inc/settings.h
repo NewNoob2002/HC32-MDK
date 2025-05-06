@@ -41,6 +41,14 @@ typedef struct tag_SystemParameter_s
 	  unsigned char usb_power_flag;
 }SystemParameter;
 
+typedef enum _gaugeState_t{
+    READ_VOLTAGE,
+    READ_CURRENT,
+    READ_TEMP,
+    READ_POWER,
+    DONE
+} gaugeState_t;
+
 enum chargeStatus
 {
     notCharge = 0,

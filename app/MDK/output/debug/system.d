@@ -77,4 +77,9 @@
   ..\..\Arduino\wiring_digital.h \
   ..\..\Arduino\Core\drivers\sysclock\sysclock.h \
   ..\..\Arduino\Core\drivers\gpio\direct_access.h \
-  ..\..\Libraries\rt-thread\include\rthw.h ..\source\inc\System.h
+  ..\..\Libraries\rt-thread\include\rthw.h ..\source\inc\global.h \
+  ..\source\inc\settings.h ..\source\inc\debug.h ..\source\inc\Key.h \
+  ..\..\Libraries\EnhancedButton\src\EnhancedButton.h \
+  ..\source\inc\Led.h ..\source\inc\Task.h ..\source\inc\powerControl.h \
+  ..\source\inc\System.h ..\source\inc\mcu_define.h \
+  ..\..\Libraries\Bq40z50\Bq40z50.h ..\source\inc\System.h

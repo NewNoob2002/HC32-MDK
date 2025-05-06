@@ -4,7 +4,6 @@
 #include <Mp2762A.h>
 #include <adc.h>
 #include <global.h>
-#include <settings.h>
 #include <SparkFun_Extensible_Message_Parser.h>
 
 #include <Task.h>
@@ -64,25 +63,6 @@ void KeyMonitor(void *e)
       LOG_INFO("Task KeyMonitor end");
 }
 
-void checkBatteryLevels()
-{
-    if (online_devices.bq40z50 == false)
-        return;
-
-    batteryVoltage = (bq40z50->getVoltageMv() / 1000.0);
-
-		batteryLevelPercent = bq40z50->getRelativeStateOfCharge();
-		batteryTempC = bq40z50->getTemperatureC();
-		batteryChargingPercentPerHour = bq40z50->getBatteryChargingPercentPerHour();
-
-    if (batteryLevelPercent == 0.0) {
-        batteryLevelPercent = 50.0;
-    } else if (batteryLevelPercent <= 99.80 && batteryVoltage >= 8.38) {
-        batteryLevelPercent = 100.0;
-    }
-    return;
-}
-
 
 //void handleChargerTask()
 //{
@@ -124,10 +104,10 @@ void handleFuelgaugeTask()
         if (millis() - lastCheckFuelGaugeOnlineTime > 60 * 1000) {
             if (bq40z50->isConnected()) {
                 online_devices.bq40z50 = true;
-                LOG_DEBUG("bq40z50 is still online-", millis());
+                LOG_DEBUG("bq40z50 is still online- %d", millis());
             } else {
                 online_devices.bq40z50 = false;
-                LOG_DEBUG("bq40z50 is offline first time-", millis());
+                LOG_DEBUG("bq40z50 is offline first time- %d", millis());
             }
             lastCheckFuelGaugeOnlineTime = millis();
         }
@@ -145,10 +125,10 @@ void handleFuelgaugeTask()
     } else {
         if (bq40z50->isConnected()) {
             online_devices.bq40z50 = true;
-            LOG_DEBUG("bq40z50 is offline but online again-", millis());
+            LOG_DEBUG("bq40z50 is offline but online again- %d", millis());
         } else {
             online_devices.bq40z50 = false;
-            LOG_DEBUG("bq40z50 is offline second time-", millis());
+            LOG_DEBUG("bq40z50 is offline second time- %d", millis());
         }
         lastCheckFuelGaugeOnlineTime = millis();
     }
@@ -169,11 +149,11 @@ void BatteryCheckTask(void *e)
     //     handleChargerTask();
     // }
 
-    if (millis() - lastBatteryFuelGaugeUpdate >= 3000) {
+    if (millis() - lastBatteryFuelGaugeUpdate >= 2000) {
         lastBatteryFuelGaugeUpdate = millis();
         handleFuelgaugeTask();
     }
-		rt_thread_mdelay(500);
+		rt_thread_mdelay(250);
 	}
 	if (DebugTask == true)
       LOG_INFO("Task BatteryCheckTask end");

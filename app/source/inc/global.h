@@ -1,7 +1,7 @@
 #pragma once
 
 #include <rtthread.h>
-
+#include <settings.h>
 #include "debug.h"
 //#include "Charger.h"
 //#include "Fuelgauge.h"

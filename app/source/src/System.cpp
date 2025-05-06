@@ -1,10 +1,61 @@
 #include <Arduino.h>
 #include <rtthread.h>
 #include <rthw.h>
+#include <global.h>
+#include <Bq40z50.h>
 
 #include "System.h"
 
 #define LIST_FIND_OBJ_NR 8
+
+static gaugeState_t gaugeState = READ_VOLTAGE;
+
+void checkBatteryLevels()
+{
+    if (online_devices.bq40z50 == false)
+        return;
+
+switch (gaugeState)
+        {
+        case READ_VOLTAGE:
+        {
+            batteryVoltage = (bq40z50->getVoltageMv() / 1000.0);
+            gaugeState = READ_CURRENT;
+            break;
+        }
+        case READ_CURRENT:
+        {
+            batteryLevelPercent = bq40z50->getRelativeStateOfCharge();
+            gaugeState = READ_TEMP;
+            break;
+        }
+        case READ_TEMP:
+        {
+            batteryTempC = bq40z50->getTemperatureC();
+            gaugeState = READ_POWER;
+            break;
+        }
+        case READ_POWER:
+        {
+            batteryChargingPercentPerHour =
+                (float)bq40z50->getBatteryChargingPercentPerHour();
+            gaugeState = DONE;
+            break;
+        }
+        case DONE:
+        {
+            gaugeState = READ_VOLTAGE;
+            break;
+        }
+        }
+
+    if (batteryLevelPercent == 0.0) {
+        batteryLevelPercent = 50.0;
+    } else if (batteryLevelPercent <= 99.80 && batteryVoltage >= 8.38) {
+        batteryLevelPercent = 100.0;
+    }
+    return;
+}
 
 rt_inline void object_split(int len)
 {

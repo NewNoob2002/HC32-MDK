@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\output\debug\hc32f460jeta.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\output\debug\hc32f460jeta.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Mon May  5 20:16:09 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Tue May  6 10:34:54 2025
 <BR><P>
 <H3>Maximum Stack Usage =        476 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -2355,7 +2355,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
 </UL>
 
-<P><STRONG><a name="[b5]"></a>BatteryCheckTask(void*)</STRONG> (Thumb, 94 bytes, Stack size 16 bytes, task.o(.text._Z16BatteryCheckTaskPv))
+<P><STRONG><a name="[b5]"></a>BatteryCheckTask(void*)</STRONG> (Thumb, 90 bytes, Stack size 16 bytes, task.o(.text._Z16BatteryCheckTaskPv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 392<LI>Call Chain = BatteryCheckTask(void*) &rArr; handleFuelgaugeTask() &rArr; Print::println(double, int) &rArr; Print::print(double, int) &rArr; Print::printFloat(double, unsigned char) &rArr; Print::print(int, int) &rArr; Print::print(long, int) &rArr; Print::printNumber(unsigned long, unsigned char) &rArr; Print::write(char const*) &rArr; strlen
 </UL>
 <BR>[Calls]<UL><LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_mdelay
@@ -2396,14 +2396,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[1f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_irqn_aa_get
 </UL>
 
-<P><STRONG><a name="[193]"></a>checkBatteryLevels()</STRONG> (Thumb, 276 bytes, Stack size 24 bytes, task.o(.text._Z18checkBatteryLevelsv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 340<LI>Call Chain = checkBatteryLevels() &rArr; BQ40Z50::getBatteryChargingPercentPerHour() &rArr; BQ40Z50::getFullChargeCapacityMah() &rArr; BQ40Z50::readRegister16(unsigned char) &rArr; TwoWire::beginTransmission(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
+<P><STRONG><a name="[193]"></a>checkBatteryLevels()</STRONG> (Thumb, 386 bytes, Stack size 16 bytes, system.o(.text._Z18checkBatteryLevelsv))
+<BR><BR>[Stack]<UL><LI>Max Depth = 332<LI>Call Chain = checkBatteryLevels() &rArr; BQ40Z50::getBatteryChargingPercentPerHour() &rArr; BQ40Z50::getFullChargeCapacityMah() &rArr; BQ40Z50::readRegister16(unsigned char) &rArr; TwoWire::beginTransmission(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
 </UL>
-<BR>[Calls]<UL><LI><a href="#[194]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getVoltageMv()
-<LI><a href="#[198]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getBatteryChargingPercentPerHour()
+<BR>[Calls]<UL><LI><a href="#[198]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getBatteryChargingPercentPerHour()
 <LI><a href="#[196]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getRelativeStateOfCharge()
 <LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getTemperatureC()
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
+<LI><a href="#[194]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getVoltageMv()
 <LI><a href="#[19c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dcmplt
 <LI><a href="#[19b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dcmpgt
 <LI><a href="#[19a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dcmpeq
@@ -2411,8 +2410,10 @@ Global Symbols
 <LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
 <LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 <LI><a href="#[195]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
+<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 </UL>
 <BR>[Called By]<UL><LI><a href="#[18d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleFuelgaugeTask()
+<LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Charging_State_Indication()
 </UL>
 
 <P><STRONG><a name="[19d]"></a>irqn_bitfield_next(unsigned int&)</STRONG> (Thumb, 70 bytes, Stack size 24 bytes, irqn.o(.text._Z18irqn_bitfield_nextRj))
@@ -2464,9 +2465,9 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[1a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::isConnected()
 <LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Print::println(double, int)
 <LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Print::print(char const*)
-<LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkBatteryLevels()
 <LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_kprintf
 <LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;millis
+<LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkBatteryLevels()
 <LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BatteryCheckTask(void*)
@@ -2519,17 +2520,14 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
 </UL>
 
-<P><STRONG><a name="[1ac]"></a>Charging_State_Indication()</STRONG> (Thumb, 224 bytes, Stack size 24 bytes, main.o(.text._Z25Charging_State_Indicationv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 340<LI>Call Chain = Charging_State_Indication() &rArr; BQ40Z50::getBatteryChargingPercentPerHour() &rArr; BQ40Z50::getFullChargeCapacityMah() &rArr; BQ40Z50::readRegister16(unsigned char) &rArr; TwoWire::beginTransmission(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
+<P><STRONG><a name="[1ac]"></a>Charging_State_Indication()</STRONG> (Thumb, 162 bytes, Stack size 16 bytes, main.o(.text._Z25Charging_State_Indicationv))
+<BR><BR>[Stack]<UL><LI>Max Depth = 348<LI>Call Chain = Charging_State_Indication() &rArr; checkBatteryLevels() &rArr; BQ40Z50::getBatteryChargingPercentPerHour() &rArr; BQ40Z50::getFullChargeCapacityMah() &rArr; BQ40Z50::readRegister16(unsigned char) &rArr; TwoWire::beginTransmission(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
 </UL>
-<BR>[Calls]<UL><LI><a href="#[198]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getBatteryChargingPercentPerHour()
-<LI><a href="#[196]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getRelativeStateOfCharge()
-<LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getTemperatureC()
+<BR>[Calls]<UL><LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkBatteryLevels()
 <LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;chargeLedBlink(int)
 <LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WatchdogFeed()
 <LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcPolling()
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputPins
-<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
 <LI><a href="#[1ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmpge
 </UL>
 <BR>[Called By]<UL><LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
@@ -2826,8 +2824,8 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HardwareSerial::~HardwareSerial__deallocating()
 </UL>
-<BR>[Address Reference Count : 2]<UL><LI> hardwareserial.o(.rodata._ZTV14HardwareSerial)
-<LI> hardwareserial.o(.text.__cxx_global_var_init)
+<BR>[Address Reference Count : 2]<UL><LI> hardwareserial.o(.text.__cxx_global_var_init)
+<LI> hardwareserial.o(.rodata._ZTV14HardwareSerial)
 </UL>
 <P><STRONG><a name="[2b7]"></a>HardwareSerial::~HardwareSerial__sub_object()</STRONG> (Thumb, 116 bytes, Stack size 32 bytes, hardwareserial.o(.text._ZN14HardwareSerialD2Ev), UNUSED)
 
@@ -2915,7 +2913,6 @@ Global Symbols
 <LI><a href="#[1dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Print::print(int, int)
 <LI><a href="#[1d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Print::print(char)
 <LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Print::print(char const*)
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[1d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dcmple
 <LI><a href="#[1d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dcmpge
 <LI><a href="#[1d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
@@ -2925,6 +2922,7 @@ Global Symbols
 <LI><a href="#[195]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
 <LI><a href="#[1d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
 <LI><a href="#[1dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2iz
+<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Print::print(double, int)
 </UL>
@@ -3115,8 +3113,8 @@ Global Symbols
 <LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TwoWire::endTransmission(bool)
 <LI><a href="#[1ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TwoWire::requestFrom(unsigned char, unsigned char*, unsigned int, bool)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[194]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getVoltageMv()
-<LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getTemperatureC()
+<BR>[Called By]<UL><LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getTemperatureC()
+<LI><a href="#[194]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getVoltageMv()
 <LI><a href="#[1ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getFullChargeCapacityMah()
 <LI><a href="#[1eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getAverageCurrentMa()
 </UL>
@@ -3124,15 +3122,14 @@ Global Symbols
 <P><STRONG><a name="[197]"></a>BQ40Z50::getTemperatureC()</STRONG> (Thumb, 78 bytes, Stack size 24 bytes, bq40z50.o(.text._ZN7BQ40Z5015getTemperatureCEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 300<LI>Call Chain = BQ40Z50::getTemperatureC() &rArr; BQ40Z50::readRegister16(unsigned char) &rArr; TwoWire::beginTransmission(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
 </UL>
-<BR>[Calls]<UL><LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
-<LI><a href="#[1d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<BR>[Calls]<UL><LI><a href="#[1d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 <LI><a href="#[1e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::readRegister16(unsigned char)
 <LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 <LI><a href="#[195]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
+<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 </UL>
 <BR>[Called By]<UL><LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkBatteryLevels()
-<LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Charging_State_Indication()
 </UL>
 
 <P><STRONG><a name="[1eb]"></a>BQ40Z50::getAverageCurrentMa()</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, bq40z50.o(.text._ZN7BQ40Z5019getAverageCurrentMaEv))
@@ -3157,7 +3154,6 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[1e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::readRegister8(unsigned char)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkBatteryLevels()
-<LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Charging_State_Indication()
 </UL>
 
 <P><STRONG><a name="[198]"></a>BQ40Z50::getBatteryChargingPercentPerHour()</STRONG> (Thumb, 64 bytes, Stack size 24 bytes, bq40z50.o(.text._ZN7BQ40Z5032getBatteryChargingPercentPerHourEv))
@@ -3172,7 +3168,6 @@ Global Symbols
 <LI><a href="#[1db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 </UL>
 <BR>[Called By]<UL><LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkBatteryLevels()
-<LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Charging_State_Indication()
 </UL>
 
 <P><STRONG><a name="[1ed]"></a>BQ40Z50::begin(TwoWire&)</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, bq40z50.o(.text._ZN7BQ40Z505beginER7TwoWire))
@@ -3495,7 +3490,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[208]"></a>$Super$$main</STRONG> (Thumb, 638 bytes, Stack size 64 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 412<LI>Call Chain = $Super$$main &rArr; PowerControlInit() &rArr; WatchdogFeedPinInit() &rArr; pinMode &rArr; adc_device_init &rArr; adc_adc_init(adc_device_t const*) &rArr; adc_clock_init(bool) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
+<BR><BR>[Stack]<UL><LI>Max Depth = 412<LI>Call Chain = $Super$$main &rArr; Charging_State_Indication() &rArr; checkBatteryLevels() &rArr; BQ40Z50::getBatteryChargingPercentPerHour() &rArr; BQ40Z50::getFullChargeCapacityMah() &rArr; BQ40Z50::readRegister16(unsigned char) &rArr; TwoWire::beginTransmission(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
 </UL>
 <BR>[Calls]<UL><LI><a href="#[20b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_startup
 <LI><a href="#[20a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_init
@@ -3522,7 +3517,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[b6]"></a>main_thread_entry</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, components.o(.text.main_thread_entry))
-<BR><BR>[Stack]<UL><LI>Max Depth = 428<LI>Call Chain = main_thread_entry &rArr; $Super$$main &rArr; PowerControlInit() &rArr; WatchdogFeedPinInit() &rArr; pinMode &rArr; adc_device_init &rArr; adc_adc_init(adc_device_t const*) &rArr; adc_clock_init(bool) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
+<BR><BR>[Stack]<UL><LI>Max Depth = 428<LI>Call Chain = main_thread_entry &rArr; $Super$$main &rArr; Charging_State_Indication() &rArr; checkBatteryLevels() &rArr; BQ40Z50::getBatteryChargingPercentPerHour() &rArr; BQ40Z50::getFullChargeCapacityMah() &rArr; BQ40Z50::readRegister16(unsigned char) &rArr; TwoWire::beginTransmission(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
 </UL>
 <BR>[Calls]<UL><LI><a href="#[20c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_components_init
 <LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
@@ -4218,9 +4213,9 @@ Global Symbols
 <P><STRONG><a name="[125]"></a>__aeabi_d2f</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, d2f.o(x$fpl$d2f))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __aeabi_d2f
 </UL>
-<BR>[Called By]<UL><LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkBatteryLevels()
-<LI><a href="#[198]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getBatteryChargingPercentPerHour()
+<BR>[Called By]<UL><LI><a href="#[198]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getBatteryChargingPercentPerHour()
 <LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getTemperatureC()
+<LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkBatteryLevels()
 <LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_CalculateBrr
 <LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SmartCard_CalculateBrr
 <LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClockSync_CalculateBrr
@@ -4254,8 +4249,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __aeabi_ddiv
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Print::printFloat(double, unsigned char)
-<LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkBatteryLevels()
 <LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getTemperatureC()
+<LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkBatteryLevels()
 <LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_CalculateBrr
 <LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SmartCard_CalculateBrr
 <LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClockSync_CalculateBrr
@@ -4298,8 +4293,8 @@ Global Symbols
 
 <P><STRONG><a name="[195]"></a>__aeabi_i2d</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dflt))
 <BR><BR>[Called By]<UL><LI><a href="#[1d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Print::printFloat(double, unsigned char)
-<LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkBatteryLevels()
 <LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getTemperatureC()
+<LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkBatteryLevels()
 </UL>
 
 <P><STRONG><a name="[2bc]"></a>_dflt</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dflt), UNUSED)
@@ -4358,8 +4353,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[259]"></a>__fpl_dnaninf</STRONG> (Thumb, 156 bytes, Stack size 16 bytes, dnaninf.o(x$fpl$dnaninf), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ddiv
-<LI><a href="#[265]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub
+<BR><BR>[Called By]<UL><LI><a href="#[265]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub
 <LI><a href="#[25a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd
 <LI><a href="#[257]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_d2f
 <LI><a href="#[263]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dcmple
@@ -4368,13 +4362,14 @@ Global Symbols
 <LI><a href="#[264]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dmul
 <LI><a href="#[261]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dfixu
 <LI><a href="#[260]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dfix
+<LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ddiv
 </UL>
 
 <P><STRONG><a name="[25c]"></a>__fpl_dretinf</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, dretinf.o(x$fpl$dretinf), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ddiv
-<LI><a href="#[25a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd
+<BR><BR>[Called By]<UL><LI><a href="#[25a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd
 <LI><a href="#[267]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_f2d
 <LI><a href="#[264]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dmul
+<LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ddiv
 </UL>
 
 <P><STRONG><a name="[1d9]"></a>__aeabi_dsub</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, daddsub_clz.o(x$fpl$dsub))
@@ -4391,10 +4386,10 @@ Global Symbols
 <P><STRONG><a name="[199]"></a>__aeabi_f2d</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, f2d.o(x$fpl$f2d))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_f2d
 </UL>
-<BR>[Called By]<UL><LI><a href="#[18d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleFuelgaugeTask()
-<LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkBatteryLevels()
-<LI><a href="#[198]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getBatteryChargingPercentPerHour()
+<BR>[Called By]<UL><LI><a href="#[198]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getBatteryChargingPercentPerHour()
 <LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getTemperatureC()
+<LI><a href="#[18d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleFuelgaugeTask()
+<LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkBatteryLevels()
 </UL>
 
 <P><STRONG><a name="[267]"></a>_f2d</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, f2d.o(x$fpl$f2d), UNUSED)
@@ -4580,7 +4575,6 @@ Global Symbols
 
 <P><STRONG><a name="[13b]"></a>__aeabi_ui2f</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, fflt_clz.o(x$fpl$ffltu))
 <BR><BR>[Called By]<UL><LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkBatteryLevels()
-<LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Charging_State_Indication()
 <LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_BaudrateConfig
 </UL>
 
@@ -4956,12 +4950,12 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = ClockSync_CalculateBrr &rArr; __aeabi_uldivmod
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 <LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 <LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 <LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ul2d
 <LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
+<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 </UL>
 <BR>[Called By]<UL><LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetBaudrate
 </UL>
@@ -4970,12 +4964,12 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = SmartCard_CalculateBrr &rArr; __aeabi_uldivmod
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 <LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 <LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 <LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ul2d
 <LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
+<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 </UL>
 <BR>[Called By]<UL><LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetBaudrate
 </UL>
@@ -4984,12 +4978,12 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = UART_CalculateBrr &rArr; __aeabi_uldivmod
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 <LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 <LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 <LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ul2d
 <LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
+<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 </UL>
 <BR>[Called By]<UL><LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetBaudrate
 </UL>

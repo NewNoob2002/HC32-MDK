@@ -72,10 +72,7 @@ void Charging_State_Indication()
 	    value1 = GPIO_ReadInputPins(CHARGER_CTRL_PORT, CHARGER_CTRL_PIN1);
 	    value2 = GPIO_ReadInputPins(CHARGER_CTRL_PORT, CHARGER_CTRL_PIN2);
 		
-		batteryLevelPercent = bq40z50->getRelativeStateOfCharge();
-		batteryTempC = bq40z50->getTemperatureC();
-		batteryChargingPercentPerHour = bq40z50->getBatteryChargingPercentPerHour();
-//	  Battery_Read_Information(&BAT_Parameter);			
+		checkBatteryLevels();
 		AdcPolling();
 			  
 		///if (BAT_Parameter.EQ < 100)
@@ -170,13 +167,13 @@ int main(void) {
 //  mp2762a->setFastChargeCurrentMa(1600);
 //  mp2762a->getChargeStatus();
 
-  if(I2C_Slave.begin() != LL_OK)
-	{
-		delay_ms(1200);
-		powerLedSwitch(0);
-		NVIC_SystemReset();
-		powerLedSwitch(1);
-	}
+//  if(I2C_Slave.begin() != LL_OK)
+//	{
+//		delay_ms(1200);
+//		powerLedSwitch(0);
+//		NVIC_SystemReset();
+//		powerLedSwitch(1);
+//	}
 
   /* Peripheral registers write protected */
   LL_PERIPH_WP(EXAMPLE_PERIPH_WP);
