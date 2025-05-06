@@ -280,8 +280,8 @@ extern usart_config_t USART3_config;
 extern usart_config_t USART4_config;
 
 #define SERIAL_1_ENABLE 1
-#define SERIAL_1_TX_PIN PA4
-#define SERIAL_1_RX_PIN PA5
+#define SERIAL_1_TX_PIN PA12
+#define SERIAL_1_RX_PIN PA11
 
 #define SERIAL_2_ENABLE 0
 #define SERIAL_2_TX_PIN PB6

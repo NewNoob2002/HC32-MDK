@@ -14,7 +14,6 @@ void checkBatteryLevels()
 {
     if (online_devices.bq40z50 == false)
         return;
-
 switch (gaugeState)
         {
         case READ_VOLTAGE:
@@ -48,11 +47,10 @@ switch (gaugeState)
             break;
         }
         }
-
     if (batteryLevelPercent == 0.0) {
         batteryLevelPercent = 50.0;
-    } else if (batteryLevelPercent <= 99.80 && batteryVoltage >= 8.38) {
-        batteryLevelPercent = 100.0;
+    } else if (batteryLevelPercent == 99) {
+        batteryLevelPercent = 100;
     }
     return;
 }

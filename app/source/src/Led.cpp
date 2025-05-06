@@ -156,11 +156,10 @@ void PowerLedUpdate()
                 powerLed.lastToggleTime = now;
             }
         }
-				if(batteryLevelPercent >=50)
-				{
-					powerLedBlink(0);
-					powerLedSwitch(0);
-				}
+        if (batteryLevelPercent >= 50) {
+            powerLedBlink(0);
+            powerLedSwitch(1);
+        }
     }
 }
 
@@ -202,6 +201,9 @@ void FunctionKeyLedUpdate()
                 digitalWrite(FunctionKey_LED_PIN, functionKeyLed.isOn ? LOW : HIGH);
                 functionKeyLed.lastToggleTime = now;
             }
+        }
+        else {
+            functionKeyLedSwitch(0);
         }
     }
 }

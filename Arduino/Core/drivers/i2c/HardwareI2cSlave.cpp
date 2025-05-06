@@ -2,32 +2,6 @@
 #include <debug.h>
 #include "delay.h"
 #include "HardwareI2cSlave.h"
-/*******************************************************************************
- * Local type definitions ('typedef')
- ******************************************************************************/
-/**
- * @brief I2c communication mode enum
- */
-typedef enum {
-    MD_TX = 0U,
-    MD_RX = 1U,
-} stc_i2c_com_mode_t;
-
-/**
- * @brief I2c communication status enum
- */
-typedef enum {
-    I2C_COM_BUSY = 0U,
-    I2C_COM_IDLE = 1U,
-} stc_i2c_com_status_t;
-
-/**
- * @brief I2c communication structure
- */
-typedef struct {
-    stc_i2c_com_mode_t enMode;             /*!< I2C communication mode*/
-    __IO stc_i2c_com_status_t enComStatus; /*!< I2C communication status*/
-} stc_i2c_communication_t;
 
 /*******************************************************************************
  * Local pre-processor symbols/macros ('#define')
@@ -79,7 +53,6 @@ RingBuffer<uint8_t> *SlaveTxBuffer = nullptr;
 
 static uint8_t u8TxBuf[TEST_DATA_LEN];
 static uint8_t u8RxBuf[TEST_DATA_LEN];
-static stc_i2c_communication_t stcI2cCom;
 
 /**
  * @brief   I2C EEI(communication error or event) interrupt callback function
@@ -100,10 +73,15 @@ static void I2C_EEI_Callback(void)
             if (SlaveTxBuffer->pop(data)) {
                 I2C_WriteData(I2C_UNIT, data);
             }
+            else {
+                LOG_ERROR("SlaveTxBuffer is empty");
+            }
 
             /* Enable stop and NACK interrupt */
             I2C_IntCmd(I2C_UNIT, I2C_INT_STOP | I2C_INT_NACK, ENABLE);
         } else if ((RESET == I2C_GetStatus(I2C_UNIT, I2C_FLAG_TRA))) {
+            I2C_IntCmd(I2C_UNIT, I2C_INT_RX_FULL, ENABLE);
+            // stcI2cCom.enMode = MD_RX;
             /* Enable stop and NACK interrupt */
             I2C_IntCmd(I2C_UNIT, I2C_INT_STOP | I2C_INT_NACK, ENABLE);
         } else {
@@ -132,10 +110,9 @@ static void I2C_EEI_Callback(void)
         I2C_ClearStatus(I2C_UNIT, I2C_CLR_STOPFCLR);
         I2C_Cmd(I2C_UNIT, DISABLE);
         /* Communication finished */
-        stcI2cCom.enComStatus = I2C_COM_IDLE;
         I2C_Cmd(I2C_UNIT, ENABLE);
         /* Config slave address match and receive full interrupt function*/
-        I2C_IntCmd(I2C_UNIT, I2C_INT_MATCH_ADDR0 | I2C_INT_RX_FULL, ENABLE);
+        I2C_IntCmd(I2C_UNIT, I2C_INT_MATCH_ADDR0, ENABLE);
     } else {
     }
 }
@@ -152,6 +129,9 @@ static void I2C_TEI_Callback(void)
         uint8_t data;
         if (SlaveTxBuffer->pop(data)) {
             I2C_WriteData(I2C_UNIT, data);
+        }
+        else {
+            LOG_ERROR("SlaveTxBuffer TEI is empty");
         }
     }
 }
@@ -373,6 +353,11 @@ void HardwareI2cSlave::updateBuffers(RingBuffer<uint8_t> *rxBuffer, RingBuffer<u
     if (txBuffer != nullptr) {
         this->__SlaveTxBuffer = txBuffer;
     }
+}
+
+bool HardwareI2cSlave::isTransmitting(void)
+{
+    return stcI2cCom.enMode == MD_TX;
 }
 
 HardwareI2cSlave I2C_Slave;

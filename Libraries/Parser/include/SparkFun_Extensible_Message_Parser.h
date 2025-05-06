@@ -223,16 +223,16 @@ typedef struct _SEMP_Bluetooth_HEADER
     uint8_t syncA;          // 0xaa
     uint8_t syncB;          // 0x44
     uint8_t syncC;          // 0x18
-    uint8_t headerLength;     // CPU Idle Percentage 0-100
+    uint8_t headerLength;     // Header length
     uint16_t messageId;     // Message ID
     uint16_t RESERVED1;      // reserved
     uint32_t RESERVED_time; // reserved time stamp
-    uint16_t messageLength;     // massage length
+    uint16_t messageLength;     // message length
     uint16_t RESERVED2;
 
-    uint8_t sender;  // Release version
-    uint8_t messageType;      // Leap sec
-    uint8_t Protocol; // Output delay time, ms
+    uint8_t sender;  // sender
+    uint8_t messageType;      // message type
+    uint8_t Protocol; // protocol
 
     int8_t MsgInterval;
 

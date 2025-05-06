@@ -1,7 +1,7 @@
 #pragma once
 
 #include <stdint.h>
-#if 0
+#if 1
 #define CHG_LED_PIN PH2
 #define FunctionKey_PIN PA15
 #else

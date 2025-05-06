@@ -44,15 +44,15 @@
 #include "itoa.h"
 
 #ifdef __cplusplus
-extern "C"{
+extern "C" {
 #endif // __cplusplus
 
 #include "wiring_constants.h"
 #include "delay.h"
 #include "systick.h"
-  /* sketch */
-//void setup( void ) ;
-//void loop( void ) ;
+/* sketch */
+// void setup( void ) ;
+// void loop( void ) ;
 
 #include "WVariant.h"
 
@@ -64,55 +64,55 @@ extern "C"{
 #ifdef __cplusplus
 #include "WCharacter.h"
 #include "WString.h"
-//#include "Tone.h"
+// #include "Tone.h"
 #include "WMath.h"
 #include "HardwareSerial.h"
 #include <Wire.h>
 // #include "RingBuf.h"
 #include "Stream.h"
-//#include "pulse.h"
+// #include "pulse.h"
 #endif
 
 #ifdef __cplusplus
-//#include "drivers/usart/Usart.h"
+// #include "drivers/usart/Usart.h"
 #endif
 
 #include "wiring_digital.h"
-//#include "wiring_analog.h"
-//#include "wiring_shift.h"
-//#include "WInterrupts.h"
+// #include "wiring_analog.h"
+// #include "wiring_shift.h"
+// #include "WInterrupts.h"
 
 // undefine stdlib's abs if encountered
 #ifdef abs
 #undef abs
 #endif // abs
 
-#define min(a,b) ((a)<(b)?(a):(b))
-#define max(a,b) ((a)>(b)?(a):(b))
-#define abs(x) ((x)>0?(x):-(x))
-#define constrain(amt,low,high) ((amt)<(low)?(low):((amt)>(high)?(high):(amt)))
-#define round(x)     ((x)>=0?(long)((x)+0.5):(long)((x)-0.5))
-#define radians(deg) ((deg)*DEG_TO_RAD)
-#define degrees(rad) ((rad)*RAD_TO_DEG)
-#define sq(x) ((x)*(x))
+#define min(a, b)                      ((a) < (b) ? (a) : (b))
+#define max(a, b)                      ((a) > (b) ? (a) : (b))
+#define abs(x)                         ((x) > 0 ? (x) : -(x))
+#define constrain(amt, low, high)      ((amt) < (low) ? (low) : ((amt) > (high) ? (high) : (amt)))
+#define round(x)                       ((x) >= 0 ? (long)((x) + 0.5) : (long)((x) - 0.5))
+#define radians(deg)                   ((deg) * DEG_TO_RAD)
+#define degrees(rad)                   ((rad) * RAD_TO_DEG)
+#define sq(x)                          ((x) * (x))
 
-#define interrupts() __enable_irq()
-#define noInterrupts() __disable_irq()
+#define interrupts()                   __enable_irq()
+#define noInterrupts()                 __disable_irq()
 
-#define lowByte(w) ((uint8_t) ((w) & 0xff))
-#define highByte(w) ((uint8_t) ((w) >> 8))
+#define lowByte(w)                     ((uint8_t)((w) & 0xff))
+#define highByte(w)                    ((uint8_t)((w) >> 8))
 
-#define bitRead(value, bit) (((value) >> (bit)) & 0x01)
-#define bitSet(value, bit) ((value) |= (1UL << (bit)))
-#define bitClear(value, bit) ((value) &= ~(1UL << (bit)))
+#define bitRead(value, bit)            (((value) >> (bit)) & 0x01)
+#define bitSet(value, bit)             ((value) |= (1UL << (bit)))
+#define bitClear(value, bit)           ((value) &= ~(1UL << (bit)))
 #define bitWrite(value, bit, bitvalue) (bitvalue ? bitSet(value, bit) : bitClear(value, bit))
 
-#define bit(b) (1UL << (b))
+#define bit(b)                         (1UL << (b))
 
 // dynamic F_CPU
 #include "sysclock.h"
 #ifndef F_CPU
-  #define F_CPU (SYSTEM_CLOCK_FREQUENCIES.hclk)
+#define F_CPU (SYSTEM_CLOCK_FREQUENCIES.hclk)
 #endif
 
 // direct port manipulation for GPIO

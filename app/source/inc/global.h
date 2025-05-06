@@ -13,7 +13,8 @@
 #include "System.h"
 #include "mcu_define.h"
 
-extern float batteryLevelPercent;
+extern uint16_t batteryLevelPercent;
 extern float batteryTempC;
 extern float batteryChargingPercentPerHour;
 extern float batteryVoltage;
+extern uint8_t POWER_OFF_FLAG;

@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\output\debug\hc32f460jeta.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\output\debug\hc32f460jeta.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Tue May  6 10:34:54 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Tue May  6 10:42:20 2025
 <BR><P>
 <H3>Maximum Stack Usage =        476 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -2256,7 +2256,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Charging_State_Indication()
 </UL>
 
-<P><STRONG><a name="[b3]"></a>KeyMonitor(void*)</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, task.o(.text._Z10KeyMonitorPv))
+<P><STRONG><a name="[b3]"></a>KeyMonitor(void*)</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, task.o(.text._Z10KeyMonitorPv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 228<LI>Call Chain = KeyMonitor(void*) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
 </UL>
 <BR>[Calls]<UL><LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_mdelay
@@ -2397,12 +2397,13 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[193]"></a>checkBatteryLevels()</STRONG> (Thumb, 386 bytes, Stack size 16 bytes, system.o(.text._Z18checkBatteryLevelsv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 332<LI>Call Chain = checkBatteryLevels() &rArr; BQ40Z50::getBatteryChargingPercentPerHour() &rArr; BQ40Z50::getFullChargeCapacityMah() &rArr; BQ40Z50::readRegister16(unsigned char) &rArr; TwoWire::beginTransmission(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
+<BR><BR>[Stack]<UL><LI>Max Depth = 300<LI>Call Chain = checkBatteryLevels() &rArr; BQ40Z50::getBatteryChargingPercentPerHour() &rArr; BQ40Z50::getFullChargeCapacityMah() &rArr; BQ40Z50::readRegister16(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
 </UL>
 <BR>[Calls]<UL><LI><a href="#[198]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getBatteryChargingPercentPerHour()
 <LI><a href="#[196]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getRelativeStateOfCharge()
 <LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getTemperatureC()
 <LI><a href="#[194]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getVoltageMv()
+<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[19c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dcmplt
 <LI><a href="#[19b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dcmpgt
 <LI><a href="#[19a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dcmpeq
@@ -2410,7 +2411,6 @@ Global Symbols
 <LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
 <LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 <LI><a href="#[195]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 </UL>
 <BR>[Called By]<UL><LI><a href="#[18d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleFuelgaugeTask()
 <LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Charging_State_Indication()
@@ -2521,7 +2521,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1ac]"></a>Charging_State_Indication()</STRONG> (Thumb, 162 bytes, Stack size 16 bytes, main.o(.text._Z25Charging_State_Indicationv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 348<LI>Call Chain = Charging_State_Indication() &rArr; checkBatteryLevels() &rArr; BQ40Z50::getBatteryChargingPercentPerHour() &rArr; BQ40Z50::getFullChargeCapacityMah() &rArr; BQ40Z50::readRegister16(unsigned char) &rArr; TwoWire::beginTransmission(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
+<BR><BR>[Stack]<UL><LI>Max Depth = 316<LI>Call Chain = Charging_State_Indication() &rArr; checkBatteryLevels() &rArr; BQ40Z50::getBatteryChargingPercentPerHour() &rArr; BQ40Z50::getFullChargeCapacityMah() &rArr; BQ40Z50::readRegister16(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
 </UL>
 <BR>[Calls]<UL><LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkBatteryLevels()
 <LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;chargeLedBlink(int)
@@ -2913,6 +2913,7 @@ Global Symbols
 <LI><a href="#[1dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Print::print(int, int)
 <LI><a href="#[1d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Print::print(char)
 <LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Print::print(char const*)
+<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[1d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dcmple
 <LI><a href="#[1d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dcmpge
 <LI><a href="#[1d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
@@ -2922,7 +2923,6 @@ Global Symbols
 <LI><a href="#[195]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
 <LI><a href="#[1d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
 <LI><a href="#[1dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2iz
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Print::print(double, int)
 </UL>
@@ -3075,7 +3075,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> hardwareserial.o(.rodata._ZTV6Stream)
 </UL>
 <P><STRONG><a name="[1a6]"></a>BQ40Z50::isConnected()</STRONG> (Thumb, 56 bytes, Stack size 24 bytes, bq40z50.o(.text._ZN7BQ40Z5011isConnectedEv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 268<LI>Call Chain = BQ40Z50::isConnected() &rArr; TwoWire::beginTransmission(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = BQ40Z50::isConnected() &rArr; TwoWire::beginTransmission(unsigned char) &rArr; I2C_TransAddr &rArr; I2C_WaitStatus &rArr; DDL_AssertHandler
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TwoWire::beginTransmission(unsigned char)
 <LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TwoWire::endTransmission(bool)
@@ -3085,7 +3085,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[194]"></a>BQ40Z50::getVoltageMv()</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, bq40z50.o(.text._ZN7BQ40Z5012getVoltageMvEv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 292<LI>Call Chain = BQ40Z50::getVoltageMv() &rArr; BQ40Z50::readRegister16(unsigned char) &rArr; TwoWire::beginTransmission(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
+<BR><BR>[Stack]<UL><LI>Max Depth = 260<LI>Call Chain = BQ40Z50::getVoltageMv() &rArr; BQ40Z50::readRegister16(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::readRegister16(unsigned char)
 </UL>
@@ -3093,7 +3093,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1e8]"></a>BQ40Z50::readRegister8(unsigned char)</STRONG> (Thumb, 144 bytes, Stack size 32 bytes, bq40z50.o(.text._ZN7BQ40Z5013readRegister8Eh))
-<BR><BR>[Stack]<UL><LI>Max Depth = 276<LI>Call Chain = BQ40Z50::readRegister8(unsigned char) &rArr; TwoWire::beginTransmission(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
+<BR><BR>[Stack]<UL><LI>Max Depth = 244<LI>Call Chain = BQ40Z50::readRegister8(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
 </UL>
 <BR>[Calls]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_kprintf
 <LI><a href="#[1e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TwoWire::write(unsigned char)
@@ -3105,7 +3105,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1e7]"></a>BQ40Z50::readRegister16(unsigned char)</STRONG> (Thumb, 160 bytes, Stack size 32 bytes, bq40z50.o(.text._ZN7BQ40Z5014readRegister16Eh))
-<BR><BR>[Stack]<UL><LI>Max Depth = 276<LI>Call Chain = BQ40Z50::readRegister16(unsigned char) &rArr; TwoWire::beginTransmission(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
+<BR><BR>[Stack]<UL><LI>Max Depth = 244<LI>Call Chain = BQ40Z50::readRegister16(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
 </UL>
 <BR>[Calls]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_kprintf
 <LI><a href="#[1e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TwoWire::write(unsigned char)
@@ -3120,20 +3120,20 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[197]"></a>BQ40Z50::getTemperatureC()</STRONG> (Thumb, 78 bytes, Stack size 24 bytes, bq40z50.o(.text._ZN7BQ40Z5015getTemperatureCEv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 300<LI>Call Chain = BQ40Z50::getTemperatureC() &rArr; BQ40Z50::readRegister16(unsigned char) &rArr; TwoWire::beginTransmission(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
+<BR><BR>[Stack]<UL><LI>Max Depth = 268<LI>Call Chain = BQ40Z50::getTemperatureC() &rArr; BQ40Z50::readRegister16(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<BR>[Calls]<UL><LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
+<LI><a href="#[1d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 <LI><a href="#[1e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::readRegister16(unsigned char)
 <LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 <LI><a href="#[195]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 </UL>
 <BR>[Called By]<UL><LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkBatteryLevels()
 </UL>
 
 <P><STRONG><a name="[1eb]"></a>BQ40Z50::getAverageCurrentMa()</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, bq40z50.o(.text._ZN7BQ40Z5019getAverageCurrentMaEv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 292<LI>Call Chain = BQ40Z50::getAverageCurrentMa() &rArr; BQ40Z50::readRegister16(unsigned char) &rArr; TwoWire::beginTransmission(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
+<BR><BR>[Stack]<UL><LI>Max Depth = 260<LI>Call Chain = BQ40Z50::getAverageCurrentMa() &rArr; BQ40Z50::readRegister16(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::readRegister16(unsigned char)
 </UL>
@@ -3141,7 +3141,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1ec]"></a>BQ40Z50::getFullChargeCapacityMah()</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, bq40z50.o(.text._ZN7BQ40Z5024getFullChargeCapacityMahEv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 292<LI>Call Chain = BQ40Z50::getFullChargeCapacityMah() &rArr; BQ40Z50::readRegister16(unsigned char) &rArr; TwoWire::beginTransmission(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
+<BR><BR>[Stack]<UL><LI>Max Depth = 260<LI>Call Chain = BQ40Z50::getFullChargeCapacityMah() &rArr; BQ40Z50::readRegister16(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::readRegister16(unsigned char)
 </UL>
@@ -3149,7 +3149,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[196]"></a>BQ40Z50::getRelativeStateOfCharge()</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, bq40z50.o(.text._ZN7BQ40Z5024getRelativeStateOfChargeEv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 292<LI>Call Chain = BQ40Z50::getRelativeStateOfCharge() &rArr; BQ40Z50::readRegister8(unsigned char) &rArr; TwoWire::beginTransmission(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
+<BR><BR>[Stack]<UL><LI>Max Depth = 260<LI>Call Chain = BQ40Z50::getRelativeStateOfCharge() &rArr; BQ40Z50::readRegister8(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::readRegister8(unsigned char)
 </UL>
@@ -3157,7 +3157,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[198]"></a>BQ40Z50::getBatteryChargingPercentPerHour()</STRONG> (Thumb, 64 bytes, Stack size 24 bytes, bq40z50.o(.text._ZN7BQ40Z5032getBatteryChargingPercentPerHourEv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 316<LI>Call Chain = BQ40Z50::getBatteryChargingPercentPerHour() &rArr; BQ40Z50::getFullChargeCapacityMah() &rArr; BQ40Z50::readRegister16(unsigned char) &rArr; TwoWire::beginTransmission(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
+<BR><BR>[Stack]<UL><LI>Max Depth = 284<LI>Call Chain = BQ40Z50::getBatteryChargingPercentPerHour() &rArr; BQ40Z50::getFullChargeCapacityMah() &rArr; BQ40Z50::readRegister16(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
 </UL>
 <BR>[Calls]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 <LI><a href="#[1ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::getFullChargeCapacityMah()
@@ -3171,7 +3171,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1ed]"></a>BQ40Z50::begin(TwoWire&)</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, bq40z50.o(.text._ZN7BQ40Z505beginER7TwoWire))
-<BR><BR>[Stack]<UL><LI>Max Depth = 292<LI>Call Chain = BQ40Z50::begin(TwoWire&) &rArr; BQ40Z50::isConnected() &rArr; TwoWire::beginTransmission(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
+<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = BQ40Z50::begin(TwoWire&) &rArr; BQ40Z50::isConnected() &rArr; TwoWire::beginTransmission(unsigned char) &rArr; I2C_TransAddr &rArr; I2C_WaitStatus &rArr; DDL_AssertHandler
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::isConnected()
 </UL>
@@ -3197,11 +3197,10 @@ Global Symbols
 <LI><a href="#[1e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::readRegister8(unsigned char)
 </UL>
 
-<P><STRONG><a name="[1e6]"></a>TwoWire::endTransmission(bool)</STRONG> (Thumb, 124 bytes, Stack size 24 bytes, wire.o(.text._ZN7TwoWire15endTransmissionEb))
-<BR><BR>[Stack]<UL><LI>Max Depth = 236<LI>Call Chain = TwoWire::endTransmission(bool) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
+<P><STRONG><a name="[1e6]"></a>TwoWire::endTransmission(bool)</STRONG> (Thumb, 92 bytes, Stack size 24 bytes, wire.o(.text._ZN7TwoWire15endTransmissionEb))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = TwoWire::endTransmission(bool) &rArr; I2C_Stop &rArr; I2C_WaitStatus &rArr; DDL_AssertHandler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_kprintf
-<LI><a href="#[151]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Stop
+<BR>[Calls]<UL><LI><a href="#[151]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Stop
 <LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Restart
 <LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Cmd
 </UL>
@@ -3210,11 +3209,10 @@ Global Symbols
 <LI><a href="#[1e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::readRegister8(unsigned char)
 </UL>
 
-<P><STRONG><a name="[1e5]"></a>TwoWire::beginTransmission(unsigned char)</STRONG> (Thumb, 122 bytes, Stack size 32 bytes, wire.o(.text._ZN7TwoWire17beginTransmissionEh))
-<BR><BR>[Stack]<UL><LI>Max Depth = 244<LI>Call Chain = TwoWire::beginTransmission(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
+<P><STRONG><a name="[1e5]"></a>TwoWire::beginTransmission(unsigned char)</STRONG> (Thumb, 110 bytes, Stack size 32 bytes, wire.o(.text._ZN7TwoWire17beginTransmissionEh))
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = TwoWire::beginTransmission(unsigned char) &rArr; I2C_TransAddr &rArr; I2C_WaitStatus &rArr; DDL_AssertHandler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_kprintf
-<LI><a href="#[152]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_TransAddr
+<BR>[Calls]<UL><LI><a href="#[152]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_TransAddr
 <LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Start
 <LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_SWResetCmd
 <LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Cmd
@@ -3224,7 +3222,7 @@ Global Symbols
 <LI><a href="#[1e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ40Z50::readRegister8(unsigned char)
 </UL>
 
-<P><STRONG><a name="[1ee]"></a>TwoWire::begin()</STRONG> (Thumb, 252 bytes, Stack size 48 bytes, wire.o(.text._ZN7TwoWire5beginEv))
+<P><STRONG><a name="[1ee]"></a>TwoWire::begin()</STRONG> (Thumb, 174 bytes, Stack size 48 bytes, wire.o(.text._ZN7TwoWire5beginEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 284<LI>Call Chain = TwoWire::begin() &rArr; GPIO_SetFunction &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
 </UL>
 <BR>[Calls]<UL><LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetFunction
@@ -3490,7 +3488,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[208]"></a>$Super$$main</STRONG> (Thumb, 638 bytes, Stack size 64 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 412<LI>Call Chain = $Super$$main &rArr; Charging_State_Indication() &rArr; checkBatteryLevels() &rArr; BQ40Z50::getBatteryChargingPercentPerHour() &rArr; BQ40Z50::getFullChargeCapacityMah() &rArr; BQ40Z50::readRegister16(unsigned char) &rArr; TwoWire::beginTransmission(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
+<BR><BR>[Stack]<UL><LI>Max Depth = 412<LI>Call Chain = $Super$$main &rArr; PowerControlInit() &rArr; WatchdogFeedPinInit() &rArr; pinMode &rArr; adc_device_init &rArr; adc_adc_init(adc_device_t const*) &rArr; adc_clock_init(bool) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
 </UL>
 <BR>[Calls]<UL><LI><a href="#[20b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_startup
 <LI><a href="#[20a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_init
@@ -3517,7 +3515,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[b6]"></a>main_thread_entry</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, components.o(.text.main_thread_entry))
-<BR><BR>[Stack]<UL><LI>Max Depth = 428<LI>Call Chain = main_thread_entry &rArr; $Super$$main &rArr; Charging_State_Indication() &rArr; checkBatteryLevels() &rArr; BQ40Z50::getBatteryChargingPercentPerHour() &rArr; BQ40Z50::getFullChargeCapacityMah() &rArr; BQ40Z50::readRegister16(unsigned char) &rArr; TwoWire::beginTransmission(unsigned char) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
+<BR><BR>[Stack]<UL><LI>Max Depth = 428<LI>Call Chain = main_thread_entry &rArr; $Super$$main &rArr; PowerControlInit() &rArr; WatchdogFeedPinInit() &rArr; pinMode &rArr; adc_device_init &rArr; adc_adc_init(adc_device_t const*) &rArr; adc_clock_init(bool) &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number &rArr; divide
 </UL>
 <BR>[Calls]<UL><LI><a href="#[20c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_components_init
 <LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
@@ -3695,8 +3693,6 @@ Global Symbols
 <LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WatchdogFeed()
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KeyMonitor(void*)
 <LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcPolling()
-<LI><a href="#[1e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TwoWire::beginTransmission(unsigned char)
-<LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TwoWire::endTransmission(bool)
 <LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HardwareI2cSlave::read()
 <LI><a href="#[220]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_system_heap_init
 <LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_free
@@ -4353,7 +4349,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[259]"></a>__fpl_dnaninf</STRONG> (Thumb, 156 bytes, Stack size 16 bytes, dnaninf.o(x$fpl$dnaninf), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[265]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub
+<BR><BR>[Called By]<UL><LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ddiv
+<LI><a href="#[265]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub
 <LI><a href="#[25a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd
 <LI><a href="#[257]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_d2f
 <LI><a href="#[263]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dcmple
@@ -4362,14 +4359,13 @@ Global Symbols
 <LI><a href="#[264]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dmul
 <LI><a href="#[261]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dfixu
 <LI><a href="#[260]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dfix
-<LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ddiv
 </UL>
 
 <P><STRONG><a name="[25c]"></a>__fpl_dretinf</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, dretinf.o(x$fpl$dretinf), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[25a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd
+<BR><BR>[Called By]<UL><LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ddiv
+<LI><a href="#[25a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd
 <LI><a href="#[267]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_f2d
 <LI><a href="#[264]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dmul
-<LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ddiv
 </UL>
 
 <P><STRONG><a name="[1d9]"></a>__aeabi_dsub</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, daddsub_clz.o(x$fpl$dsub))
@@ -4950,12 +4946,12 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = ClockSync_CalculateBrr &rArr; __aeabi_uldivmod
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 <LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 <LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 <LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ul2d
 <LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 </UL>
 <BR>[Called By]<UL><LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetBaudrate
 </UL>
@@ -4964,12 +4960,12 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = SmartCard_CalculateBrr &rArr; __aeabi_uldivmod
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 <LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 <LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 <LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ul2d
 <LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 </UL>
 <BR>[Called By]<UL><LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetBaudrate
 </UL>
@@ -4978,12 +4974,12 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = UART_CalculateBrr &rArr; __aeabi_uldivmod
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 <LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 <LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 <LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ul2d
 <LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 </UL>
 <BR>[Called By]<UL><LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetBaudrate
 </UL>

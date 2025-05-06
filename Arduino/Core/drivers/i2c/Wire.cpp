@@ -1,10 +1,11 @@
 #include "delay.h"
+#include "hc32_ll_i2c.h"
 #include "variant.h"
 #include <Wire.h>
 #include <debug.h>
 #include <hc32_ll.h>
 
-#define WireDEBUG
+//#define WireDEBUG
 #ifdef WireDEBUG
 #define Wire_DEBUG(fmt, args...) LOG_DEBUG(fmt, ##args)
 #else
@@ -73,7 +74,10 @@ int32_t TwoWire::begin() {
 	return i32Ret;
 }
 
-void TwoWire::end() { I2C_DeInit(this->_config->register_base); }
+void TwoWire::end() { 
+  I2C_Cmd(this->_config->register_base, DISABLE);
+  I2C_DeInit(this->_config->register_base); 
+}
 
 void TwoWire::setClock(uint32_t clockFreq) {
   this->_clock_frequency = clockFreq;
