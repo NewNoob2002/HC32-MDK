@@ -79,8 +79,8 @@ ARM Macro Assembler    Page 2
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4 --fpu=SoftVFP
  --depend=.\output\debug\cmb_fault.d -o.\output\debug\cmb_fault.o -IC:\Users\gu
 oti\AppData\Local\Arm\Packs\HDSC\HC32F460\1.0.12\Device\Include --predefine="__
-UVISION_VERSION SETA 536" --predefine="_RTE_ SETA 1" --list=.\output\debug\cmb_
-fault.lst ..\..\Libraries\cm_backtrace\fault_handler\keil\cmb_fault.S
+UVISION_VERSION SETA 536" --list=.\output\debug\cmb_fault.lst ..\..\Libraries\c
+m_backtrace\fault_handler\keil\cmb_fault.S
 
 
 
@@ -134,4 +134,4 @@ ult.S
 ult.S
 Comment: cm_backtrace_fault used once
 1 symbol
-336 symbols in table
+335 symbols in table

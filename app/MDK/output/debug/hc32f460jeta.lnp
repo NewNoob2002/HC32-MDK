@@ -64,8 +64,6 @@
 ".\output\debug\hc32_ll_wdt.o"
 ".\output\debug\hc32f460_ll_interrupts_share.o"
 ".\output\debug\millistaskmanager.o"
-".\output\debug\cm_backtrace.o"
-".\output\debug\cmb_fault.o"
 --strict --scatter ".\config\linker\HC32F460xE.sct"
 --keep=*Handler --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

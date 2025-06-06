@@ -11,10 +11,7 @@
   ..\..\CMSIS\Device\HDSC\hc32f4xx\Include\hc32f460.h \
   ..\..\CMSIS\Include\core_cm4.h ..\..\CMSIS\Include\cmsis_version.h \
   ..\..\CMSIS\Include\cmsis_compiler.h \
-  ..\..\CMSIS\Include\cmsis_armclang.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\arm_compat.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\arm_acle.h \
-  ..\..\CMSIS\Include\mpu_armv7.h \
+  ..\..\CMSIS\Include\cmsis_armclang.h ..\..\CMSIS\Include\mpu_armv7.h \
   ..\..\CMSIS\Device\HDSC\hc32f4xx\Include\system_hc32f460.h \
   ..\..\Driver\inc\hc32_ll_def.h \
   ..\..\CMSIS\Device\HDSC\hc32f4xx\Include\hc32f4xx.h \
@@ -55,20 +52,20 @@
   ..\..\Arduino\Core\avr\interrupt.h ..\..\Arduino\Core\avr\io.h \
   ..\..\Arduino\Core\avr\dtostrf.h ..\..\Arduino\binary.h \
   ..\..\Arduino\itoa.h ..\..\Arduino\wiring_constants.h \
-  ..\..\Arduino\WVariant.h ..\..\Arduino\Core\drivers\gpio\gpio.h \
-  ..\..\Arduino\Core\drivers\gpio\addon_gpio.h \
-  ..\..\Arduino\Core\drivers\adc\adc.h \
-  ..\..\Arduino\Core\drivers\adc\adc_config.h ..\..\Arduino\WVariant.h \
-  ..\..\Arduino\core_types.h ..\..\Arduino\core_debug.h \
-  ..\..\Arduino\Core\drivers\panic\panic.h \
-  ..\..\Arduino\Core\drivers\panic\panic_api.h \
+  ..\..\Arduino\WVariant.h ..\..\Arduino\Core\drivers\adc\adc.h \
+  ..\..\Arduino\Core\drivers\adc\adc_config.h \
   ..\..\Arduino\Core\variants\hc32f460xx\variant.h \
   ..\..\Arduino\WCharacter.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\ctype.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\ctype.h ..\..\Arduino\WString.h \
   ..\..\Arduino\WMath.h ..\..\Arduino\RingBuf.h ..\..\Arduino\Stream.h \
   ..\..\Arduino\Print.h ..\..\Arduino\Printable.h \
-  ..\..\Arduino\wiring_digital.h \
+  ..\..\Arduino\wiring_digital.h ..\..\Arduino\WVariant.h \
   ..\..\Arduino\Core\drivers\sysclock\sysclock.h \
   ..\..\Arduino\Core\drivers\gpio\direct_access.h \
-  ..\..\bsp\USART\usart_handlers.h
+  ..\..\bsp\USART\usart_handlers.h \
+  ..\..\Arduino\Core\drivers\gpio\gpio.h \
+  ..\..\Arduino\Core\drivers\gpio\addon_gpio.h \
+  ..\..\Arduino\core_types.h ..\..\Arduino\core_debug.h \
+  ..\..\Arduino\Core\drivers\panic\panic.h \
+  ..\..\Arduino\Core\drivers\panic\panic_api.h

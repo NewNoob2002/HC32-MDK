@@ -1,20 +1,2 @@
-<<<<<<< HEAD
-/app/MDK/output/*
-/app/MDK/output/debug/*
-=======
-# dot files
-/.vscode/launch.json
-/.settings
-/.eide/log
-/.eide.usr.ctx.json
-
-# project out
-/build
-/bin
-/obj
-/out
-
-# eide template
-*.ept
-*.eide-template
->>>>>>> f6f97cb766ab510a21feca370b07245adc777d6c
+app/MDK/output
+app/MDK/output/debug

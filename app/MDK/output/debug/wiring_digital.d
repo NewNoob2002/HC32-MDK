@@ -11,10 +11,7 @@
   ..\..\CMSIS\Device\HDSC\hc32f4xx\Include\hc32f460.h \
   ..\..\CMSIS\Include\core_cm4.h ..\..\CMSIS\Include\cmsis_version.h \
   ..\..\CMSIS\Include\cmsis_compiler.h \
-  ..\..\CMSIS\Include\cmsis_armclang.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\arm_compat.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\arm_acle.h \
-  ..\..\CMSIS\Include\mpu_armv7.h \
+  ..\..\CMSIS\Include\cmsis_armclang.h ..\..\CMSIS\Include\mpu_armv7.h \
   ..\..\CMSIS\Device\HDSC\hc32f4xx\Include\system_hc32f460.h \
   ..\..\Driver\inc\hc32_ll_def.h \
   ..\..\CMSIS\Device\HDSC\hc32f4xx\Include\hc32f4xx.h \
@@ -34,19 +31,17 @@
   ..\..\Driver\inc\hc32_ll_utility.h ..\..\Arduino\WVariant.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdbool.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  ..\..\Arduino\Core\drivers\adc\adc.h \
+  ..\..\Arduino\Core\drivers\adc\adc_config.h \
+  ..\..\Arduino\Core\variants\hc32f460xx\variant.h \
+  ..\..\Arduino\wiring_constants.h ..\..\Arduino\core_types.h \
   ..\..\Arduino\Core\drivers\gpio\gpio.h \
   ..\..\Arduino\Core\drivers\gpio\addon_gpio.h \
-  ..\..\Arduino\Core\drivers\adc\adc.h \
-  ..\..\Arduino\Core\drivers\adc\adc_config.h ..\..\Arduino\WVariant.h \
   ..\..\Arduino\core_types.h ..\..\Arduino\core_debug.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdio.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
   ..\..\Arduino\Core\drivers\panic\panic.h \
   ..\..\Arduino\Core\drivers\panic\panic_api.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdlib.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
-  ..\..\Arduino\Core\variants\hc32f460xx\variant.h \
-  ..\..\Arduino\wiring_constants.h ..\..\Arduino\core_types.h \
-  ..\..\Arduino\core_debug.h \
+  ..\..\Arduino\WVariant.h ..\..\Arduino\core_debug.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\string.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h

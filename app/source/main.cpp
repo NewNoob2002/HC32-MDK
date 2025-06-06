@@ -15,14 +15,7 @@ MillisTaskManager task;
 
 static void led_blink()
 {
-<<<<<<< HEAD
 		GPIO_TogglePins(GPIO_PORT_B, GPIO_PIN_14);
-=======
-    digitalWrite(PB14, LOW);
-    delay_ms(100);
-    digitalWrite(PB14, HIGH);
->>>>>>> f6f97cb766ab510a21feca370b07245adc777d6c
-    delay_ms(100);
 }
 /**
  * @brief  Main function of SPI tx/rx dma project
@@ -42,7 +35,7 @@ int main(void)
     /* Peripheral registers write protected */
     LL_PERIPH_WP(EXAMPLE_PERIPH_WP);
     
-    task.Register(led_blink, 10);
+    task.Register(led_blink, 100);
 //    task.Register(dmaSend, 10);
     
     while(1) {
